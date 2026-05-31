@@ -2,3 +2,15 @@
 RULE_ELITE_RECRUITMENT;Elite Recruitment;Recrutement d'élite;Elite-Rekrutierung;;Reclutamiento de élite;;;;;;;;;x
 RULE_ELITE_RECRUITMENT_ON_DESC;Elite Recruitment court decisions are enabled.;Les décisions de recrutement d'élite sont activées.;Die Elite-Rekrutierungsentscheidungen sind aktiviert.;;Las decisiones de reclutamiento de élite están activadas.;;;;;;;;;x
 RULE_ELITE_RECRUITMENT_OFF_DESC;Elite Recruitment court decisions are disabled.;Les décisions de recrutement d'élite sont désactivées.;Die Elite-Rekrutierungsentscheidungen sind deaktiviert.;;Las decisiones de reclutamiento de élite están desactivadas.;;;;;;;;;x
+RULE_ELITE_RECRUITMENT_GOLD_COST;Elite Recruitment: Gold Cost;Recrutement d'élite : coût en or;Elite-Rekrutierung: Goldkosten;;Reclutamiento de élite: coste de oro;;;;;;;;;x
+RULE_ELITE_RECRUITMENT_PRESTIGE_COST;Elite Recruitment: Prestige Cost;Recrutement d'élite : coût en prestige;Elite-Rekrutierung: Prestigekosten;;Reclutamiento de élite: coste de prestigio;;;;;;;;;x
+RULE_ELITE_COST_1X;1x;1x;1x;;1x;;;;;;;;;x
+RULE_ELITE_COST_2X;2x;2x;2x;;2x;;;;;;;;;x
+RULE_ELITE_COST_4X;4x;4x;4x;;4x;;;;;;;;;x
+RULE_ELITE_COST_6X;6x;6x;6x;;6x;;;;;;;;;x
+RULE_ELITE_COST_8X;8x;8x;8x;;8x;;;;;;;;;x
+RULE_ELITE_COST_1X_DESC;Base cost (vanilla).;Coût de base (standard).;Basiskosten (Standard).;;Coste base (estándar).;;;;;;;;;x
+RULE_ELITE_COST_2X_DESC;Twice the base cost.;Le double du coût de base.;Das Doppelte der Basiskosten.;;El doble del coste base.;;;;;;;;;x
+RULE_ELITE_COST_4X_DESC;Four times the base cost.;Le quadruple du coût de base.;Das Vierfache der Basiskosten.;;El cuádruple del coste base.;;;;;;;;;x
+RULE_ELITE_COST_6X_DESC;Six times the base cost.;Le sextuple du coût de base.;Das Sechsfache der Basiskosten.;;El séxtuple del coste base.;;;;;;;;;x
+RULE_ELITE_COST_8X_DESC;Eight times the base cost.;L'octuple du coût de base.;Das Achtfache der Basiskosten.;;El óctuple del coste base.;;;;;;;;;x

@@ -9,6 +9,22 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-31
+
+### Added
+- Game rule **Elite Recruitment: Gold Cost** (*1x* / *2x* / *4x* / *6x* / *8x*, default
+  *4x*) scaling the gold price of all recruits — commanders and stewards. Each tier carries
+  a min gold floor equal to its multiplier (1–8 gold), so the cost stays meaningful even for
+  low-income realms.
+- Game rule **Elite Recruitment: Prestige Cost** (*1x* / *2x* / *4x* / *6x* / *8x*, default
+  *4x*) scaling the Prestige price of commander recruits (stewards stay Prestige-free).
+
+### Changed
+- Recruit costs now flow through centralized `pay_elite_gold_cost` /
+  `pay_elite_prestige_cost` effects and `elite_recruitment_can_afford_gold_trigger` /
+  `elite_recruitment_can_afford_prestige_trigger` triggers, branched by the new rules.
+  Default costs are raised from the prior baseline (gold ~4x; commander Prestige 100).
+
 ## [0.3.0] - 2026-05-31
 
 ### Added

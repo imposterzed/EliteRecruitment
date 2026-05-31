@@ -79,3 +79,62 @@ assign_religion_traits = {
     }
   }
 }
+
+# Deduct the gold cost for an elite recruit, scaled by the elite_recruitment_gold_cost rule.
+# scaled_wealth removes a fraction of yearly income (base x1 = 0.25). Each tier also carries
+# a min floor equal to its multiplier (x1=1 ... x8=8 gold), so the multiplier scales both the
+# income fraction and the floor consistently. min is a sign-aware magnitude floor, edge
+# protection that only bites for very low-income rulers.
+pay_elite_gold_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x1 } }
+    scaled_wealth = { value = -0.25 min = -1 }
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x2 } }
+    scaled_wealth = { value = -0.5 min = -2 }
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x4 } }
+    scaled_wealth = { value = -1.0 min = -4 }
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x6 } }
+    scaled_wealth = { value = -1.5 min = -6 }
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x8 } }
+    scaled_wealth = { value = -2.0 min = -8 }
+  }
+  else = {
+    scaled_wealth = { value = -1.0 min = -4 } # rule absent: default x4
+  }
+}
+
+# Deduct the Prestige cost for a commander recruit, scaled by the elite_recruitment_prestige_cost rule.
+# Base x1 = 25 Prestige (vanilla).
+pay_elite_prestige_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x1 } }
+    prestige = -25
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x2 } }
+    prestige = -50
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x4 } }
+    prestige = -100
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x6 } }
+    prestige = -150
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x8 } }
+    prestige = -200
+  }
+  else = {
+    prestige = -100 # rule absent: default x4
+  }
+}

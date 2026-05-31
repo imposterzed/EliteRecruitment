@@ -24,3 +24,66 @@ elite_recruitment_commanders_enabled_trigger = {
 elite_recruitment_stewards_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = off } }
 }
+
+# Whether the ruler can afford the gold cost, scaled by the elite_recruitment_gold_cost rule.
+# Cost is max(scaled income fraction, min floor = multiplier), so affordability = wealth >=
+# both: scaled_wealth checks gold vs the scaled amount, wealth checks gold vs the flat floor.
+elite_recruitment_can_afford_gold_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x1 } }
+    scaled_wealth = 0.25
+    wealth = 1
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x2 } }
+    scaled_wealth = 0.5
+    wealth = 2
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x4 } }
+    scaled_wealth = 1.0
+    wealth = 4
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x6 } }
+    scaled_wealth = 1.5
+    wealth = 6
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x8 } }
+    scaled_wealth = 2.0
+    wealth = 8
+  }
+  trigger_else = {
+    scaled_wealth = 1.0
+    wealth = 4 # rule absent: default x4
+  }
+}
+
+# Whether the ruler can afford the Prestige cost, scaled by the elite_recruitment_prestige_cost rule.
+# Base x1 = 25 Prestige.
+elite_recruitment_can_afford_prestige_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x1 } }
+    prestige = 25
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x2 } }
+    prestige = 50
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x4 } }
+    prestige = 100
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x6 } }
+    prestige = 150
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x8 } }
+    prestige = 200
+  }
+  trigger_else = {
+    prestige = 100 # rule absent: default x4
+  }
+}

@@ -19,14 +19,14 @@ decisions = {
     }
 
     allow = {
-      prestige = 25
-      scaled_wealth = 0.25
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      prestige = -25
-      scaled_wealth = -0.25
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
 
       custom_tooltip = {
         text = promoted_commander_TT
@@ -61,14 +61,14 @@ decisions = {
     }
 
     allow = {
-      prestige = 25
-      scaled_wealth = 0.25
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      prestige = -25
-      scaled_wealth = -0.25
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
 
       custom_tooltip = {
         text = promoted_commander_TT
@@ -100,12 +100,12 @@ decisions = {
     }
 
     allow = {
-      scaled_wealth = 0.25
+      elite_recruitment_can_afford_gold_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      scaled_wealth = -0.25
+      pay_elite_gold_cost = yes
 
       custom_tooltip = {
         text = recruit_steward_TT
@@ -142,12 +142,12 @@ decisions = {
     }
 
     allow = {
-      scaled_wealth = 0.25
+      elite_recruitment_can_afford_gold_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      scaled_wealth = -0.25
+      pay_elite_gold_cost = yes
 
       custom_tooltip = {
         text = recruit_steward_TT
