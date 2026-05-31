@@ -12,6 +12,7 @@ decisions = {
     ai = no
 
     potential = {
+      elite_recruitment_commanders_enabled_trigger = yes
       NOT = { has_religion_feature = religion_matriarchal }
       NOT = { has_law = enatic_succession }
       NOT = { has_law = enatic_cognatic_succession }
@@ -52,6 +53,7 @@ decisions = {
     ai = no
 
     potential = {
+      elite_recruitment_commanders_enabled_trigger = yes
       OR = {
         realm_allows_female_courtiers_trigger = yes
         has_law = status_of_women_4
@@ -93,6 +95,7 @@ decisions = {
     ai = no
 
     potential = {
+      elite_recruitment_stewards_enabled_trigger = yes
       NOT = { has_religion_feature = religion_matriarchal }
     }
 
@@ -129,6 +132,7 @@ decisions = {
     ai = no
 
     potential = {
+      elite_recruitment_stewards_enabled_trigger = yes
       OR = {
         realm_allows_female_courtiers_trigger = yes
         has_law = status_of_women_2

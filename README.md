@@ -48,6 +48,15 @@ personality — tuned so it *adds* character without changing what they fundamen
 The baseline is always "a reliably excellent specialist"; the random flavor is the
 seasoning, never the main course.
 
+## Game rules
+
+Elite Recruitment adds a **game rule** so you can tailor it to your campaign. Set it on the
+**Game Rules** screen when you start a new game (it lives under the "Various" group).
+
+- **Elite Recruitment** — *On* (default) / *Off*. Enables or disables all of the mod's
+  recruitment decisions at once. It defaults to **On**, so the mod works out of the box
+  even if you never open the rules screen.
+
 ## Requirements
 
 - Crusader Kings II `3.3.x`
