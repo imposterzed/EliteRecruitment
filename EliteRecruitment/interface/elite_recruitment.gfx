@@ -1,0 +1,20 @@
+spriteTypes = {
+
+	# CK2 shows the sprite named GFX_<decision_name> as that decision's icon.
+	# These point at the existing vanilla decision-icon textures rather than
+	# shipping our own, so no third-party art is redistributed. The game resolves
+	# the path through the load order: vanilla's 28x28 normally, or a 4K UI mod's
+	# higher-res version automatically if one (e.g. Proper4KUI) is active and
+	# overrides that path. To use bespoke art instead, drop a .dds into
+	# EliteRecruitment/gfx/interface/ and repoint the texturefile below.
+
+	spriteType = {
+		name = "GFX_recruit_male_elite_commander"
+		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
+	}
+
+	spriteType = {
+		name = "GFX_recruit_female_elite_commander"
+		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
+	}
+}

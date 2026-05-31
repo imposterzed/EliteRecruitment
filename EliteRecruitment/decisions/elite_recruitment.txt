@@ -1,0 +1,97 @@
+##################################################
+##              Elite Recruitment               ##
+##################################################
+## Helper effects to add flavor to the Elite    ##
+## Recruitment mod.                             ##
+##################################################
+
+decisions = {
+
+  # Recruit male commander
+  recruit_male_elite_commander = {
+    ai = no
+
+    potential = {
+      NOT = { has_religion_feature = religion_matriarchal }
+      NOT = { has_law = enatic_succession }
+      NOT = { has_law = enatic_cognatic_succession }
+    }
+
+    allow = {
+      prestige = 25
+      scaled_wealth = 0.25
+      in_seclusion = no
+    }
+
+    effect = {
+      prestige = -25
+      scaled_wealth = -0.25
+
+      custom_tooltip = {
+        text = promoted_commander_TT
+
+        create_male_soldier_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_commander_base_attributes = yes
+          assign_commander_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit female commander
+  recruit_female_elite_commander = {
+    ai = no
+
+    potential = {
+      OR = {
+        has_religion_feature = religion_matriarchal
+        has_law = true_cognatic_succession
+        has_law = absolute_cognatic_succession
+        has_law = enatic_succession
+        has_law = enatic_cognatic_succession
+        has_law = status_of_women_3
+        has_law = status_of_women_4
+        religion_group = pagan_group
+      }
+    }
+
+    allow = {
+      prestige = 25
+      scaled_wealth = 0.25
+      in_seclusion = no
+    }
+
+    effect = {
+      prestige = -25
+      scaled_wealth = -0.25
+
+      custom_tooltip = {
+        text = promoted_commander_TT
+
+        create_female_soldier_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_commander_base_attributes = yes
+          assign_commander_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+}

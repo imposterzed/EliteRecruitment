@@ -1,0 +1,19 @@
+# CK2 reads script/localisation as Windows-1252. Store them as UTF-8 in git
+# (readable diffs on GitHub) but check them out as Windows-1252 so the game
+# reads accented characters correctly.
+*.txt working-tree-encoding=Windows-1252 git-encoding=UTF-8
+*.csv working-tree-encoding=Windows-1252 git-encoding=UTF-8
+
+# Auto-detect text and normalize line endings; CK2 text files use CRLF on checkout.
+* text=auto
+*.txt text eol=crlf
+*.csv text eol=crlf
+*.gfx text eol=crlf
+*.mod text eol=crlf
+
+# Binary assets — never text-convert or diff these.
+*.jpg binary
+*.png binary
+*.dds binary
+*.tga binary
+*.bmp binary

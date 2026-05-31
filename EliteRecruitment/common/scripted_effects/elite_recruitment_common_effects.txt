@@ -1,0 +1,47 @@
+##################################################
+##       Elite Recruitment Common Helpers       ##
+##################################################
+## Common helper effects to add flavor to the   ##
+## Elite Recruitment mod.                       ##
+##################################################
+
+# Assign a random age to the base character
+assign_random_adult_age = {
+  random_list = {
+    1 = {} # Stays 16
+    2 = { add_age = 1 } # Becomes 17
+    3 = { add_age = 2 } # Becomes 18
+    4 = { add_age = 3 } # Becomes 19
+    5 = { add_age = 4 } # Becomes 20
+    5 = { add_age = 5 } # Becomes 21
+    5 = { add_age = 6 } # Becomes 22
+    5 = { add_age = 7 } # Becomes 23
+    5 = { add_age = 8 } # Becomes 24
+    5 = { add_age = 9 } # Becomes 25
+    4 = { add_age = 10 } # Becomes 26
+    4 = { add_age = 11 } # Becomes 27
+    4 = { add_age = 12 } # Becomes 28
+    4 = { add_age = 13 } # Becomes 29
+    4 = { add_age = 14 } # Becomes 30
+    3 = { add_age = 15 } # Becomes 31
+    3 = { add_age = 16 } # Becomes 32
+    3 = { add_age = 17 } # Becomes 33
+    3 = { add_age = 18 } # Becomes 34
+    3 = { add_age = 19 } # Becomes 35
+    2 = { add_age = 20 } # Becomes 36
+    2 = { add_age = 21 } # Becomes 37
+    2 = { add_age = 22 } # Becomes 38
+    2 = { add_age = 23 } # Becomes 39
+    2 = { add_age = 24 } # Becomes 40
+    1 = { add_age = 25 } # Becomes 41
+    1 = { add_age = 26 } # Becomes 42
+    1 = { add_age = 27 } # Becomes 43
+    1 = { add_age = 28 } # Becomes 44
+    1 = { add_age = 29 } # Becomes 45
+    1 = { add_age = 30 } # Becomes 46
+    1 = { add_age = 31 } # Becomes 47
+    1 = { add_age = 32 } # Becomes 48
+    1 = { add_age = 33 } # Becomes 49
+    1 = { add_age = 34 } # Becomes 50
+  }
+}
