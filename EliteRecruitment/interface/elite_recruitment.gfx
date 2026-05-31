@@ -17,4 +17,14 @@ spriteTypes = {
 		name = "GFX_recruit_female_elite_commander"
 		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
 	}
+
+	spriteType = {
+		name = "GFX_recruit_male_elite_steward"
+		texturefile = "gfx\\interface\\decision_icon_employ_steward.dds"
+	}
+
+	spriteType = {
+		name = "GFX_recruit_female_elite_steward"
+		texturefile = "gfx\\interface\\decision_icon_employ_stewardess.dds"
+	}
 }

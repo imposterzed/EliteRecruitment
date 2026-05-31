@@ -1,0 +1,16 @@
+##################################################
+##       Elite Recruitment Shared Triggers      ##
+##################################################
+## Shared triggers to add flavor to the Elite   ##
+## Recruitment mod.                             ##
+##################################################
+
+# Whether women may hold court roles regardless of the status_of_women laws
+realm_allows_female_courtiers_trigger = {
+  OR = {
+    has_game_rule = { name = gender value = all }
+    has_religion_feature = religion_matriarchal
+    has_religion_feature = religion_equal
+    has_religion_feature = religion_feature_bon
+  }
+}

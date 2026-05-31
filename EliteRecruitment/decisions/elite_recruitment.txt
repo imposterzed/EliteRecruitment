@@ -53,14 +53,8 @@ decisions = {
 
     potential = {
       OR = {
-        has_religion_feature = religion_matriarchal
-        has_law = true_cognatic_succession
-        has_law = absolute_cognatic_succession
-        has_law = enatic_succession
-        has_law = enatic_cognatic_succession
-        has_law = status_of_women_3
+        realm_allows_female_courtiers_trigger = yes
         has_law = status_of_women_4
-        religion_group = pagan_group
       }
     }
 
@@ -83,6 +77,83 @@ decisions = {
           assign_random_adult_age = yes
           assign_commander_base_attributes = yes
           assign_commander_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite steward (male)
+  recruit_male_elite_steward = {
+    ai = no
+
+    potential = {
+      NOT = { has_religion_feature = religion_matriarchal }
+    }
+
+    allow = {
+      scaled_wealth = 0.25
+      in_seclusion = no
+    }
+
+    effect = {
+      scaled_wealth = -0.25
+
+      custom_tooltip = {
+        text = recruit_steward_TT
+
+        create_male_steward_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_steward_base_attributes = yes
+          assign_steward_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite steward (female)
+  recruit_female_elite_steward = {
+    ai = no
+
+    potential = {
+      OR = {
+        realm_allows_female_courtiers_trigger = yes
+        has_law = status_of_women_2
+        has_law = status_of_women_3
+        has_law = status_of_women_4
+      }
+    }
+
+    allow = {
+      scaled_wealth = 0.25
+      in_seclusion = no
+    }
+
+    effect = {
+      scaled_wealth = -0.25
+
+      custom_tooltip = {
+        text = recruit_steward_TT
+
+        create_female_steward_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_steward_base_attributes = yes
+          assign_steward_traits = yes
         }
       }
 
