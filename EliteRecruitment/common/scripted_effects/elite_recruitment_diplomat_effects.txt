@@ -1,0 +1,163 @@
+##################################################
+##      Elite Recruitment Diplomat Helpers      ##
+##################################################
+## Diplomat helper effects to add flavor to the ##
+## Elite Recruitment mod.                       ##
+##################################################
+
+# Create male diplomat in your culture and religion with dynasty lottery
+create_male_diplomat_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_diplomat = {
+      dynasty = random
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_diplomat = {
+      dynasty = none
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_diplomat = {
+      dynasty = actually_culture
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Create female diplomat in your culture and religion with dynasty lottery
+create_female_diplomat_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_diplomat = {
+      dynasty = random
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_diplomat = {
+      dynasty = none
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_diplomat = {
+      dynasty = actually_culture
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Assign the base diplomat attributes to the base character
+assign_diplomat_base_attributes = {
+  change_diplomacy = 12
+  change_learning = 4
+  change_stewardship = 4
+  change_intrigue = 4
+  change_martial = 4
+}
+
+# Assign the diplomat traits to the base character (orchestrator)
+assign_diplomat_traits = {
+  remove_diplomat_negative_traits = yes
+  set_elite_diplomat_education = yes
+  assign_diplomat_flavor = yes
+  assign_religion_traits = yes
+
+  set_character_flag = invited_diplomat
+  save_event_target_as = invited_character
+}
+
+# Remove social and physical drawbacks unbecoming of an elite diplomat
+remove_diplomat_negative_traits = {
+  # spawn_fantastic_diplomat removals
+  remove_trait = weak
+  remove_trait = slow
+  remove_trait = imbecile
+  remove_trait = dull
+  remove_trait = dwarf
+  # giant not stripped -- net-positive opinion for an envoy
+  remove_trait = hunchback
+  remove_trait = clubfooted
+  remove_trait = craven
+  remove_trait = paranoid
+
+  # Elite additions
+  remove_trait = shy
+  remove_trait = cruel
+  remove_trait = envious
+
+  remove_lifestyle_trait_effect = yes
+}
+
+# Guaranteed top diplomacy education
+set_elite_diplomat_education = {
+  clear_education_trait = yes
+  add_trait = grey_eminence
+}
+
+# Weighted "flavor" roll for diplomats
+assign_diplomat_flavor = {
+  random_list = {
+    # spawn_fantastic_diplomat flavor
+    5 = {
+      add_trait = shrewd
+    }
+    5 = {
+      add_trait = quick
+    }
+
+    # Elite additions
+    20 = {
+      assign_elite_beauty_trait = yes
+    }
+    20 = {
+      change_diplomacy = 2
+    }
+    10 = {
+      change_diplomacy = 4
+    }
+    10 = {
+      add_trait = gregarious
+    }
+    10 = {
+      add_trait = socializer
+    }
+    10 = {
+      add_trait = kind
+    }
+    5 = {
+      add_trait = honest
+    }
+    5 = {
+      add_trait = genius
+    }
+  }
+}

@@ -52,7 +52,7 @@ elite_recruitment_gold_cost = {
   }
 }
 
-# Prestige cost multiplier for commander recruits (stewards cost no Prestige).
+# Prestige cost multiplier for commander and diplomat recruits (stewards cost no Prestige).
 # Base x1 = 25 Prestige (vanilla); each step scales from there.
 elite_recruitment_prestige_cost = {
   name = "RULE_ELITE_RECRUITMENT_PRESTIGE_COST"

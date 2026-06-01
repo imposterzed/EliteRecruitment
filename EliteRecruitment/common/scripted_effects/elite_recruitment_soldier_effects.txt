@@ -95,6 +95,7 @@ assign_commander_traits = {
   assign_commander_flavor = yes
   assign_commander_legendary_chance = yes
   assign_religion_traits = yes
+  assign_commander_crusade_trait = yes
 
   set_character_flag = invited_soldier
   save_event_target_as = invited_character
@@ -107,11 +108,11 @@ remove_commander_negative_traits = {
   remove_trait = imbecile
   remove_trait = dull
   remove_trait = dwarf
-  remove_trait = giant
+  # giant not stripped -- net-positive for a commander (combat rating)
   remove_trait = hunchback
   remove_trait = clubfooted
   remove_trait = craven
-  remove_trait = paranoid
+  # paranoid not stripped -- intrigue/honor trait, no martial impact
 
   remove_lifestyle_trait_effect = yes
 }
@@ -246,6 +247,18 @@ assign_commander_warrior_lodge = {
           add_warrior_lodge_leader_trait_effect = yes
         }
       }
+    }
+  }
+}
+
+# Small chance the recruit is a holy-war veteran, with the trait matching their faith.
+# Dharmic faiths have no such trait, so they are excluded.
+assign_commander_crusade_trait = {
+  if = {
+    limit = { has_dharmic_religion_trigger = no }
+    random = {
+      chance = 15
+      add_crusade_trait_effect = yes
     }
   }
 }

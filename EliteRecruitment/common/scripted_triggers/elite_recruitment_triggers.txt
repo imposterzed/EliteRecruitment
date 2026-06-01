@@ -25,6 +25,11 @@ elite_recruitment_stewards_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = off } }
 }
 
+# Whether the Elite Recruitment diplomat decisions are enabled (game-rule gate)
+elite_recruitment_diplomats_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+}
+
 # Whether the character belongs to any Holy Fury warrior lodge
 in_warrior_lodge_trigger = {
   OR = {

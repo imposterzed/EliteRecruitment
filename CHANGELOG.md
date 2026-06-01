@@ -9,6 +9,35 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-05-31
+
+### Added
+- **Elite diplomat recruitment:** **Recruit Elite Male Diplomat** / **Recruit Elite Female
+  Diplomat** decisions — gold + Prestige cost, a guaranteed **Grey Eminence** education and a
+  large **Diplomacy** boost, plus a diplomacy-themed flavor roll (a charismatic presence,
+  Gregarious, Socializer, Kind, Honest, and the like). Modeled on vanilla's
+  `spawn_fantastic_diplomat_effect`.
+- **Holy-war veteran flavor for commanders:** a recruit has a small chance to gain the
+  crusader-family trait matching their faith (Crusader, Mujahid, reformed-pagan
+  equivalents, ...) via the cross-build `add_crusade_trait_effect`. Dharmic faiths have no
+  such trait and are excluded.
+- Localisation for the diplomat strings (EN/FR/DE/ES).
+
+### Changed
+- **Commander negative-trait removal** no longer strips **Giant** (a net positive for a
+  commander — +combat rating and +vassal/tribal opinion) or **Paranoid** (no martial
+  impact), so a naturally-rolled recruit keeps them. The legendary builds that add Giant are
+  unaffected (Giant/Dwarf are opposites and auto-resolve).
+- The **Prestige Cost** game rule now also applies to diplomats (stewards remain
+  Prestige-free).
+
+### Fixed
+- **Female steward gate** tightened to full gender equality (`status_of_women_4`, or an
+  equal/matriarchal faith). A brought-in courtier is unrelated and unlanded, and vanilla
+  won't seat such a woman on the council below that threshold — so the prior
+  `status_of_women_2/3` options could offer a Stewardess who couldn't actually take the
+  post. The new Female Diplomat uses the same corrected gate.
+
 ## [0.6.0] - 2026-05-31
 
 ### Changed

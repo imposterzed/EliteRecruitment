@@ -1,7 +1,7 @@
 spriteTypes = {
 
 	# CK2 shows the sprite named GFX_<decision_name> as that decision's icon.
-	# These point at the existing vanilla decision-icon textures rather than
+	# These point at the existing vanilla UI textures rather than
 	# shipping our own, so no third-party art is redistributed. The game resolves
 	# the path through the load order: vanilla's 28x28 normally, or a 4K UI mod's
 	# higher-res version automatically if one (e.g. Proper4KUI) is active and
@@ -26,5 +26,15 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_recruit_female_elite_steward"
 		texturefile = "gfx\\interface\\decision_icon_employ_stewardess.dds"
+	}
+
+	spriteType = {
+		name = "GFX_recruit_male_elite_diplomat"
+		texturefile = "gfx\\interface\\icon_diplomacy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_recruit_female_elite_diplomat"
+		texturefile = "gfx\\interface\\icon_diplomacy.dds"
 	}
 }

@@ -135,8 +135,6 @@ decisions = {
       elite_recruitment_stewards_enabled_trigger = yes
       OR = {
         realm_allows_female_courtiers_trigger = yes
-        has_law = status_of_women_2
-        has_law = status_of_women_3
         has_law = status_of_women_4
       }
     }
@@ -158,6 +156,87 @@ decisions = {
           assign_random_adult_age = yes
           assign_steward_base_attributes = yes
           assign_steward_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite diplomat (male)
+  recruit_male_elite_diplomat = {
+    ai = no
+
+    potential = {
+      elite_recruitment_diplomats_enabled_trigger = yes
+      NOT = { has_religion_feature = religion_matriarchal }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
+
+      custom_tooltip = {
+        text = recruit_diplomat_TT
+
+        create_male_diplomat_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_diplomat_base_attributes = yes
+          assign_diplomat_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite diplomat (female)
+  recruit_female_elite_diplomat = {
+    ai = no
+
+    potential = {
+      elite_recruitment_diplomats_enabled_trigger = yes
+      OR = {
+        realm_allows_female_courtiers_trigger = yes
+        has_law = status_of_women_4
+      }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
+
+      custom_tooltip = {
+        text = recruit_diplomat_TT
+
+        create_female_diplomat_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_diplomat_base_attributes = yes
+          assign_diplomat_traits = yes
         }
       }
 

@@ -111,7 +111,7 @@ pay_elite_gold_cost = {
   }
 }
 
-# Deduct the Prestige cost for a commander recruit, scaled by the elite_recruitment_prestige_cost rule.
+# Deduct the Prestige cost for a commander or diplomat recruit, scaled by the elite_recruitment_prestige_cost rule.
 # Base x1 = 25 Prestige (vanilla).
 pay_elite_prestige_cost = {
   if = {
