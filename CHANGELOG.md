@@ -9,6 +9,33 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-05-31
+
+### Added
+- Commander leadership roll rebuilt and grouped by the wiki's categories — General,
+  Unit-specific (incl. **War Elephant** for Indian-culture realms), and **Terrain Expertise**.
+- **Chinese commander traits (Jade Dragon):** a Chinese-culture recruit has a ~50% chance to
+  also gain a "Way of the..." leadership trait, respecting the engine's two-trait cap.
+- **Warrior-lodge sponsorship (Holy Fury):** a recruit of a warrior-lodge ruler is inducted
+  into that lodge, with a ~25% chance of having earned its command trait.
+- **Elite Recruitment — CleanSlate Patch** companion mod (same repo): an `on_startup` action
+  sets a global flag so CleanSlate installs use CleanSlate's renamed traits. It only *adds* an
+  action (no file override), so it can't conflict with CleanSlate or other mods.
+
+### Fixed
+- **Vanilla-safety:** several traits the mod used were CleanSlate renames that don't exist in
+  vanilla CK2, so they silently no-opped there. Every trait the mod adds/removes now resolves
+  on both builds. Build-renamed traits (physique Robust/Brawny, beauty Fair/Attractive,
+  Battlefield Terrain Master, Direct Leader, terrain experts) are routed through hooks in
+  `common/scripted_effects/elite_recruitment_trait_compat.txt`, switched by the patch's flag.
+- **Double leadership trait:** the generated soldier could arrive with its own leadership trait
+  and the mod added another, filling the two-trait cap and blocking the Chinese/lodge bonus.
+  Any generated leadership trait is now cleared before the curated roll.
+
+### Changed
+- Commander and steward trait assignment refactored into clean orchestrators that call per-step
+  helpers (negative-trait removal, education, leadership, flavor, compatibility).
+
 ## [0.4.0] - 2026-05-31
 
 ### Added

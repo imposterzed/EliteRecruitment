@@ -67,10 +67,17 @@ Elite Recruitment adds **game rules** so you can tailor it to your campaign. Set
 
 ## Requirements
 
-- Crusader Kings II `3.3.x`
-- **Holy Fury** recommended — the legendary-commander results, faith features, and
-  pagan/Indian flavor lean on it. The mod still runs without it; that content just
-  won't show up.
+- **Crusader Kings II `3.3.x`.** The base game is all you need — nothing below is required.
+
+Several optional flourishes appear only if you own the relevant DLC. Without it, that content
+is simply skipped — the mod still works:
+
+- **Holy Fury** — legendary, named commanders (when the ruler carries an *inspire commanders*
+  bloodline), warrior-lodge sponsorship and the lodge's command trait, and faith flavor
+  (zodiac signs, reformed-pagan traits).
+- **Jade Dragon** — Chinese "Way of the…" commander traits for Chinese-culture realms.
+- **Rajas of India** — Indian flavor: a caste trait and the *War Elephant Leader* trait.
+- **The Reaper's Due** — the rare *One-Eyed* commander flourish.
 
 ## Installation
 
@@ -91,6 +98,14 @@ base-game files), so it's friendly with most mods.
 bits, this mod uses corrected, current conditions and trait handling — several of them
 borrowed from the excellent **CleanSlate** overhaul — so it behaves properly on a modern,
 fully-patched game.
+
+**Built for vanilla; CleanSlate add-on available.** Every trait this mod uses exists in
+vanilla CK2, so it's vanilla-safe out of the box. CleanSlate renames several of those traits
+(physique, beauty, and some leadership traits like *Battlefield Terrain Master* and the
+terrain experts), so CleanSlate players should *also* enable the optional **[Elite Recruitment
+— CleanSlate Patch](EliteRecruitmentCleanSlatePatch/README.md)**, which flips the mod to
+CleanSlate's trait names via a startup flag. Without it the mod still works on CleanSlate —
+recruits just won't roll those renamed trait variants.
 
 **Overhauls & CleanSlate.** CK2 generally loads small add-ons like this *after* a larger
 overhaul on its own, and the CK2 launcher has no manual "reorder" — so you normally don't

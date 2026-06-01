@@ -84,8 +84,24 @@ assign_commander_base_attributes = {
   change_stewardship = 4
 }
 
-# Assign the commander traits to the base character with some random flavor
+# Assign the commander traits to the base character (orchestrator)
 assign_commander_traits = {
+  remove_commander_negative_traits = yes
+  set_elite_commander_education = yes
+  remove_existing_leadership_traits = yes
+  assign_commander_leadership_trait = yes
+  assign_elite_chinese_commander_trait = yes
+  assign_commander_warrior_lodge = yes
+  assign_commander_flavor = yes
+  assign_commander_legendary_chance = yes
+  assign_religion_traits = yes
+
+  set_character_flag = invited_soldier
+  save_event_target_as = invited_character
+}
+
+# Remove physical/martial drawbacks unbecoming of an elite commander
+remove_commander_negative_traits = {
   remove_trait = weak
   remove_trait = slow
   remove_trait = imbecile
@@ -98,27 +114,147 @@ assign_commander_traits = {
   remove_trait = paranoid
 
   remove_lifestyle_trait_effect = yes
+}
+
+# Strip any leadership trait the base soldier was generated with, so our curated roll is the
+# only standard leadership trait and there's room for a bonus (cap is 2). remove_trait on an
+# absent trait is a no-op; build-renamed traits are cleared via the trait_compat utility.
+remove_existing_leadership_traits = {
+  # General
+  remove_trait = aggressive_leader
+  remove_trait = defensive_leader
+  remove_trait = unyielding_leader
+  remove_trait = flanker
+  remove_trait = inspiring_leader
+  remove_trait = trickster
+  remove_trait = organizer
+  remove_trait = siege_leader
+  remove_trait = winter_soldier
+
+  # Unit-specific
+  remove_trait = cavalry_leader
+  remove_trait = heavy_infantry_leader
+  remove_trait = light_foot_leader
+  remove_trait = war_elephant_leader
+
+  # Chinese (Jade Dragon)
+  remove_trait = logistics_expert
+  remove_trait = levy_coordinator
+  remove_trait = sapper
+  remove_trait = master_of_flame
+
+  # Warrior lodge (Holy Fury)
+  remove_trait = norse_leader
+  remove_trait = tengri_leader
+  remove_trait = baltic_leader
+  remove_trait = finnish_leader
+  remove_trait = slavic_leader
+  remove_trait = west_african_leader
+  remove_trait = zun_leader
+  remove_trait = bon_leader
+  remove_trait = hellenic_leader
+
+  # Build-renamed leadership traits (Battlefield Terrain Master, Direct Leader, terrain)
+  remove_elite_compat_leadership_traits = yes
+}
+
+# Guaranteed top martial education
+set_elite_commander_education = {
   clear_education_trait = yes
   add_trait = brilliant_strategist
+}
 
-  # Random leader trait
+# Roll one leadership trait, grouped by the wiki's categories.
+# Build-specific IDs go through the trait_compat hooks.
+assign_commander_leadership_trait = {
   random_list = {
-    10 = { add_trait = aggressive_leader }
-    10 = { add_trait = battlefield_terrain_master }
-    10 = { add_trait = defensive_leader }
-    10 = { add_trait = direct_leader }
-    10 = { add_trait = flanker }
-    10 = { add_trait = heavy_infantry_leader }
-    10 = { add_trait = inspiring_leader }
-    10 = { add_trait = organizer }
-    10 = { add_trait = siege_leader }
-    10 = { add_trait = trickster }
-  }
+    # General
+    10 = { add_trait = aggressive_leader } # Aggressive Leader
+    10 = { add_trait = defensive_leader } # Defender
+    10 = { add_trait = unyielding_leader } # Unyielding
+    10 = { add_trait = flanker } # Flanker
+    10 = { add_trait = inspiring_leader } # Inspiring Leader
+    10 = { add_trait = trickster } # Trickster
+    10 = { add_trait = organizer } # Organizer
+    10 = { add_trait = siege_leader } # Siege Leader
+    10 = { add_trait = winter_soldier } # Winter Soldier
+    10 = { assign_elite_battlefield_terrain_master_trait = yes } # Battlefield Terrain Master
+    10 = { assign_elite_direct_leader_trait = yes } # Direct Leader
 
-  # Random commander flavor
+    # Unit-specific
+    10 = { add_trait = cavalry_leader } # Cavalry Leader
+    10 = { add_trait = heavy_infantry_leader } # Heavy Infantry Leader
+    10 = { add_trait = light_foot_leader } # Light Foot Leader
+    10 = {
+      trigger = { ROOT = { culture_group = indian_group } }
+      add_trait = war_elephant_leader # War Elephant Leader (Indian culture only)
+    }
+
+    # Terrain expertise
+    10 = { assign_elite_desert_terrain_trait = yes } # Desert
+    10 = { assign_elite_flat_terrain_trait = yes } # Flatland
+    10 = { assign_elite_jungle_terrain_trait = yes } # Jungle
+    10 = { assign_elite_mountain_terrain_trait = yes } # Mountain
+    10 = { assign_elite_rough_terrain_trait = yes } # Rough
+  }
+}
+
+# Chinese (Jade Dragon) bonus: a Chinese-culture recruit has a ~50% chance at a second
+# leadership trait (the cap is MAX_LEADERSHIP_TRAITS = 2), as vanilla grants these.
+assign_elite_chinese_commander_trait = {
+  if = {
+    limit = {
+      has_dlc = "Jade Dragon"
+      ROOT = { culture_group = chinese_group }
+    }
+    random_list = {
+      100 = {}  # ~50% none
+      25 = { trigger = { can_have_more_leadership_traits = yes } add_trait = logistics_expert } # Way of the Dog
+      25 = { trigger = { can_have_more_leadership_traits = yes } add_trait = levy_coordinator } # Way of the Tiger
+      25 = { trigger = { can_have_more_leadership_traits = yes } add_trait = sapper }           # Way of the Leopard
+      25 = { trigger = { can_have_more_leadership_traits = yes } add_trait = master_of_flame }  # Way of the Dragon
+    }
+  }
+}
+
+# If the recruiting ruler belongs to a warrior lodge, sponsor the recruit into it,
+# with a 25% chance they have already earned the lodge's command trait.
+assign_commander_warrior_lodge = {
+  if = {
+    limit = { ROOT = { in_warrior_lodge_trigger = yes } }
+    ROOT = { society = { save_event_target_as = elite_ruler_lodge } }
+    join_society = event_target:elite_ruler_lodge
+
+    # ~25% effective chance at the lodge trait. A Chinese-culture ruler's recruit may have
+    # already spent its 2nd leadership slot on a Chinese trait, so roll 50% for them
+    # (50% Chinese-fail x 50% = ~25%) to match the rate other lodge members get.
+    if = {
+      limit = { ROOT = { culture_group = chinese_group } }
+      random_list = {
+        50 = {}
+        50 = {
+          trigger = { can_have_more_leadership_traits = yes }
+          add_warrior_lodge_leader_trait_effect = yes
+        }
+      }
+    }
+    else = {
+      random_list = {
+        75 = {}
+        25 = {
+          trigger = { can_have_more_leadership_traits = yes }
+          add_warrior_lodge_leader_trait_effect = yes
+        }
+      }
+    }
+  }
+}
+
+# Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
+assign_commander_flavor = {
   random_list = {
     30 = {
-      add_trait = brawny
+      assign_elite_physique_trait = yes
     }
     15 = {
       change_martial = 2
@@ -152,8 +288,10 @@ assign_commander_traits = {
       add_trait = giant
     }
   }
+}
 
-  # Bloodline specific additions
+# Small chance of a legendary, named commander if the ruler owns an inspire-commanders bloodline
+assign_commander_legendary_chance = {
   if = {
     limit = {  ROOT = {
       any_owned_bloodline = {
@@ -173,11 +311,6 @@ assign_commander_traits = {
       }
     }
   }
-
-  assign_religion_traits = yes
-
-  set_character_flag = invited_soldier
-  save_event_target_as = invited_character
 }
 
 # Assign the as a legendary commander per common/scripted_effects/00_scripted_effects.txt
@@ -185,7 +318,7 @@ assign_legendary_commander = {
   random_list = {
     20 = {
       add_trait = giant
-      add_trait = brawny
+      assign_elite_physique_trait = yes
       add_trait = hunter
       change_martial = 2
       give_nickname = nick_the_giant
@@ -195,7 +328,7 @@ assign_legendary_commander = {
       trigger = { has_dlc = "Reapers" }
 
       add_trait = giant
-      add_trait = brawny
+      assign_elite_physique_trait = yes
       add_trait = strategist
       add_trait = one_eyed
       change_martial = 1
@@ -217,7 +350,7 @@ assign_legendary_commander = {
     }
 
     20 = {
-      add_trait = brawny
+      assign_elite_physique_trait = yes
       remove_trait = temperate
       add_trait = wroth
       add_trait = falconer
@@ -249,7 +382,7 @@ assign_legendary_commander = {
     }
 
     20 = {
-      add_trait = brawny
+      assign_elite_physique_trait = yes
       add_trait = strategist
       change_martial = 1
       give_nickname = nick_the_strong
@@ -320,7 +453,7 @@ assign_legendary_commander = {
     }
 
     20 = {
-      add_trait = attractive
+      assign_elite_beauty_trait = yes
       add_trait = strategist
       change_martial = 4
       give_nickname = nick_the_lion

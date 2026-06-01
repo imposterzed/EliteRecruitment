@@ -84,8 +84,19 @@ assign_steward_base_attributes = {
   change_martial = 4       # vanilla: 2
 }
 
-# Assign the steward traits to the base character with some random flavor
+# Assign the steward traits to the base character (orchestrator)
 assign_steward_traits = {
+  remove_steward_negative_traits = yes
+  set_elite_steward_education = yes
+  assign_steward_flavor = yes
+  assign_religion_traits = yes
+
+  set_character_flag = invited_steward
+  save_event_target_as = invited_character
+}
+
+# Remove administrative drawbacks unbecoming of an elite steward
+remove_steward_negative_traits = {
   # Vanilla employ_steward removals
   remove_trait = slow
   remove_trait = imbecile
@@ -97,10 +108,16 @@ assign_steward_traits = {
   remove_trait = arbitrary
 
   remove_lifestyle_trait_effect = yes
+}
+
+# Guaranteed top stewardship education
+set_elite_steward_education = {
   clear_education_trait = yes
   add_trait = midas_touched
+}
 
-  # Random steward flavor
+# Weighted "flavor" roll for stewards
+assign_steward_flavor = {
   random_list = {
     # Vanilla employ_steward flavor
     15 = {
@@ -140,9 +157,4 @@ assign_steward_traits = {
       add_trait = genius
     }
   }
-
-  assign_religion_traits = yes
-
-  set_character_flag = invited_steward
-  save_event_target_as = invited_character
 }
