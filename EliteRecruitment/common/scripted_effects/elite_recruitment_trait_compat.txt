@@ -133,3 +133,39 @@ remove_elite_compat_leadership_traits = {
     remove_trait = rough_terrain_leader
   }
 }
+
+# Intrigue lifestyle trait:
+# Schemer (vanilla) / Master Schemer (CleanSlate)
+assign_elite_schemer_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = master_schemer
+  }
+  else = {
+    add_trait = schemer
+  }
+}
+
+# Seduction lifestyle trait (sex-specific):
+# Seducer/Seductress (vanilla) / Master Seducer/Master Seductress (CleanSlate)
+assign_elite_seducer_trait = {
+  if = {
+    limit = { is_female = yes }
+    if = {
+      limit = { has_global_flag = cleanslate_active }
+      add_trait = master_seductress
+    }
+    else = {
+      add_trait = seductress
+    }
+  }
+  else = {
+    if = {
+      limit = { has_global_flag = cleanslate_active }
+      add_trait = master_seducer
+    }
+    else = {
+      add_trait = seducer
+    }
+  }
+}

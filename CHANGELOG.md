@@ -9,6 +9,32 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-06-01
+
+### Added
+- **Elite spymaster recruitment:** **Recruit Elite Male Spymaster** / **Recruit Elite Female
+  Spymaster** decisions — gold + Prestige cost, a guaranteed **Elusive Shadow** education and
+  a large **Intrigue** boost, plus an intrigue-themed flavor roll (Deceitful, Schemer,
+  Cynical, Cruel, Paranoid, a charming/seductive option, Impaler, ...). Built on
+  `create_random_intriguer`. The Female Spymaster uses vanilla's fuller `can_be_spymaster_trigger`
+  eligibility — pagan-group realms and the Cathar/Messalian faiths allow it without
+  status-of-women laws.
+- Localisation for the spymaster strings (EN/FR/DE/ES).
+- Two CleanSlate-compat hooks for the spymaster's lifestyle flavor traits: Schemer / Master
+  Schemer, and Seducer/Seductress / Master Seducer/Master Seductress (with a sex branch).
+
+### Changed
+- **Spymaster trait curation** inverts the diplomat's: `paranoid` is **kept** (+2 intrigue),
+  while conspicuous traits (giant, dwarf, hunchback, clubfooted, harelip, lisp, stutter, ugly,
+  inbred) and anti-spy personality (`honest`, which is −2 intrigue, and `trusting`) are
+  stripped — an elite spy should blend in.
+- **All elite recruits now strip `slothful`** (−1 to all attributes); previously only the
+  steward did.
+- **Jain gating for Hunter / Impaler** (both carry `NOT religion = jain`): the commander's
+  Hunter flavor roll and the spymaster's Impaler roll are excluded for Jain rulers (no wasted
+  roll), and the legendary "the Hunter" build is withheld from Jain — while "the Giant" build
+  keeps its other traits and merely drops the incidental Hunter.
+
 ## [0.7.0] - 2026-05-31
 
 ### Added

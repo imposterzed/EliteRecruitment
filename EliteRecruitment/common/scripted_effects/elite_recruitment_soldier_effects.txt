@@ -114,6 +114,9 @@ remove_commander_negative_traits = {
   remove_trait = craven
   # paranoid not stripped -- intrigue/honor trait, no martial impact
 
+  # Elite addition: Slothful is -1 to all attributes
+  remove_trait = slothful
+
   remove_lifestyle_trait_effect = yes
 }
 
@@ -276,6 +279,7 @@ assign_commander_flavor = {
       add_trait = duelist
     }
     10 = {
+      trigger = { NOT = { religion = jain } }  # Jain cannot have Hunter
       add_trait = hunter
     }
     10 = {
@@ -332,7 +336,7 @@ assign_legendary_commander = {
     20 = {
       add_trait = giant
       assign_elite_physique_trait = yes
-      add_trait = hunter
+      if = { limit = { NOT = { religion = jain } }  add_trait = hunter }  # incidental here; Jain cannot have Hunter
       change_martial = 2
       give_nickname = nick_the_giant
     }
@@ -426,6 +430,7 @@ assign_legendary_commander = {
     }
 
     20 = {
+      trigger = { NOT = { religion = jain } }  # Hunter is integral to this build; Jain cannot have it
       add_trait = hunter
       add_trait = shrewd
       change_martial = 3

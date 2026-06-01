@@ -1,0 +1,172 @@
+##################################################
+##     Elite Recruitment Spymaster Helpers      ##
+##################################################
+## Spymaster helper effects to add flavor to    ##
+## the Elite Recruitment mod.                   ##
+##################################################
+
+# Create male spymaster in your culture and religion with dynasty lottery
+create_male_spymaster_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_intriguer = {
+      dynasty = random
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_intriguer = {
+      dynasty = none
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_intriguer = {
+      dynasty = actually_culture
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Create female spymaster in your culture and religion with dynasty lottery
+create_female_spymaster_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_intriguer = {
+      dynasty = random
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_intriguer = {
+      dynasty = none
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_intriguer = {
+      dynasty = actually_culture
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Assign the base spymaster attributes to the base character
+assign_spymaster_base_attributes = {
+  change_intrigue = 12
+  change_diplomacy = 4
+  change_learning = 4
+  change_stewardship = 4
+  change_martial = 4
+}
+
+# Assign the spymaster traits to the base character (orchestrator)
+assign_spymaster_traits = {
+  remove_spymaster_negative_traits = yes
+  set_elite_spymaster_education = yes
+  assign_spymaster_flavor = yes
+  assign_religion_traits = yes
+
+  set_character_flag = invited_spymaster
+  save_event_target_as = invited_character
+}
+
+# Remove incompetence, frailty, and conspicuous traits unbecoming of an elite spymaster.
+# A spy must blend in, so a memorable face, gait, or speech is a liability. paranoid is
+# deliberately kept -- it is +2 intrigue, an asset for a spymaster.
+remove_spymaster_negative_traits = {
+  # Incompetence / frailty
+  remove_trait = imbecile
+  remove_trait = dull
+  remove_trait = slow
+  remove_trait = weak
+  remove_trait = slothful
+
+  # Conspicuousness -- a memorable figure makes a poor spy
+  remove_trait = dwarf
+  remove_trait = giant
+  remove_trait = hunchback
+  remove_trait = clubfooted
+  remove_trait = harelip
+  remove_trait = lisp
+  remove_trait = stutter
+  remove_trait = ugly
+  remove_trait = inbred
+
+  # Anti-spy personality
+  remove_trait = craven
+  remove_trait = honest    # -2 intrigue; honesty undercuts a spy
+  remove_trait = trusting  # gullibility, the opposite of the paranoid we keep
+
+  remove_lifestyle_trait_effect = yes
+}
+
+# Guaranteed top intrigue education
+set_elite_spymaster_education = {
+  clear_education_trait = yes
+  add_trait = elusive_shadow
+}
+
+# Weighted "flavor" roll for spymasters
+assign_spymaster_flavor = {
+  random_list = {
+    20 = {
+      change_intrigue = 2
+    }
+    15 = {
+      add_trait = deceitful
+    }
+    10 = {
+      change_intrigue = 4
+    }
+    10 = {
+      assign_elite_schemer_trait = yes
+    }
+    10 = {
+      add_trait = cynical
+    }
+    10 = {
+      assign_elite_beauty_trait = yes
+    }
+    5 = {
+      add_trait = cruel
+    }
+    5 = {
+      add_trait = paranoid
+    }
+    5 = {
+      add_trait = genius
+    }
+    5 = {
+      trigger = { NOT = { religion = jain } }
+      add_trait = impaler
+    }
+    5 = {
+      assign_elite_seducer_trait = yes
+    }
+  }
+}

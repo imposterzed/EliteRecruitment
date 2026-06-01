@@ -248,4 +248,94 @@ decisions = {
     }
   }
 
+  # Recruit elite spymaster (male)
+  recruit_male_elite_spymaster = {
+    ai = no
+
+    potential = {
+      elite_recruitment_spymasters_enabled_trigger = yes
+      NOT = { has_religion_feature = religion_matriarchal }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
+
+      custom_tooltip = {
+        text = recruit_spymaster_TT
+
+        create_male_spymaster_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_spymaster_base_attributes = yes
+          assign_spymaster_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite spymaster (female).
+  # can_be_spymaster_trigger is more permissive than the other council roles: besides full
+  # gender equality and equal/matriarchal faiths, pagan-group realms (not patriarchal) and
+  # Cathar/Messalian faiths allow a female spymaster without status-of-women laws.
+  recruit_female_elite_spymaster = {
+    ai = no
+
+    potential = {
+      elite_recruitment_spymasters_enabled_trigger = yes
+      OR = {
+        realm_allows_female_courtiers_trigger = yes
+        has_law = status_of_women_4
+        AND = {
+          religion_group = pagan_group
+          NOT = { has_religion_feature = religion_patriarchal }
+        }
+        religion = cathar
+        religion = messalian
+      }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_prestige_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_prestige_cost = yes
+
+      custom_tooltip = {
+        text = recruit_spymaster_TT
+
+        create_female_spymaster_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_spymaster_base_attributes = yes
+          assign_spymaster_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
 }

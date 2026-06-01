@@ -113,6 +113,7 @@ remove_diplomat_negative_traits = {
   remove_trait = shy
   remove_trait = cruel
   remove_trait = envious
+  remove_trait = slothful
 
   remove_lifestyle_trait_effect = yes
 }
