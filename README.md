@@ -99,13 +99,15 @@ bits, this mod uses corrected, current conditions and trait handling — several
 borrowed from the excellent **CleanSlate** overhaul — so it behaves properly on a modern,
 fully-patched game.
 
-**Built for vanilla; CleanSlate add-on available.** Every trait this mod uses exists in
+**Built for vanilla; auto-adapts to CleanSlate.** Every trait this mod uses exists in
 vanilla CK2, so it's vanilla-safe out of the box. CleanSlate renames several of those traits
 (physique, beauty, and some leadership traits like *Battlefield Terrain Master* and the
-terrain experts), so CleanSlate players should *also* enable the optional **[Elite Recruitment
-— CleanSlate Patch](EliteRecruitmentCleanSlatePatch/README.md)**, which flips the mod to
-CleanSlate's trait names via a startup flag. Without it the mod still works on CleanSlate —
-recruits just won't roll those renamed trait variants.
+terrain experts). The mod detects CleanSlate automatically: CleanSlate sets a
+`cleanslate_active` flag at startup, and when that flag is present the mod uses CleanSlate's
+trait names instead. **CleanSlate users — make sure you're on the latest version from
+[GitHub](https://github.com/ck2plus/CleanSlate)**, as that startup flag is a recent addition.
+On an older CleanSlate that lacks it the mod still works; recruits just won't roll those
+renamed trait variants.
 
 **Overhauls & CleanSlate.** CK2 generally loads small add-ons like this *after* a larger
 overhaul on its own, and the CK2 launcher has no manual "reorder" — so you normally don't

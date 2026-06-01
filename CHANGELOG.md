@@ -9,6 +9,19 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-05-31
+
+### Changed
+- CleanSlate is now detected automatically via the `cleanslate_active` global flag that
+  CleanSlate sets at startup (merged upstream), rather than a flag set by a separate patch
+  mod. When the flag is present the mod uses CleanSlate's renamed traits; on vanilla — or an
+  older CleanSlate without the flag — it uses the vanilla traits, exactly as before.
+
+### Removed
+- The **Elite Recruitment — CleanSlate Patch** companion mod, no longer needed now that
+  CleanSlate sets its own startup flag. CleanSlate users should run a current version, as the
+  flag is a recent addition.
+
 ## [0.5.0] - 2026-05-31
 
 ### Added

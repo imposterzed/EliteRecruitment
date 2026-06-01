@@ -3,8 +3,8 @@
 ##################################################
 ## Maps the flavor and leadership traits that   ##
 ## CleanSlate renames. The base uses vanilla    ##
-## IDs; when the elite_recruitment_cleanslate   ##
-## flag is set (by the CleanSlate patch) the    ##
+## IDs; when CleanSlate's cleanslate_active     ##
+## flag is set (it sets this at startup) the    ##
 ## CleanSlate IDs are used instead. Per-trait   ##
 ## mapping is noted on each effect below.       ##
 ##################################################
@@ -13,7 +13,7 @@
 # Robust (vanilla) / Brawny (CleanSlate)
 assign_elite_physique_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = brawny
   }
   else = {
@@ -25,7 +25,7 @@ assign_elite_physique_trait = {
 # Fair (vanilla) / Attractive (CleanSlate)
 assign_elite_beauty_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = attractive
   }
   else = {
@@ -37,7 +37,7 @@ assign_elite_beauty_trait = {
 # narrow_flank_leader (vanilla) / battlefield_terrain_master (CleanSlate)
 assign_elite_battlefield_terrain_master_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = battlefield_terrain_master
   }
   else = {
@@ -49,7 +49,7 @@ assign_elite_battlefield_terrain_master_trait = {
 # experimenter (vanilla) / direct_leader (CleanSlate)
 assign_elite_direct_leader_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = direct_leader
   }
   else = {
@@ -61,7 +61,7 @@ assign_elite_direct_leader_trait = {
 # vanilla *_terrain_leader / CleanSlate *_expert
 assign_elite_desert_terrain_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = desert_expert
   }
   else = {
@@ -71,7 +71,7 @@ assign_elite_desert_terrain_trait = {
 
 assign_elite_flat_terrain_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = flat_terrain_expert
   }
   else = {
@@ -81,7 +81,7 @@ assign_elite_flat_terrain_trait = {
 
 assign_elite_jungle_terrain_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = jungle_expert
   }
   else = {
@@ -91,7 +91,7 @@ assign_elite_jungle_terrain_trait = {
 
 assign_elite_mountain_terrain_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = mountain_expert
   }
   else = {
@@ -101,7 +101,7 @@ assign_elite_mountain_terrain_trait = {
 
 assign_elite_rough_terrain_trait = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     add_trait = rough_terrain_expert
   }
   else = {
@@ -112,7 +112,7 @@ assign_elite_rough_terrain_trait = {
 # Remove the build's renamed leadership traits (Battlefield Terrain Master, Direct Leader, terrain)
 remove_elite_compat_leadership_traits = {
   if = {
-    limit = { has_global_flag = elite_recruitment_cleanslate }
+    limit = { has_global_flag = cleanslate_active }
     # CleanSlate IDs
     remove_trait = battlefield_terrain_master
     remove_trait = direct_leader
