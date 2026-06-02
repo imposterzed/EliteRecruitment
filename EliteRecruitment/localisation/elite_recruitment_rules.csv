@@ -1,17 +1,14 @@
 #CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
 RULE_ELITE_RECRUITMENT;Elite Recruitment;Recrutement d'élite;Elite-Rekrutierung;;Reclutamiento de élite;;;;;;;;;x
-RULE_ELITE_RECRUITMENT_ON_DESC;Elite Recruitment court decisions are enabled.;Les décisions de recrutement d'élite sont activées.;Die Elite-Rekrutierungsentscheidungen sind aktiviert.;;Las decisiones de reclutamiento de élite están activadas.;;;;;;;;;x
-RULE_ELITE_RECRUITMENT_OFF_DESC;Elite Recruitment court decisions are disabled.;Les décisions de recrutement d'élite sont désactivées.;Die Elite-Rekrutierungsentscheidungen sind deaktiviert.;;Las decisiones de reclutamiento de élite están desactivadas.;;;;;;;;;x
-RULE_ELITE_RECRUITMENT_GOLD_COST;Elite Recruitment: Gold Cost;Recrutement d'élite : coût en or;Elite-Rekrutierung: Goldkosten;;Reclutamiento de élite: coste de oro;;;;;;;;;x
-RULE_ELITE_RECRUITMENT_PRESTIGE_COST;Elite Recruitment: Prestige Cost;Recrutement d'élite : coût en prestige;Elite-Rekrutierung: Prestigekosten;;Reclutamiento de élite: coste de prestigio;;;;;;;;;x
-RULE_ELITE_COST_1X;1x;1x;1x;;1x;;;;;;;;;x
-RULE_ELITE_COST_2X;2x;2x;2x;;2x;;;;;;;;;x
-RULE_ELITE_COST_4X;4x;4x;4x;;4x;;;;;;;;;x
-RULE_ELITE_COST_6X;6x;6x;6x;;6x;;;;;;;;;x
-RULE_ELITE_COST_8X;8x;8x;8x;;8x;;;;;;;;;x
-RULE_ELITE_COST_1X_DESC;Base cost (vanilla).;Coût de base (standard).;Basiskosten (Standard).;;Coste base (estándar).;;;;;;;;;x
-RULE_ELITE_COST_2X_DESC;Twice the base cost.;Le double du coût de base.;Das Doppelte der Basiskosten.;;El doble del coste base.;;;;;;;;;x
-RULE_ELITE_COST_4X_DESC;Four times the base cost.;Le quadruple du coût de base.;Das Vierfache der Basiskosten.;;El cuádruple del coste base.;;;;;;;;;x
-RULE_ELITE_COST_6X_DESC;Six times the base cost.;Le sextuple du coût de base.;Das Sechsfache der Basiskosten.;;El séxtuple del coste base.;;;;;;;;;x
-RULE_ELITE_COST_8X_DESC;Eight times the base cost.;L'octuple du coût de base.;Das Achtfache der Basiskosten.;;El óctuple del coste base.;;;;;;;;;x
-RULE_ELITE_RECRUITMENT_PIETY_COST;Elite Recruitment: Piety Cost;Recrutement d'élite : coût en piété;Elite-Rekrutierung: Frömmigkeitskosten;;Reclutamiento de élite: coste de piedad;;;;;;;;;x
+RULE_ELITE_COST_PITTANCE;Pittance;Misère;Hungerlohn;;Miseria;;;;;;;;;x
+RULE_ELITE_COST_TRIFLE;Trifle;Broutille;Kleinigkeit;;Bagatela;;;;;;;;;x
+RULE_ELITE_COST_MODICUM;Modicum;Modique;Mäßig;;Módico;;;;;;;;;x
+RULE_ELITE_COST_BOUNTY;Bounty;Largesse;Großzügig;;Generoso;;;;;;;;;x
+RULE_ELITE_COST_FORTUNE;Fortune;Fortune;Vermögen;;Fortuna;;;;;;;;;x
+RULE_ELITE_COST_DISABLED;Disabled;Désactivé;Deaktiviert;;Desactivado;;;;;;;;;x
+RULE_ELITE_COST_PITTANCE_DESC;A token sum — the cheapest tier. Recruits cost a quarter of the standard.;Une somme symbolique — le palier le moins cher. Les recrues coûtent le quart du coût standard.;Ein symbolischer Betrag — die günstigste Stufe. Rekruten kosten ein Viertel des Standards.;;Una suma simbólica — el nivel más barato. Los reclutas cuestan un cuarto de lo normal.;;;;;;;;;x
+RULE_ELITE_COST_TRIFLE_DESC;A modest outlay — half the standard cost.;Une dépense modeste — la moitié du coût standard.;Eine bescheidene Ausgabe — die Hälfte der Standardkosten.;;Un desembolso modesto — la mitad del coste normal.;;;;;;;;;x
+RULE_ELITE_COST_MODICUM_DESC;The default, balanced cost.;Le coût par défaut, équilibré.;Die standardmäßige, ausgewogene Kostenstufe.;;El coste predeterminado y equilibrado.;;;;;;;;;x
+RULE_ELITE_COST_BOUNTY_DESC;A generous sum — twice the standard cost.;Une somme généreuse — le double du coût standard.;Eine großzügige Summe — das Doppelte der Standardkosten.;;Una suma generosa — el doble del coste normal.;;;;;;;;;x
+RULE_ELITE_COST_FORTUNE_DESC;A king's ransom — four times the standard. For self-imposed challenge.;Un pont d'or — le quadruple du coût standard. Pour un défi que l'on s'impose.;Ein fürstliches Handgeld — das Vierfache der Standardkosten. Für eine selbst auferlegte Herausforderung.;;Un caudal regio — el cuádruple del coste normal. Para un desafío autoimpuesto.;;;;;;;;;x
+RULE_ELITE_COST_DISABLED_DESC;Turns off all Elite Recruitment court decisions.;Désactive toutes les décisions de cour du Recrutement d'élite.;Deaktiviert alle Hofentscheidungen der Elite-Rekrutierung.;;Desactiva todas las decisiones cortesanas de Reclutamiento de élite.;;;;;;;;;x

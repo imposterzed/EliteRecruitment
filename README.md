@@ -1,8 +1,8 @@
 # Elite Recruitment
 
-Elite Recruitment adds court decisions that let you spend gold — plus Prestige (commanders,
-diplomats, spymasters) or Piety (the court chaplain) — to bring an elite, ready-made
-specialist into your court:
+Elite Recruitment adds court decisions that let you spend a mix of **Gold** and a fitting
+secondary currency — **Prestige** for the secular advisors, **Piety** for the court chaplain —
+to bring an elite, ready-made specialist into your court:
 
 - **Recruit Elite Male Commander** / **Recruit Elite Female Commander**
 - **Recruit Elite Steward** / **Recruit Elite Stewardess**
@@ -73,23 +73,48 @@ seasoning, never the main course.
 
 ## Game rules
 
-Elite Recruitment adds **game rules** so you can tailor it to your campaign. Set them on the
-**Game Rules** screen when you start a new game (they live under the "Various" group).
+Elite Recruitment adds a single **game rule**, so you can tailor it to your campaign. Set it on
+the **Game Rules** screen when you start a new game (it lives under the "Various" group).
 
-- **Elite Recruitment** — *On* (default) / *Off*. Enables or disables all of the mod's
-  recruitment decisions at once. It defaults to **On**, so the mod works out of the box
-  even if you never open the rules screen.
-- **Elite Recruitment: Gold Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales the
-  gold price of every recruit (commanders, stewards, diplomats, spymasters, *and* the chaplain). The base *1x* is the original
-  cost — about a quarter of a year's income — so the default *4x* is roughly a full year's.
-  Each tier also carries a small minimum equal to its multiplier (1/2/4/6/8 gold) so the
-  price stays meaningful even for the poorest realms.
-- **Elite Recruitment: Prestige Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales
-  the Prestige price of **commander, diplomat, and spymaster** recruits (stewards never cost
-  Prestige). The base *1x* is 25 Prestige, so the default *4x* is 100.
-- **Elite Recruitment: Piety Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales the
-  Piety price of the **court chaplain** (the only recruit that costs Piety). The base *1x* is
-  25 Piety, so the default *4x* is 100.
+**Elite Recruitment** — one sliding-scale cost tier:
+
+> Pittance · Trifle · **Modicum** (default) · Bounty · Fortune · Disabled
+
+- **Disabled** turns off every recruitment decision.
+- The tiers scale all costs together by a shared multiplier: **Pittance ×0.25 · Trifle ×0.5 ·
+  Modicum ×1 · Bounty ×2 · Fortune ×4**.
+
+Costs are tuned per council role, so each office has its own flavor:
+
+- **Steward** — pure coin: the heaviest gold cost, only a token Prestige.
+- **Spymaster** — more gold than Prestige.
+- **Commander** — balanced gold and Prestige.
+- **Diplomat** — more Prestige than gold.
+- **Court Chaplain** — mostly Piety, with a little gold.
+
+**Gold** is charged as a **fraction of your yearly income** (so it scales with your realm), with
+a **minimum floor in gold** so the price stays meaningful for low-income rulers — for most small
+and mid realms, the floor is what you actually pay.
+
+**Gold cost** — % of yearly income (minimum gold floor in parentheses):
+
+| Role | Pittance | Trifle | Modicum | Bounty | Fortune |
+|---|---|---|---|---|---|
+| Steward | 25% (12) | 50% (25) | 100% (50) | 200% (100) | 400% (200) |
+| Spymaster | 18.75% (10) | 37.5% (20) | 75% (40) | 150% (80) | 300% (160) |
+| Commander | 12.5% (8) | 25% (15) | 50% (30) | 100% (60) | 200% (120) |
+| Diplomat | 6.25% (5) | 12.5% (10) | 25% (20) | 50% (40) | 100% (80) |
+| Court Chaplain | 6.25% (5) | 12.5% (10) | 25% (20) | 50% (40) | 100% (80) |
+
+**Secondary cost** — flat Prestige (secular advisors) or Piety (the chaplain):
+
+| Role | Currency | Pittance | Trifle | Modicum | Bounty | Fortune |
+|---|---|---|---|---|---|---|
+| Steward | Prestige | 5 | 10 | 25 | 50 | 100 |
+| Spymaster | Prestige | 10 | 25 | 50 | 100 | 200 |
+| Commander | Prestige | 25 | 50 | 100 | 200 | 400 |
+| Diplomat | Prestige | 35 | 75 | 150 | 300 | 600 |
+| Court Chaplain | Piety | 35 | 75 | 150 | 300 | 600 |
 
 ## Requirements
 

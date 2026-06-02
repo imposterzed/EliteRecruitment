@@ -1,117 +1,43 @@
 ##################################################
 ##         Elite Recruitment Game Rules         ##
 ##################################################
-## On/off toggle for the Elite Recruitment mod. ##
-## First option is the default.                 ##
+## Single sliding-scale cost rule. Costs vary by ##
+## council role; this tier scales them together. ##
+## Disabled turns off all recruitment decisions. ##
+## First option (Modicum) is the default.        ##
 ##################################################
 
 elite_recruitment = {
   name = "RULE_ELITE_RECRUITMENT"
   group = "RULE_GROUP_VARIOUS"
   option = {
-    name = on
-    text = "RULE_OPTION_ON"
-    desc = "RULE_ELITE_RECRUITMENT_ON_DESC"
+    name = modicum
+    text = "RULE_ELITE_COST_MODICUM"
+    desc = "RULE_ELITE_COST_MODICUM_DESC"
   }
   option = {
-    name = off
-    text = "RULE_OPTION_OFF"
-    desc = "RULE_ELITE_RECRUITMENT_OFF_DESC"
-  }
-}
-
-# Gold cost multiplier for all recruits (commanders, stewards, diplomats, and spymasters; the chaplain too).
-# Base x1 = scaled_wealth 0.25 (vanilla); each step scales from there.
-elite_recruitment_gold_cost = {
-  name = "RULE_ELITE_RECRUITMENT_GOLD_COST"
-  group = "RULE_GROUP_VARIOUS"
-  option = {
-    name = x4
-    text = "RULE_ELITE_COST_4X"
-    desc = "RULE_ELITE_COST_4X_DESC"
+    name = bounty
+    text = "RULE_ELITE_COST_BOUNTY"
+    desc = "RULE_ELITE_COST_BOUNTY_DESC"
   }
   option = {
-    name = x6
-    text = "RULE_ELITE_COST_6X"
-    desc = "RULE_ELITE_COST_6X_DESC"
+    name = fortune
+    text = "RULE_ELITE_COST_FORTUNE"
+    desc = "RULE_ELITE_COST_FORTUNE_DESC"
   }
   option = {
-    name = x8
-    text = "RULE_ELITE_COST_8X"
-    desc = "RULE_ELITE_COST_8X_DESC"
+    name = disabled
+    text = "RULE_ELITE_COST_DISABLED"
+    desc = "RULE_ELITE_COST_DISABLED_DESC"
   }
   option = {
-    name = x1
-    text = "RULE_ELITE_COST_1X"
-    desc = "RULE_ELITE_COST_1X_DESC"
+    name = pittance
+    text = "RULE_ELITE_COST_PITTANCE"
+    desc = "RULE_ELITE_COST_PITTANCE_DESC"
   }
   option = {
-    name = x2
-    text = "RULE_ELITE_COST_2X"
-    desc = "RULE_ELITE_COST_2X_DESC"
-  }
-}
-
-# Prestige cost multiplier for commander, diplomat, and spymaster recruits (stewards and the chaplain cost no Prestige).
-# Base x1 = 25 Prestige (vanilla); each step scales from there.
-elite_recruitment_prestige_cost = {
-  name = "RULE_ELITE_RECRUITMENT_PRESTIGE_COST"
-  group = "RULE_GROUP_VARIOUS"
-  option = {
-    name = x4
-    text = "RULE_ELITE_COST_4X"
-    desc = "RULE_ELITE_COST_4X_DESC"
-  }
-  option = {
-    name = x6
-    text = "RULE_ELITE_COST_6X"
-    desc = "RULE_ELITE_COST_6X_DESC"
-  }
-  option = {
-    name = x8
-    text = "RULE_ELITE_COST_8X"
-    desc = "RULE_ELITE_COST_8X_DESC"
-  }
-  option = {
-    name = x1
-    text = "RULE_ELITE_COST_1X"
-    desc = "RULE_ELITE_COST_1X_DESC"
-  }
-  option = {
-    name = x2
-    text = "RULE_ELITE_COST_2X"
-    desc = "RULE_ELITE_COST_2X_DESC"
-  }
-}
-
-# Piety cost multiplier for chaplain recruits (only the chaplain costs Piety).
-# Base x1 = 25 Piety; each step scales from there.
-elite_recruitment_piety_cost = {
-  name = "RULE_ELITE_RECRUITMENT_PIETY_COST"
-  group = "RULE_GROUP_VARIOUS"
-  option = {
-    name = x4
-    text = "RULE_ELITE_COST_4X"
-    desc = "RULE_ELITE_COST_4X_DESC"
-  }
-  option = {
-    name = x6
-    text = "RULE_ELITE_COST_6X"
-    desc = "RULE_ELITE_COST_6X_DESC"
-  }
-  option = {
-    name = x8
-    text = "RULE_ELITE_COST_8X"
-    desc = "RULE_ELITE_COST_8X_DESC"
-  }
-  option = {
-    name = x1
-    text = "RULE_ELITE_COST_1X"
-    desc = "RULE_ELITE_COST_1X_DESC"
-  }
-  option = {
-    name = x2
-    text = "RULE_ELITE_COST_2X"
-    desc = "RULE_ELITE_COST_2X_DESC"
+    name = trifle
+    text = "RULE_ELITE_COST_TRIFLE"
+    desc = "RULE_ELITE_COST_TRIFLE_DESC"
   }
 }

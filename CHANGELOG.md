@@ -9,6 +9,39 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-06-01
+
+### Changed
+- **Cost rules consolidated into one sliding-scale tier.** The four old rules (the On/Off
+  toggle plus the x1–x8 Gold/Prestige/Piety multipliers) are replaced by a single
+  **Elite Recruitment** rule with named tiers — **Pittance · Trifle · Modicum (default) ·
+  Bounty · Fortune · Disabled**. Tiers scale every cost together (×0.25 / ×0.5 / ×1 / ×2 / ×4);
+  **Disabled** absorbs the old On/Off toggle. Options are ordered so Disabled sits three steps
+  either way from Modicum.
+- **Costs are now tuned per council role** rather than one flat multiplier: the Steward leans
+  heaviest on gold with only a token Prestige, the Spymaster more gold than Prestige, the
+  Commander balanced, the Diplomat more Prestige than gold, and the Chaplain mostly Piety with
+  a little gold.
+- **Aggressive gold floors.** Gold is still a fraction of yearly income, but the minimum floor
+  is raised substantially (e.g. 50 gold for a Modicum steward vs. the old ~4), so the price
+  stays meaningful for a low-income ruler sitting on a hoard — the floor, not the income
+  fraction, binds for most small and mid realms.
+- **Decision descriptions** brought in line with the new costs and each other: every recruit
+  now leads with "brilliant" plus its specialty, and lists the currency it costs most first
+  (the Steward and Spymaster now lead with wealth, and the Steward notes its Prestige cost).
+  Dropped the misleading "shieldmaiden" and universal "legendary" flavor from the commanders.
+
+### Added
+- Five per-role cost effects (`pay_elite_commander_cost` … `pay_elite_chaplain_cost`) and
+  matching `elite_recruitment_*_can_afford_trigger` triggers, replacing the per-currency plumbing.
+- Localisation for the new tier names and descriptions (EN/FR/DE/ES).
+
+### Removed
+- The `elite_recruitment` On/Off rule (its key is repurposed as the tier selector) and the
+  `elite_recruitment_gold_cost` / `_prestige_cost` / `_piety_cost` multiplier rules, along with
+  their `pay_elite_gold_cost` / `_prestige_cost` / `_piety_cost` effects and
+  `elite_recruitment_can_afford_gold` / `_prestige` / `_piety` triggers.
+
 ## [0.9.0] - 2026-06-01
 
 ### Added

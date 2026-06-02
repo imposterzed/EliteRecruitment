@@ -88,89 +88,149 @@ assign_religion_traits = {
   }
 }
 
-# Deduct the gold cost for an elite recruit, scaled by the elite_recruitment_gold_cost rule.
-# scaled_wealth removes a fraction of yearly income (base x1 = 0.25). Each tier also carries
-# a min floor equal to its multiplier (x1=1 ... x8=8 gold), so the multiplier scales both the
-# income fraction and the floor consistently. min is a sign-aware magnitude floor, edge
-# protection that only bites for very low-income rulers.
-pay_elite_gold_cost = {
-  if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x1 } }
-    scaled_wealth = { value = -0.25 min = -1 }
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x2 } }
-    scaled_wealth = { value = -0.5 min = -2 }
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x4 } }
-    scaled_wealth = { value = -1.0 min = -4 }
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x6 } }
-    scaled_wealth = { value = -1.5 min = -6 }
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x8 } }
-    scaled_wealth = { value = -2.0 min = -8 }
-  }
-  else = {
-    scaled_wealth = { value = -1.0 min = -4 } # rule absent: default x4
-  }
-}
+# Per-role recruitment costs, all scaled together by the single elite_recruitment
+# tier rule. Gold uses scaled_wealth (a fraction of yearly income) backed by a firm
+# min floor, so the charge stays meaningful even for low-income rulers; for most
+# small and mid realms it is the floor, not the income fraction, that binds. Each
+# role's secondary currency suits its office: Prestige for the secular advisors,
+# Piety for the chaplain. Modicum is the default tier and the rule-absent fallback.
 
-# Deduct the Prestige cost for a commander, diplomat, or spymaster recruit, scaled by the elite_recruitment_prestige_cost rule.
-# Base x1 = 25 Prestige (vanilla).
-pay_elite_prestige_cost = {
+# Marshal: balanced gold and Prestige.
+pay_elite_commander_cost = {
   if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x1 } }
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = { value = -0.125 min = -8 }
     prestige = -25
   }
   else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x2 } }
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = { value = -0.25 min = -15 }
     prestige = -50
   }
   else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x4 } }
-    prestige = -100
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x6 } }
-    prestige = -150
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x8 } }
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = { value = -1.0 min = -60 }
     prestige = -200
   }
-  else = {
-    prestige = -100 # rule absent: default x4
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = { value = -2.0 min = -120 }
+    prestige = -400
+  }
+  else = { # modicum
+    scaled_wealth = { value = -0.5 min = -30 }
+    prestige = -100
   }
 }
 
-# Deduct the Piety cost for a chaplain recruit, scaled by the elite_recruitment_piety_cost rule.
-# Base x1 = 25 Piety.
-pay_elite_piety_cost = {
+# Steward: heaviest gold, lightest Prestige.
+pay_elite_steward_cost = {
   if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x1 } }
-    piety = -25
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = { value = -0.25 min = -12 }
+    prestige = -5
   }
   else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x2 } }
-    piety = -50
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = { value = -0.5 min = -25 }
+    prestige = -10
   }
   else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x4 } }
-    piety = -100
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = { value = -2.0 min = -100 }
+    prestige = -50
   }
   else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x6 } }
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = { value = -4.0 min = -200 }
+    prestige = -100
+  }
+  else = { # modicum
+    scaled_wealth = { value = -1.0 min = -50 }
+    prestige = -25
+  }
+}
+
+# Chancellor: light gold, heaviest Prestige.
+pay_elite_diplomat_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = { value = -0.0625 min = -5 }
+    prestige = -35
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = { value = -0.125 min = -10 }
+    prestige = -75
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = { value = -0.5 min = -40 }
+    prestige = -300
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = { value = -1.0 min = -80 }
+    prestige = -600
+  }
+  else = { # modicum
+    scaled_wealth = { value = -0.25 min = -20 }
+    prestige = -150
+  }
+}
+
+# Spymaster: more gold than Prestige.
+pay_elite_spymaster_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = { value = -0.1875 min = -10 }
+    prestige = -10
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = { value = -0.375 min = -20 }
+    prestige = -25
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = { value = -1.5 min = -80 }
+    prestige = -100
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = { value = -3.0 min = -160 }
+    prestige = -200
+  }
+  else = { # modicum
+    scaled_wealth = { value = -0.75 min = -40 }
+    prestige = -50
+  }
+}
+
+# Chaplain: heaviest Piety, a little gold.
+pay_elite_chaplain_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = { value = -0.0625 min = -5 }
+    piety = -35
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = { value = -0.125 min = -10 }
+    piety = -75
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = { value = -0.5 min = -40 }
+    piety = -300
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = { value = -1.0 min = -80 }
+    piety = -600
+  }
+  else = { # modicum
+    scaled_wealth = { value = -0.25 min = -20 }
     piety = -150
-  }
-  else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x8 } }
-    piety = -200
-  }
-  else = {
-    piety = -100 # rule absent: default x4
   }
 }

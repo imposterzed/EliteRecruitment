@@ -19,14 +19,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_commander_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_commander_cost = yes
 
       custom_tooltip = {
         text = promoted_commander_TT
@@ -61,14 +59,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_commander_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_commander_cost = yes
 
       custom_tooltip = {
         text = promoted_commander_TT
@@ -100,12 +96,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_steward_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
+      pay_elite_steward_cost = yes
 
       custom_tooltip = {
         text = recruit_steward_TT
@@ -140,12 +136,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_steward_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
+      pay_elite_steward_cost = yes
 
       custom_tooltip = {
         text = recruit_steward_TT
@@ -177,14 +173,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_diplomat_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_diplomat_cost = yes
 
       custom_tooltip = {
         text = recruit_diplomat_TT
@@ -219,14 +213,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_diplomat_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_diplomat_cost = yes
 
       custom_tooltip = {
         text = recruit_diplomat_TT
@@ -258,14 +250,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_spymaster_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_spymaster_cost = yes
 
       custom_tooltip = {
         text = recruit_spymaster_TT
@@ -309,14 +299,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_prestige_trigger = yes
+      elite_recruitment_spymaster_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_prestige_cost = yes
+      pay_elite_spymaster_cost = yes
 
       custom_tooltip = {
         text = recruit_spymaster_TT
@@ -351,14 +339,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_piety_trigger = yes
+      elite_recruitment_chaplain_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_piety_cost = yes
+      pay_elite_chaplain_cost = yes
 
       custom_tooltip = {
         text = recruit_chaplain_TT
@@ -395,14 +381,12 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_can_afford_gold_trigger = yes
-      elite_recruitment_can_afford_piety_trigger = yes
+      elite_recruitment_chaplain_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_gold_cost = yes
-      pay_elite_piety_cost = yes
+      pay_elite_chaplain_cost = yes
 
       custom_tooltip = {
         text = recruit_chaplain_TT

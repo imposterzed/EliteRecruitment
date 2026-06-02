@@ -17,27 +17,27 @@ realm_allows_female_courtiers_trigger = {
 
 # Whether the Elite Recruitment commander decisions are enabled (game-rule gate)
 elite_recruitment_commanders_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the Elite Recruitment steward decisions are enabled (game-rule gate)
 elite_recruitment_stewards_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the Elite Recruitment diplomat decisions are enabled (game-rule gate)
 elite_recruitment_diplomats_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the Elite Recruitment spymaster decisions are enabled (game-rule gate)
 elite_recruitment_spymasters_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the Elite Recruitment chaplain decisions are enabled (game-rule gate)
 elite_recruitment_chaplains_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the character belongs to any Holy Fury warrior lodge
@@ -55,93 +55,166 @@ in_warrior_lodge_trigger = {
   }
 }
 
-# Whether the ruler can afford the gold cost, scaled by the elite_recruitment_gold_cost rule.
-# Cost is max(scaled income fraction, min floor = multiplier), so affordability = wealth >=
-# both: scaled_wealth checks gold vs the scaled amount, wealth checks gold vs the flat floor.
-elite_recruitment_can_afford_gold_trigger = {
-  trigger_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x1 } }
-    scaled_wealth = 0.25
-    wealth = 1
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x2 } }
-    scaled_wealth = 0.5
-    wealth = 2
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x4 } }
-    scaled_wealth = 1.0
-    wealth = 4
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x6 } }
-    scaled_wealth = 1.5
-    wealth = 6
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_gold_cost value = x8 } }
-    scaled_wealth = 2.0
-    wealth = 8
-  }
-  trigger_else = {
-    scaled_wealth = 1.0
-    wealth = 4 # rule absent: default x4
-  }
-}
+# Affordability per role, mirroring the pay_elite_*_cost effects. Gold needs both
+# checks: scaled_wealth (income fraction) and wealth (the firm floor). The secondary
+# currency check matches the role. Modicum is the default and rule-absent fallback.
 
-# Whether the ruler can afford the Prestige cost, scaled by the elite_recruitment_prestige_cost rule.
-# Base x1 = 25 Prestige.
-elite_recruitment_can_afford_prestige_trigger = {
+elite_recruitment_commander_can_afford_trigger = {
   trigger_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x1 } }
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = 0.125
+    wealth = 8
     prestige = 25
   }
   trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x2 } }
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = 0.25
+    wealth = 15
     prestige = 50
   }
   trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x4 } }
-    prestige = 100
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x6 } }
-    prestige = 150
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_prestige_cost value = x8 } }
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = 1.0
+    wealth = 60
     prestige = 200
   }
-  trigger_else = {
-    prestige = 100 # rule absent: default x4
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = 2.0
+    wealth = 120
+    prestige = 400
+  }
+  trigger_else = { # modicum
+    scaled_wealth = 0.5
+    wealth = 30
+    prestige = 100
   }
 }
 
-# Whether the ruler can afford the Piety cost, scaled by the elite_recruitment_piety_cost rule.
-# Base x1 = 25 Piety.
-elite_recruitment_can_afford_piety_trigger = {
+elite_recruitment_steward_can_afford_trigger = {
   trigger_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x1 } }
-    piety = 25
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = 0.25
+    wealth = 12
+    prestige = 5
   }
   trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x2 } }
-    piety = 50
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = 0.5
+    wealth = 25
+    prestige = 10
   }
   trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x4 } }
-    piety = 100
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = 2.0
+    wealth = 100
+    prestige = 50
   }
   trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x6 } }
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = 4.0
+    wealth = 200
+    prestige = 100
+  }
+  trigger_else = { # modicum
+    scaled_wealth = 1.0
+    wealth = 50
+    prestige = 25
+  }
+}
+
+elite_recruitment_diplomat_can_afford_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = 0.0625
+    wealth = 5
+    prestige = 35
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = 0.125
+    wealth = 10
+    prestige = 75
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = 0.5
+    wealth = 40
+    prestige = 300
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = 1.0
+    wealth = 80
+    prestige = 600
+  }
+  trigger_else = { # modicum
+    scaled_wealth = 0.25
+    wealth = 20
+    prestige = 150
+  }
+}
+
+elite_recruitment_spymaster_can_afford_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = 0.1875
+    wealth = 10
+    prestige = 10
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = 0.375
+    wealth = 20
+    prestige = 25
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = 1.5
+    wealth = 80
+    prestige = 100
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = 3.0
+    wealth = 160
+    prestige = 200
+  }
+  trigger_else = { # modicum
+    scaled_wealth = 0.75
+    wealth = 40
+    prestige = 50
+  }
+}
+
+elite_recruitment_chaplain_can_afford_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = pittance } }
+    scaled_wealth = 0.0625
+    wealth = 5
+    piety = 35
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = trifle } }
+    scaled_wealth = 0.125
+    wealth = 10
+    piety = 75
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = bounty } }
+    scaled_wealth = 0.5
+    wealth = 40
+    piety = 300
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment value = fortune } }
+    scaled_wealth = 1.0
+    wealth = 80
+    piety = 600
+  }
+  trigger_else = { # modicum
+    scaled_wealth = 0.25
+    wealth = 20
     piety = 150
-  }
-  trigger_else_if = {
-    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x8 } }
-    piety = 200
-  }
-  trigger_else = {
-    piety = 100 # rule absent: default x4
   }
 }
