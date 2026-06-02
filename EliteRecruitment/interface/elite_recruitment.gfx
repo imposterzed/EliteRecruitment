@@ -47,4 +47,14 @@ spriteTypes = {
 		name = "GFX_recruit_female_elite_spymaster"
 		texturefile = "gfx\\interface\\icon_intrigue.dds"
 	}
+
+	spriteType = {
+		name = "GFX_recruit_male_elite_chaplain"
+		texturefile = "gfx\\interface\\icon_learning.dds"
+	}
+
+	spriteType = {
+		name = "GFX_recruit_female_elite_chaplain"
+		texturefile = "gfx\\interface\\icon_learning.dds"
+	}
 }

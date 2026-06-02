@@ -1,0 +1,238 @@
+##################################################
+##     Elite Recruitment Chaplain Helpers       ##
+##################################################
+## Chaplain helper effects to add flavor to     ##
+## the Elite Recruitment mod.                   ##
+##################################################
+
+# Create male chaplain in your culture and religion with dynasty lottery
+create_male_chaplain_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_priest = {
+      dynasty = random
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_priest = {
+      dynasty = none
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_priest = {
+      dynasty = actually_culture
+      female = no
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Create female chaplain in your culture and religion with dynasty lottery
+create_female_chaplain_dynasty_lottery = {
+  random_list = {
+    # New random house
+    33 = { create_random_priest = {
+      dynasty = random
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Lowborn
+    33 = { create_random_priest = {
+      dynasty = none
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+
+    # Random existing house matching your culture
+    33 = { create_random_priest = {
+      dynasty = actually_culture
+      female = yes
+      random_traits = yes
+      age = 16
+      religion = ROOT
+      culture = ROOT
+    } }
+  }
+}
+
+# Assign the base chaplain attributes to the base character
+assign_chaplain_base_attributes = {
+  change_learning = 12
+  change_diplomacy = 4
+  change_stewardship = 4
+  change_intrigue = 4
+  change_martial = 4
+}
+
+# Assign the chaplain traits to the base character (orchestrator)
+assign_chaplain_traits = {
+  set_character_flag = elite_recruit_clergy   # makes the shared assign_religion_traits grant the brahmin (priest) caste
+  remove_chaplain_negative_traits = yes
+  set_elite_chaplain_education = yes
+  assign_chaplain_flavor = yes
+  assign_chaplain_wonder_bonus = yes
+  assign_religion_traits = yes
+
+  set_character_flag = invited_chaplain
+  save_event_target_as = invited_character
+}
+
+# Remove drawbacks unbecoming of an elite court chaplain. A holy man should be able-bodied,
+# well-spoken (he preaches), and devout; gluttonous/greedy are intentionally kept, as a
+# well-fed friar or a worldly, coffer-filling prelate are apt, characterful clergy.
+remove_chaplain_negative_traits = {
+  # Incompetence / frailty
+  remove_trait = weak
+  remove_trait = slow
+  remove_trait = imbecile
+  remove_trait = dull
+  remove_trait = slothful
+  remove_trait = inbred    # -5 to every attribute
+
+  # spawn_fantastic_scholar physical, plus oratory (a chaplain preaches)
+  remove_trait = dwarf
+  remove_trait = giant
+  remove_trait = hunchback
+  remove_trait = clubfooted
+  remove_trait = harelip
+  remove_trait = lisp
+  remove_trait = stutter
+  remove_trait = craven
+  remove_trait = paranoid
+
+  # Unbecoming of a holy man (gluttonous/greedy kept for worldly-cleric flavor)
+  remove_trait = cynical    # a doubting, irreligious chaplain
+  remove_trait = deceitful  # a dishonest, scheming cleric
+  remove_trait = lustful
+  remove_trait = proud
+  remove_trait = wroth
+  remove_trait = envious
+
+  remove_lifestyle_trait_effect = yes
+}
+
+# Guaranteed top learning education
+set_elite_chaplain_education = {
+  clear_education_trait = yes
+  add_trait = mastermind_theologian
+}
+
+# Weighted "flavor" roll for chaplains
+assign_chaplain_flavor = {
+  random_list = {
+    15 = {
+      change_learning = 2
+    }
+    15 = {
+      add_trait = theologian
+    }
+    10 = {
+      add_trait = erudite
+    }
+    10 = {
+      change_learning = 4
+    }
+    10 = {
+      add_trait = mystic
+    }
+    10 = {
+      # scholar is non-Muslim only; faqih is the Muslim equivalent
+      if = {
+        limit = { religion_group = muslim }
+        add_trait = faqih
+      }
+      else = {
+        add_trait = scholar
+      }
+    }
+    10 = {
+      add_trait = shrewd
+    }
+    5 = {
+      add_trait = zealous
+    }
+    5 = {
+      add_trait = humble
+    }
+    5 = {
+      add_trait = genius
+    }
+    5 = {
+      add_trait = quick
+    }
+    5 = {
+      add_trait = diligent
+    }
+    5 = {
+      trigger = { NOT = { religion_group = muslim } }  # chaste is non-Muslim
+      add_trait = chaste
+      random = {
+        chance = 15
+        add_trait = celibate  # a devout chaplain who has taken the vow
+      }
+    }
+  }
+}
+
+# If the ruler owns a wonder/upgrade that inspires learning (a great library, House of
+# Wisdom, etc.), the chaplain recruit is enhanced -- the scholarly counterpart to the
+# commander's inspire-commanders bloodline bonus. The top education (mastermind_theologian)
+# is already guaranteed, so this grants the other learning boons vanilla's employ_priest
+# rolls there.
+assign_chaplain_wonder_bonus = {
+  if = {
+    limit = { ROOT = { realm_wonder_or_upgrade_has_flag_inspires_learning_trigger = yes } }
+    # Skip a boon the recruit already has so the bonus always lands something fresh;
+    # change_learning is always valid, so the pool is never empty.
+    random_list = {
+      25 = {
+        trigger = { NOT = { trait = erudite } }
+        add_trait = erudite
+      }
+      20 = {
+        trigger = { NOT = { trait = erudite } }
+        add_trait = erudite
+        change_learning = 2
+      }
+      15 = {
+        trigger = {
+          has_dlc = "Reapers"   # physician is a Reaper's Due trait
+          NOT = { trait = physician }
+        }
+        add_trait = physician
+      }
+      15 = {
+        change_learning = 4
+      }
+      15 = {
+        trigger = { NOT = { trait = genius } }
+        add_trait = genius
+      }
+      10 = {
+        trigger = { NOT = { trait = poet } }
+        add_trait = poet
+      }
+    }
+  }
+}
+

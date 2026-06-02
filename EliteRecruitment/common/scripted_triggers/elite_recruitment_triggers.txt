@@ -35,6 +35,11 @@ elite_recruitment_spymasters_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = off } }
 }
 
+# Whether the Elite Recruitment chaplain decisions are enabled (game-rule gate)
+elite_recruitment_chaplains_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = off } }
+}
+
 # Whether the character belongs to any Holy Fury warrior lodge
 in_warrior_lodge_trigger = {
   OR = {
@@ -110,5 +115,33 @@ elite_recruitment_can_afford_prestige_trigger = {
   }
   trigger_else = {
     prestige = 100 # rule absent: default x4
+  }
+}
+
+# Whether the ruler can afford the Piety cost, scaled by the elite_recruitment_piety_cost rule.
+# Base x1 = 25 Piety.
+elite_recruitment_can_afford_piety_trigger = {
+  trigger_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x1 } }
+    piety = 25
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x2 } }
+    piety = 50
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x4 } }
+    piety = 100
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x6 } }
+    piety = 150
+  }
+  trigger_else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x8 } }
+    piety = 200
+  }
+  trigger_else = {
+    piety = 100 # rule absent: default x4
   }
 }

@@ -338,4 +338,90 @@ decisions = {
     }
   }
 
+  # Recruit elite court chaplain (male)
+  recruit_male_elite_chaplain = {
+    ai = no
+
+    potential = {
+      elite_recruitment_chaplains_enabled_trigger = yes
+      OR = {
+        religion_allows_male_temple_holders = yes
+        has_religion_feature = religion_patriarchal
+      }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_piety_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_piety_cost = yes
+
+      custom_tooltip = {
+        text = recruit_chaplain_TT
+
+        create_male_chaplain_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_chaplain_base_attributes = yes
+          assign_chaplain_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
+  # Recruit elite court chaplain (female).
+  # A court chaplain must belong to a faith that ordains the recruit's sex; many faiths
+  # (e.g. Catholicism) ordain no women, so the female decision is religion-gated.
+  recruit_female_elite_chaplain = {
+    ai = no
+
+    potential = {
+      elite_recruitment_chaplains_enabled_trigger = yes
+      OR = {
+        religion_allows_female_temple_holders = yes
+        has_religion_feature = religion_matriarchal
+      }
+    }
+
+    allow = {
+      elite_recruitment_can_afford_gold_trigger = yes
+      elite_recruitment_can_afford_piety_trigger = yes
+      in_seclusion = no
+    }
+
+    effect = {
+      pay_elite_gold_cost = yes
+      pay_elite_piety_cost = yes
+
+      custom_tooltip = {
+        text = recruit_chaplain_TT
+
+        create_female_chaplain_dynasty_lottery = yes
+
+        new_character = {
+          assign_random_adult_age = yes
+          assign_chaplain_base_attributes = yes
+          assign_chaplain_traits = yes
+        }
+      }
+
+      character_event = { id = NE.1 }
+    }
+
+    ai_will_do = {
+      factor = 0
+    }
+  }
+
 }

@@ -9,6 +9,41 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-06-01
+
+### Added
+- **Elite court chaplain recruitment:** **Recruit Elite Male Chaplain** / **Recruit Elite
+  Female Chaplain** decisions — **gold + Piety** cost, a guaranteed **Mastermind Theologian**
+  education and a large **Learning** boost, plus a learning/piety flavor roll (Theologian,
+  Mystic, Scholar/Faqih, Erudite, Shrewd, Genius/Quick, and pious touches — Zealous, Humble,
+  Diligent, or a Chaste vow that may deepen into Celibate).
+  Built on `create_random_priest`; grants the priestly caste `brahmin` (not `kshatriya`) for
+  dharmic faiths, satisfying `can_be_spiritual`. Icon: the Learning attribute (an open book).
+- **Wonder-inspired chaplains:** if the ruler owns a wonder/upgrade flagged
+  `inspires_learning` (a great library, House of Wisdom, …), the chaplain gains an extra
+  learning boon (`erudite`, `physician`, `genius`, `poet`, or a learning bump) — the
+  scholarly counterpart to the commander's inspire-commanders legendary bonus.
+- **Piety-cost infrastructure:** new `elite_recruitment_piety_cost` game rule (x1/x2/x4/x6/x8,
+  default x4), `pay_elite_piety_cost` effect, and `elite_recruitment_can_afford_piety_trigger`,
+  mirroring the prestige plumbing (x1 = 25 Piety … x4 = 100). Only the chaplain costs Piety.
+- Localisation for the chaplain strings and the Piety-cost rule (EN/FR/DE/ES).
+
+### Changed
+- **Chaplain trait curation:** strips incompetence (incl. `inbred`, −5 to all), the
+  spawn-scholar physical set plus speech impediments (`harelip`/`lisp`/`stutter` — a chaplain
+  preaches), and traits unbecoming of a holy man (`cynical`, `deceitful`, `lustful`, `proud`,
+  `wroth`, `envious`); keeps `gluttonous` and `greedy` as worldly-cleric flavor (the well-fed
+  friar, the coffer-filling prelate).
+- **Female chaplain gate is faith-based** (`religion_allows_female_temple_holders` or a
+  matriarchal faith), not law-based — it appears only for faiths that ordain women.
+- The shared `assign_religion_traits` helper is now caste-aware — `brahmin` for a clergy
+  recruit (flagged `elite_recruit_clergy`, i.e. the chaplain), `kshatriya` otherwise — so the
+  chaplain reuses it instead of a near-duplicate effect. Unchanged for the other four recruits.
+
+### Fixed
+- Stale cost-rule comments: the gold/prestige rule and effect comments now list all paying
+  roles (the spymaster's Prestige use, added in 0.8.0, was missing).
+
 ## [0.8.0] - 2026-06-01
 
 ### Added

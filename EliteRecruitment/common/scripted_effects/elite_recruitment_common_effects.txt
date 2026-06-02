@@ -51,7 +51,15 @@ assign_religion_traits = {
   if = {
     limit = { has_dharmic_religion_trigger = yes }
 
-    add_trait = kshatriya
+    # Priest caste (brahmin) for a clergy recruit flagged elite_recruit_clergy (the chaplain);
+    # the warrior caste (kshatriya) for everyone else.
+    if = {
+      limit = { has_character_flag = elite_recruit_clergy }
+      add_trait = brahmin
+    }
+    else = {
+      add_trait = kshatriya
+    }
     character_event = { id = RoI.30121 }
 
   } else_if = {
@@ -111,7 +119,7 @@ pay_elite_gold_cost = {
   }
 }
 
-# Deduct the Prestige cost for a commander or diplomat recruit, scaled by the elite_recruitment_prestige_cost rule.
+# Deduct the Prestige cost for a commander, diplomat, or spymaster recruit, scaled by the elite_recruitment_prestige_cost rule.
 # Base x1 = 25 Prestige (vanilla).
 pay_elite_prestige_cost = {
   if = {
@@ -136,5 +144,33 @@ pay_elite_prestige_cost = {
   }
   else = {
     prestige = -100 # rule absent: default x4
+  }
+}
+
+# Deduct the Piety cost for a chaplain recruit, scaled by the elite_recruitment_piety_cost rule.
+# Base x1 = 25 Piety.
+pay_elite_piety_cost = {
+  if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x1 } }
+    piety = -25
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x2 } }
+    piety = -50
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x4 } }
+    piety = -100
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x6 } }
+    piety = -150
+  }
+  else_if = {
+    limit = { has_game_rule = { name = elite_recruitment_piety_cost value = x8 } }
+    piety = -200
+  }
+  else = {
+    piety = -100 # rule absent: default x4
   }
 }

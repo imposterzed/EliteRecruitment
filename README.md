@@ -1,30 +1,35 @@
 # Elite Recruitment
 
-Elite Recruitment adds court decisions that let you spend gold — and Prestige, for
-commanders, diplomats, and spymasters — to bring an elite, ready-made specialist into your court:
+Elite Recruitment adds court decisions that let you spend gold — plus Prestige (commanders,
+diplomats, spymasters) or Piety (the court chaplain) — to bring an elite, ready-made
+specialist into your court:
 
 - **Recruit Elite Male Commander** / **Recruit Elite Female Commander**
 - **Recruit Elite Steward** / **Recruit Elite Stewardess**
 - **Recruit Elite Male Diplomat** / **Recruit Elite Female Diplomat**
 - **Recruit Elite Male Spymaster** / **Recruit Elite Female Spymaster**
+- **Recruit Elite Male Chaplain** / **Recruit Elite Female Chaplain**
 
 ## What it does
 
 Crusader Kings II's vanilla **Promote Commander** decision can already turn up a strong —
 even legendary — commander. Elite Recruitment delivers that same high-end commander, and
-extends the idea to **stewards**, **diplomats**, and **spymasters**: vanilla's "Invite Noble
-to Court" only brings in an ordinary courtier, so a *guaranteed elite* steward, diplomat, or
-spymaster has no real vanilla counterpart. Each comes with a clean, deliberate **male vs.
-female** choice instead of leaving the recruit's gender up to the game:
+extends the idea to **stewards**, **diplomats**, **spymasters**, and a **court chaplain**:
+vanilla's "Invite Noble to Court" only brings in an ordinary courtier, so a *guaranteed
+elite* specialist in any of those roles has no real vanilla counterpart. Each comes with a
+clean, deliberate **male vs. female** choice instead of leaving the recruit's gender up to
+the game:
 
 - The **male** decision is available to most realms.
 - The **female** decision appears for realms whose laws or faith support women holding that
   post. A brought-in courtier is unrelated and unlanded, and for most roles vanilla only
   seats such a woman on the council (or in command) under full gender equality (or an
   equal/matriarchal faith) — so the Female Commander, Stewardess, and Diplomat share that
-  gate. The **Female Spymaster** is available more widely: pagan-group realms and the
-  Cathar/Messalian faiths let women run the spy network without those laws, matching
-  vanilla's own rules for that post.
+  gate. The **Female Spymaster** is available more widely (pagan-group realms and the
+  Cathar/Messalian faiths allow it without those laws), while the **chaplain** is gated by
+  faith instead: a court chaplain must belong to a religion that ordains the recruit's sex,
+  so the Female Chaplain appears only for faiths that ordain women (Catholicism, for one,
+  does not).
 
 So you choose the recruit that fits your realm, rather than the game choosing for you.
 
@@ -43,17 +48,22 @@ to their other skills) and **Grey Eminence**, the top diplomacy education.
 **Spymasters** are elite intriguers — guaranteed a large **Intrigue** boost (plus a smaller
 lift to their other skills) and **Elusive Shadow**, the top intrigue education.
 
+**Court chaplains** are elite theologians — guaranteed a large **Learning** boost (plus a
+smaller lift to their other skills) and **Mastermind Theologian**, the top learning education.
+
 On top of that, every recruit gets a **weighted "flavor" roll** that adds a little
 personality — tuned so it *adds* character without changing what they fundamentally are:
 
 - **Most of the time** you get something small and fitting — a touch more of their core
   skill, or a relevant trait (Duelist, Hunter, or Strong for commanders; Administrator,
   Architect, Gardener, or Temperate for stewards; Gregarious, Kind, or Honest for diplomats;
-  Deceitful, Schemer, or Cynical for spymasters).
+  Deceitful, Schemer, or Cynical for spymasters; Theologian, Mystic, Erudite, or Scholar for chaplains).
 - **Occasionally** something bigger or quirkier appears. These are intentionally rare, so
   your recruit almost always reads as "an excellent specialist," not a lottery prize.
 - **Rarely**, if you carry a bloodline that *inspires commanders*, a commander recruit can
-  be a **legendary, named hero** — a unique nickname and a stronger set of traits.
+  be a **legendary, named hero** — a unique nickname and a stronger set of traits. Likewise,
+  if your realm has a **wonder that inspires learning** (a great library, House of Wisdom),
+  a chaplain recruit picks up extra scholarly traits.
 - Recruits also pick up **faith-appropriate touches** where they fit (a caste trait for
   Indian religions, a zodiac sign for astrological faiths, and so on), and a commander may
   turn up a **holy-war veteran** trait matching their faith (Crusader, Mujahid, and the like).
@@ -70,13 +80,16 @@ Elite Recruitment adds **game rules** so you can tailor it to your campaign. Set
   recruitment decisions at once. It defaults to **On**, so the mod works out of the box
   even if you never open the rules screen.
 - **Elite Recruitment: Gold Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales the
-  gold price of every recruit (commanders, stewards, diplomats, *and* spymasters). The base *1x* is the original
+  gold price of every recruit (commanders, stewards, diplomats, spymasters, *and* the chaplain). The base *1x* is the original
   cost — about a quarter of a year's income — so the default *4x* is roughly a full year's.
   Each tier also carries a small minimum equal to its multiplier (1/2/4/6/8 gold) so the
   price stays meaningful even for the poorest realms.
 - **Elite Recruitment: Prestige Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales
   the Prestige price of **commander, diplomat, and spymaster** recruits (stewards never cost
   Prestige). The base *1x* is 25 Prestige, so the default *4x* is 100.
+- **Elite Recruitment: Piety Cost** — *1x* / *2x* / **4x** (default) / *6x* / *8x*. Scales the
+  Piety price of the **court chaplain** (the only recruit that costs Piety). The base *1x* is
+  25 Piety, so the default *4x* is 100.
 
 ## Requirements
 
@@ -134,9 +147,10 @@ overhaul is replacing the decisions folder and loading after this mod.
 
 - The decisions reuse vanilla icons as placeholders — the "Employ Soldier" icon for
   commanders, the "Employ Steward"/"Employ Stewardess" icons for stewards, the **Diplomacy**
-  attribute icon (a sealed scroll) for diplomats, and the **Intrigue** attribute icon (a
-  dagger) for spymasters. Custom icons are planned. They'll automatically use a 4K-UI mod's
-  higher-res icons (e.g. Proper4KUI) if one is installed.
+  attribute icon (a sealed scroll) for diplomats, the **Intrigue** attribute icon (a dagger)
+  for spymasters, and the **Learning** attribute icon (an open book) for chaplains. Custom
+  icons are planned. They'll automatically use a 4K-UI mod's higher-res icons (e.g.
+  Proper4KUI) if one is installed.
 
 ## License
 
