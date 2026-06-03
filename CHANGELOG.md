@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.5] - 2026-06-03
+
+### Fixed
+- **The Chancellor recruit no longer keeps a speech impediment.** Stripped `harelip`,
+  `lisp`, and `stutter` from the elite Chancellor — fitting for the realm's silver-tongued
+  envoy (the Court Chaplain, also a speaker, already strips them).
+
 ## [0.12.4] - 2026-06-03
 
 ### Added

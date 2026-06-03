@@ -112,6 +112,11 @@ remove_chancellor_negative_traits = {
   remove_trait = craven
   remove_trait = paranoid
 
+  # Speech defects -- an envoy is the realm's voice
+  remove_trait = harelip
+  remove_trait = lisp
+  remove_trait = stutter
+
   # Off-putting manners, unbecoming of a diplomat
   remove_trait = shy
   remove_trait = cruel
