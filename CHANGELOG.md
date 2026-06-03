@@ -9,6 +9,16 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.6] - 2026-06-03
+
+### Changed
+- **Steward decisions now read "Recruit Elite Male/Female Steward"** (dropping "Stewardess"),
+  matching the explicit-gender naming the other four roles already use in every language
+  (French *masculin/féminine*, German *(männlich)/(weiblich)*, Spanish *masculino/femenina*).
+- **Decision descriptions are gender-neutral across all five roles** — the recruit's sex is
+  stated in the decision name, so the descriptions don't repeat it (dropped "male/female" from
+  the Marshal and Steward descriptions; the other languages gender the role noun naturally).
+
 ## [0.12.5] - 2026-06-03
 
 ### Fixed
