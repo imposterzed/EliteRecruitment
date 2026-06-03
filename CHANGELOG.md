@@ -9,6 +9,14 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.2] - 2026-06-02
+
+### Changed
+- **Reorganized the scripted-triggers file (no gameplay change).** Grouped the two shared
+  eligibility triggers together, then co-located each role's enabled gate with its
+  affordability check under a per-role header, and normalized the file banner. Reordering
+  and comments only — every trigger body is unchanged.
+
 ## [0.12.1] - 2026-06-02
 
 ### Changed

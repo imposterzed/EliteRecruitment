@@ -1,9 +1,11 @@
 ##################################################
-##       Elite Recruitment Shared Triggers      ##
+##          Elite Recruitment Triggers          ##
 ##################################################
-## Shared triggers to add flavor to the Elite   ##
-## Recruitment mod.                             ##
+## Shared eligibility helpers, plus each role's ##
+## game-rule and affordability gates.           ##
 ##################################################
+
+# --- Shared helpers ---
 
 # Whether women may hold court roles regardless of the status_of_women laws
 realm_allows_female_courtiers_trigger = {
@@ -13,31 +15,6 @@ realm_allows_female_courtiers_trigger = {
     has_religion_feature = religion_equal
     has_religion_feature = religion_feature_bon
   }
-}
-
-# Whether the Elite Recruitment marshal decisions are enabled (game-rule gate)
-elite_recruitment_marshals_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Whether the Elite Recruitment steward decisions are enabled (game-rule gate)
-elite_recruitment_stewards_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Whether the Elite Recruitment chancellor decisions are enabled (game-rule gate)
-elite_recruitment_chancellors_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Whether the Elite Recruitment spymaster decisions are enabled (game-rule gate)
-elite_recruitment_spymasters_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Whether the Elite Recruitment chaplain decisions are enabled (game-rule gate)
-elite_recruitment_chaplains_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
 # Whether the character belongs to any Holy Fury warrior lodge
@@ -55,10 +32,19 @@ in_warrior_lodge_trigger = {
   }
 }
 
-# Affordability per role, mirroring the pay_elite_*_cost effects. Gold needs both
-# checks: scaled_wealth (income fraction) and wealth (the firm floor). The secondary
-# currency check matches the role. Modicum is the default and rule-absent fallback.
+# --- Per-role gates ---
+# Each role below pairs an enabled check (the elite_recruitment rule is not Disabled)
+# with an affordability check mirroring its pay_elite_*_cost effect. Gold needs both
+# scaled_wealth (income fraction) and wealth (the firm floor); the secondary currency
+# matches the role. Modicum is the default and the rule-absent fallback.
 
+# Marshal: balanced gold and Prestige.
+# Decisions enabled unless the elite_recruitment rule is Disabled
+elite_recruitment_marshals_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Can afford the cost (mirrors pay_elite_marshal_cost)
 elite_recruitment_marshal_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -91,6 +77,13 @@ elite_recruitment_marshal_can_afford_trigger = {
   }
 }
 
+# Steward: heaviest gold, lightest Prestige.
+# Decisions enabled unless the elite_recruitment rule is Disabled
+elite_recruitment_stewards_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Can afford the cost (mirrors pay_elite_steward_cost)
 elite_recruitment_steward_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -123,6 +116,13 @@ elite_recruitment_steward_can_afford_trigger = {
   }
 }
 
+# Chancellor: light gold, heaviest Prestige.
+# Decisions enabled unless the elite_recruitment rule is Disabled
+elite_recruitment_chancellors_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Can afford the cost (mirrors pay_elite_chancellor_cost)
 elite_recruitment_chancellor_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -155,6 +155,13 @@ elite_recruitment_chancellor_can_afford_trigger = {
   }
 }
 
+# Spymaster: more gold than Prestige.
+# Decisions enabled unless the elite_recruitment rule is Disabled
+elite_recruitment_spymasters_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Can afford the cost (mirrors pay_elite_spymaster_cost)
 elite_recruitment_spymaster_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -187,6 +194,13 @@ elite_recruitment_spymaster_can_afford_trigger = {
   }
 }
 
+# Chaplain: heaviest Piety, a little gold.
+# Decisions enabled unless the elite_recruitment rule is Disabled
+elite_recruitment_chaplains_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Can afford the cost (mirrors pay_elite_chaplain_cost)
 elite_recruitment_chaplain_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
