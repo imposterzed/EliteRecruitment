@@ -93,6 +93,7 @@ assign_marshal_traits = {
   assign_elite_chinese_marshal_trait = yes
   assign_marshal_warrior_lodge = yes
   assign_marshal_flavor = yes
+  assign_marshal_battle_wounds = yes
   assign_marshal_legendary_chance = yes
   assign_religion_traits = yes
   assign_marshal_crusade_trait = yes
@@ -299,14 +300,43 @@ assign_marshal_flavor = {
       change_martial = 4
     }
     5 = {
-      trigger = { has_dlc = "Reapers" }
-      add_trait = one_eyed
+      add_trait = brave
     }
     5 = {
       add_trait = shrewd
     }
     1 = {
       add_trait = giant
+    }
+  }
+}
+
+# A veteran commander sometimes carries the marks of past battles. The penalty wounds
+# are paired with a hardening trait so the roll is always worth getting.
+assign_marshal_battle_wounds = {
+  random = {
+    chance = 15
+    random_list = {
+      # Battle scars -- no attribute penalty; the tier scales up with Holy Fury
+      50 = {
+        random_list = {
+          50 = { add_trait = scarred }
+          25 = { trigger = { has_dlc = "Holy Fury" } add_trait = scarred_mid }
+          25 = { trigger = { has_dlc = "Holy Fury" } add_trait = scarred_high }
+        }
+      }
+      # Lost an eye, but seasoned by it -- patient's +5 combat blunts the -10
+      25 = {
+        trigger = { has_dlc = "Reapers" }
+        add_trait = one_eyed
+        add_trait = patient
+      }
+      # Disfigured in the fighting, all the more wrathful for it
+      25 = {
+        trigger = { has_dlc = "Reapers" }
+        add_trait = disfigured
+        add_trait = wroth
+      }
     }
   }
 }

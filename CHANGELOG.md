@@ -9,6 +9,16 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.4] - 2026-06-03
+
+### Added
+- **Marshal "battle wounds" flavor.** A marshal recruit now has a small chance to bear the
+  marks of past battles — a hardened battle scar (its severity scaling with Holy Fury), or,
+  with The Reaper's Due, a lost eye or a disfiguring wound. The penalty wounds come paired
+  with a fitting trait (hard-won patience, or a battle-born temper) so the roll is always
+  worthwhile.
+- **A few new flavor traits.** Marshals can roll **Brave**; spymasters can roll **Envious**.
+
 ## [0.12.3] - 2026-06-03
 
 ### Fixed

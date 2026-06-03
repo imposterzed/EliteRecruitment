@@ -159,6 +159,9 @@ assign_spymaster_flavor = {
       add_trait = paranoid
     }
     5 = {
+      add_trait = envious
+    }
+    5 = {
       add_trait = genius
     }
     5 = {
