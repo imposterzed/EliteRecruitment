@@ -9,6 +9,16 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-06-02
+
+### Added
+- **Mod-detection flag.** Elite Recruitment now sets the global flag
+  `elite_recruitment_active` at game start (new games and save loads), so other mods can
+  detect that it is loaded — the same courtesy CleanSlate extends with `cleanslate_active`,
+  which Elite Recruitment reads for trait-name compatibility.
+- **README "For modders" section** documenting the new detection flag and the per-recruit
+  `elite_recruit_<role>` character flags.
+
 ## [0.11.0] - 2026-06-02
 
 ### Added

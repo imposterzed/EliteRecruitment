@@ -173,6 +173,19 @@ but running it (it's free) is recommended for the cleanest overall experience. I
 *different* overhaul and the decisions don't appear, that's a load-order conflict — the
 overhaul is replacing the decisions folder and loading after this mod.
 
+## For modders
+
+Two flags let other mods detect Elite Recruitment and the specialists it recruits:
+
+- **Detect the mod.** Elite Recruitment sets the global flag `elite_recruitment_active` at
+  `on_startup` (on new games and on every save load). Check for it with
+  `has_global_flag = elite_recruitment_active` — the same way Elite Recruitment detects
+  CleanSlate's `cleanslate_active`.
+- **Identify a recruit.** Each recruit is tagged with a per-character flag —
+  `elite_recruit_marshal`, `elite_recruit_steward`, `elite_recruit_chancellor`,
+  `elite_recruit_spymaster`, or `elite_recruit_chaplain` — so you can match them with
+  `has_character_flag`.
+
 ## Notes
 
 - Each decision uses its council attribute's vanilla icon — **Martial** (crossed swords) for
