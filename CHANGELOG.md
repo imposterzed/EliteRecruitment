@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.9] - 2026-06-03
+
+### Changed
+- **New preview/poster art** (`elite_recruitment.jpg`) — a bolder recruitment-poster design
+  (large pointing king, "ELITE RECRUITMENT" + "YOUR REALM NEEDS YOU!") that stays legible at
+  Steam's 268×268 thumbnail size.
+
 ## [0.12.8] - 2026-06-03
 
 ### Added
