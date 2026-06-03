@@ -104,6 +104,7 @@ remove_chancellor_negative_traits = {
   remove_trait = slow
   remove_trait = imbecile
   remove_trait = dull
+  remove_trait = inbred
   remove_trait = dwarf
   # giant not stripped -- net-positive opinion for an envoy
   remove_trait = hunchback

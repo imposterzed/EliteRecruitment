@@ -108,6 +108,7 @@ remove_marshal_negative_traits = {
   remove_trait = slow
   remove_trait = imbecile
   remove_trait = dull
+  remove_trait = inbred
   remove_trait = dwarf
   # giant not stripped -- net-positive for a marshal (combat rating)
   remove_trait = hunchback
@@ -135,6 +136,8 @@ remove_existing_leadership_traits = {
   remove_trait = organizer
   remove_trait = siege_leader
   remove_trait = winter_soldier
+  # holy_warrior is a holy-war trait but leader = yes, so it counts toward the cap
+  remove_trait = holy_warrior
 
   # Unit-specific
   remove_trait = cavalry_leader

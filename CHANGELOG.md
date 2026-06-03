@@ -9,6 +9,16 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.3] - 2026-06-03
+
+### Fixed
+- **Elite recruits no longer keep `inbred`.** The marshal, steward, and chancellor now strip
+  `inbred` (−5 to every attribute), matching the spymaster and chaplain — no elite recruit
+  should carry the game's worst congenital trait.
+- **Marshals strip a generated `holy_warrior`.** It is a leadership trait (`leader = yes`),
+  so it was added to the pre-roll leadership wipe; otherwise it could occupy a command slot
+  and crowd out the curated leadership trait or its Chinese/lodge bonus.
+
 ## [0.12.2] - 2026-06-02
 
 ### Changed
