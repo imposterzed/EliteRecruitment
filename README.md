@@ -5,7 +5,7 @@ secondary currency — **Prestige** for the secular advisors, **Piety** for the 
 to bring an elite, ready-made specialist into your court:
 
 - **Recruit Elite Male Marshal** / **Recruit Elite Female Marshal**
-- **Recruit Elite Steward** / **Recruit Elite Stewardess**
+- **Recruit Elite Male Steward** / **Recruit Elite Female Steward**
 - **Recruit Elite Male Chancellor** / **Recruit Elite Female Chancellor**
 - **Recruit Elite Male Spymaster** / **Recruit Elite Female Spymaster**
 - **Recruit Elite Male Chaplain** / **Recruit Elite Female Chaplain**
@@ -69,6 +69,9 @@ personality — tuned so it *adds* character without changing what they fundamen
   be a **legendary, named hero** — a unique nickname and a stronger set of traits. Likewise,
   if your realm has a **wonder that inspires learning** (a great library, House of Wisdom),
   a chaplain recruit picks up extra scholarly traits.
+- A **marshal** may also carry the **marks of old battles** — a hardened scar, or (with The
+  Reaper's Due) a lost eye or a disfiguring wound — always paired with a fitting trait, such
+  as hard-won patience or a battle-born temper, so a scar is never just a penalty.
 - Recruits also pick up **faith-appropriate touches** where they fit (a caste trait for
   Indian religions, a zodiac sign for astrological faiths, and so on), and a marshal may
   turn up a **holy-war veteran** trait matching their faith (Crusader, Mujahid, and the like).
@@ -133,7 +136,7 @@ is simply skipped — the mod still works:
   (zodiac signs, reformed-pagan traits).
 - **Jade Dragon** — Chinese "Way of the…" commander traits for Chinese-culture realms.
 - **Rajas of India** — Indian flavor: a caste trait and the *War Elephant Leader* trait.
-- **The Reaper's Due** — the rare *One-Eyed* marshal flourish.
+- **The Reaper's Due** — rare marshal battle wounds (a lost eye or a disfiguring wound).
 
 ## Installation
 

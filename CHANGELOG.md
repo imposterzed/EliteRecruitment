@@ -9,6 +9,14 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.7] - 2026-06-03
+
+### Changed
+- **README intro updated to "Recruit Elite Male/Female Steward,"** matching the 0.12.6
+  decision rename (it still listed the old "Stewardess" name).
+- **README "The recruits" now notes the marshal battle-wound flavor** from 0.12.4, and the
+  Reaper's Due line broadens the stale "One-Eyed" mention to a lost eye or disfiguring wound.
+
 ## [0.12.6] - 2026-06-03
 
 ### Changed
