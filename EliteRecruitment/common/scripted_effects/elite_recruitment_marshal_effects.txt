@@ -101,7 +101,8 @@ assign_marshal_traits = {
   save_event_target_as = invited_character
 }
 
-# Remove physical/martial drawbacks unbecoming of an elite marshal
+# Remove physical and martial drawbacks unbecoming of an elite marshal: a battle-leader
+# must be hale and brave. giant and paranoid are deliberately kept (see inline notes).
 remove_marshal_negative_traits = {
   remove_trait = weak
   remove_trait = slow
@@ -330,7 +331,7 @@ assign_marshal_legendary_chance = {
   }
 }
 
-# Assign the as a legendary marshal per common/scripted_effects/00_scripted_effects.txt
+# Build a legendary, named marshal: one of many hero archetypes, each a themed trait set
 assign_legendary_marshal = {
   random_list = {
     20 = {

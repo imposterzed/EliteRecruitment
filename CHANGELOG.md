@@ -9,6 +9,15 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.1] - 2026-06-02
+
+### Changed
+- **Code-comment cleanup (no gameplay change).** Standardized the scripted-effect comments
+  across the five council files to a consistent role-mindset voice — dropped the
+  vanilla-comparison annotations, unified the "flavor" roll headers — and corrected the
+  Chancellor effect file's banner, which still read "Diplomat." Comments and a banner only;
+  no behavior, balance, or localisation change.
+
 ## [0.12.0] - 2026-06-02
 
 ### Added

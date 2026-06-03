@@ -131,7 +131,7 @@ set_elite_spymaster_education = {
   add_trait = elusive_shadow
 }
 
-# Weighted "flavor" roll for spymasters
+# Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
 assign_spymaster_flavor = {
   random_list = {
     20 = {

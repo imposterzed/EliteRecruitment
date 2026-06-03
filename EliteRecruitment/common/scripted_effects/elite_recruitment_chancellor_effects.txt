@@ -1,8 +1,8 @@
 ##################################################
-##      Elite Recruitment Diplomat Helpers      ##
+##     Elite Recruitment Chancellor Helpers     ##
 ##################################################
-## Diplomat helper effects to add flavor to the ##
-## Elite Recruitment mod.                       ##
+## Chancellor helper effects to add flavor to   ##
+## the Elite Recruitment mod.                   ##
 ##################################################
 
 # Create male chancellor in your culture and religion with dynasty lottery
@@ -95,9 +95,11 @@ assign_chancellor_traits = {
   save_event_target_as = invited_character
 }
 
-# Remove social and physical drawbacks unbecoming of an elite chancellor
+# Remove social and physical drawbacks unbecoming of an elite chancellor. An envoy is the
+# realm's face abroad, so frailty, cowardice, and abrasive or off-putting manners are
+# stripped (the imposing giant is the one deliberate exception below).
 remove_chancellor_negative_traits = {
-  # spawn_fantastic_diplomat removals
+  # Incompetence / frailty
   remove_trait = weak
   remove_trait = slow
   remove_trait = imbecile
@@ -109,7 +111,7 @@ remove_chancellor_negative_traits = {
   remove_trait = craven
   remove_trait = paranoid
 
-  # Elite additions
+  # Off-putting manners, unbecoming of a diplomat
   remove_trait = shy
   remove_trait = cruel
   remove_trait = envious
@@ -124,18 +126,15 @@ set_elite_chancellor_education = {
   add_trait = grey_eminence
 }
 
-# Weighted "flavor" roll for chancellors
+# Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
 assign_chancellor_flavor = {
   random_list = {
-    # spawn_fantastic_diplomat flavor
     5 = {
       add_trait = shrewd
     }
     5 = {
       add_trait = quick
     }
-
-    # Elite additions
     20 = {
       assign_elite_beauty_trait = yes
     }

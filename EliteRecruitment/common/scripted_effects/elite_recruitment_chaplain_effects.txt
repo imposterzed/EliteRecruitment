@@ -136,7 +136,7 @@ set_elite_chaplain_education = {
   add_trait = mastermind_theologian
 }
 
-# Weighted "flavor" roll for chaplains
+# Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
 assign_chaplain_flavor = {
   random_list = {
     15 = {

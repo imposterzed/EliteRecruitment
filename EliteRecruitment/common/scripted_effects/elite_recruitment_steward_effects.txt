@@ -77,11 +77,11 @@ create_female_steward_dynasty_lottery = {
 
 # Assign the base steward attributes to the base character
 assign_steward_base_attributes = {
-  change_stewardship = 12  # vanilla employ_steward: 8
-  change_diplomacy = 4     # vanilla: 2
-  change_intrigue = 4      # vanilla: 2
-  change_learning = 4      # vanilla: 2
-  change_martial = 4       # vanilla: 2
+  change_stewardship = 12
+  change_diplomacy = 4
+  change_intrigue = 4
+  change_learning = 4
+  change_martial = 4
 }
 
 # Assign the steward traits to the base character (orchestrator)
@@ -95,15 +95,17 @@ assign_steward_traits = {
   save_event_target_as = invited_character
 }
 
-# Remove administrative drawbacks unbecoming of an elite steward
+# Remove drawbacks unbecoming of an elite steward. A treasurer must be sharp and diligent,
+# so dullness and sloth are stripped; gluttonous (wasteful) and arbitrary (corrupt) ill
+# befit a steady hand on the realm's coffers.
 remove_steward_negative_traits = {
-  # Vanilla employ_steward removals
+  # Incompetence / sloth
   remove_trait = slow
   remove_trait = imbecile
   remove_trait = dull
-
-  # Elite additions
   remove_trait = slothful
+
+  # Unbecoming of a careful administrator
   remove_trait = gluttonous
   remove_trait = arbitrary
 
@@ -116,17 +118,15 @@ set_elite_steward_education = {
   add_trait = midas_touched
 }
 
-# Weighted "flavor" roll for stewards
+# Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
 assign_steward_flavor = {
   random_list = {
-    # Vanilla employ_steward flavor
     15 = {
       change_stewardship = 2
     }
     10 = {
       change_stewardship = 4
     }
-    # vanilla's change_stewardship = 6 dropped -- redundant with the +12 base attributes
     10 = {
       add_trait = gardener
     }
@@ -139,8 +139,6 @@ assign_steward_flavor = {
     5 = {
       add_trait = shrewd
     }
-
-    # Elite additions
     15 = {
       add_trait = temperate
     }
