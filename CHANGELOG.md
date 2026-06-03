@@ -9,6 +9,17 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.12.8] - 2026-06-03
+
+### Added
+- **README "Development" section** documenting the encoding/EOL workflow — why the script and
+  localisation files are UTF-8 in git but Windows-1252 + CRLF on disk, and how to edit them
+  without corrupting accents.
+
+### Removed
+- **The non-standard `git-encoding=UTF-8` token** from `.gitattributes`. `working-tree-encoding`
+  already stores the blob as UTF-8, so the token was redundant and ignored by git.
+
 ## [0.12.7] - 2026-06-03
 
 ### Changed

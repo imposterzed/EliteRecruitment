@@ -189,6 +189,23 @@ Two flags let other mods detect Elite Recruitment and the specialists it recruit
   `elite_recruit_spymaster`, or `elite_recruit_chaplain` — so you can match them with
   `has_character_flag`.
 
+## Development
+
+The mod's script and localisation files (`.txt`, `.csv`) are kept as **UTF-8** in git for
+readable, diffable accented text on GitHub, but **CK2 reads them as Windows-1252** — so
+`.gitattributes` checks them out as **Windows-1252 with CRLF** line endings. Two things follow
+for contributors:
+
+- **Accented localisation edits must be saved as Windows-1252,** not UTF-8 — a UTF-8 save
+  corrupts the accents once git reinterprets the bytes. Set your editor accordingly (in
+  Notepad++: *Encoding → ANSI*, and *Edit → EOL Conversion → Windows (CR LF)*), or convert
+  with a small script. Plain-ASCII edits are unaffected.
+- **A UTF-8/LF editor may leave the file looking modified** with a *"LF will be replaced by
+  CRLF"* notice — that's the expected line-ending reconciliation, not an error. Run
+  `git add --renormalize .` before committing and confirm `git status` is clean.
+
+Markdown (this README, the changelog) is plain UTF-8 and needs none of this.
+
 ## Notes
 
 - Each decision uses its council attribute's vanilla icon — **Martial** (crossed swords) for
