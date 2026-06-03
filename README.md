@@ -4,9 +4,9 @@ Elite Recruitment adds court decisions that let you spend a mix of **Gold** and 
 secondary currency — **Prestige** for the secular advisors, **Piety** for the court chaplain —
 to bring an elite, ready-made specialist into your court:
 
-- **Recruit Elite Male Commander** / **Recruit Elite Female Commander**
+- **Recruit Elite Male Marshal** / **Recruit Elite Female Marshal**
 - **Recruit Elite Steward** / **Recruit Elite Stewardess**
-- **Recruit Elite Male Diplomat** / **Recruit Elite Female Diplomat**
+- **Recruit Elite Male Chancellor** / **Recruit Elite Female Chancellor**
 - **Recruit Elite Male Spymaster** / **Recruit Elite Female Spymaster**
 - **Recruit Elite Male Chaplain** / **Recruit Elite Female Chaplain**
 
@@ -14,7 +14,7 @@ to bring an elite, ready-made specialist into your court:
 
 Crusader Kings II's vanilla **Promote Commander** decision can already turn up a strong —
 even legendary — commander. Elite Recruitment delivers that same high-end commander, and
-extends the idea to **stewards**, **diplomats**, **spymasters**, and a **court chaplain**:
+extends the idea to **stewards**, **chancellors**, **spymasters**, and a **court chaplain**:
 vanilla's "Invite Noble to Court" only brings in an ordinary courtier, so a *guaranteed
 elite* specialist in any of those roles has no real vanilla counterpart. Each comes with a
 clean, deliberate **male vs. female** choice instead of leaving the recruit's gender up to
@@ -24,7 +24,7 @@ the game:
 - The **female** decision appears for realms whose laws or faith support women holding that
   post. A brought-in courtier is unrelated and unlanded, and for most roles vanilla only
   seats such a woman on the council (or in command) under full gender equality (or an
-  equal/matriarchal faith) — so the Female Commander, Stewardess, and Diplomat share that
+  equal/matriarchal faith) — so the Female Marshal, Stewardess, and Chancellor share that
   gate. The **Female Spymaster** is available more widely (pagan-group realms and the
   Cathar/Messalian faiths allow it without those laws), while the **chaplain** is gated by
   faith instead: a court chaplain must belong to a religion that ordains the recruit's sex,
@@ -33,16 +33,21 @@ the game:
 
 So you choose the recruit that fits your realm, rather than the game choosing for you.
 
+On arrival, a pop-up offers to **seat the recruit in their council role on the spot**,
+replacing the current officeholder if the seat is filled. A Marshal can instead be given an
+**army command**, and a Court Chaplain can be made **court physician** (The Reaper's Due) or
+**court tutor** (Conclave) when suited.
+
 ## The recruits
 
-**Commanders** are elite tacticians — guaranteed a large **Martial** boost (plus a smaller
+**Marshals** are elite tacticians — guaranteed a large **Martial** boost (plus a smaller
 lift to their other skills), the **Brilliant Strategist** education, and a **battlefield
 leadership** trait (defensive leader, flanker, siege leader, etc.).
 
 **Stewards** are elite administrators — guaranteed a large **Stewardship** boost (plus a
 smaller lift to their other skills) and **Midas Touched**, the top stewardship education.
 
-**Diplomats** are elite envoys — guaranteed a large **Diplomacy** boost (plus a smaller lift
+**Chancellors** are elite envoys — guaranteed a large **Diplomacy** boost (plus a smaller lift
 to their other skills) and **Grey Eminence**, the top diplomacy education.
 
 **Spymasters** are elite intriguers — guaranteed a large **Intrigue** boost (plus a smaller
@@ -55,17 +60,17 @@ On top of that, every recruit gets a **weighted "flavor" roll** that adds a litt
 personality — tuned so it *adds* character without changing what they fundamentally are:
 
 - **Most of the time** you get something small and fitting — a touch more of their core
-  skill, or a relevant trait (Duelist, Hunter, or Strong for commanders; Administrator,
-  Architect, Gardener, or Temperate for stewards; Gregarious, Kind, or Honest for diplomats;
+  skill, or a relevant trait (Duelist, Hunter, or Strong for marshals; Administrator,
+  Architect, Gardener, or Temperate for stewards; Gregarious, Kind, or Honest for chancellors;
   Deceitful, Schemer, or Cynical for spymasters; Theologian, Mystic, Erudite, or Scholar for chaplains).
 - **Occasionally** something bigger or quirkier appears. These are intentionally rare, so
   your recruit almost always reads as "an excellent specialist," not a lottery prize.
-- **Rarely**, if you carry a bloodline that *inspires commanders*, a commander recruit can
+- **Rarely**, if you carry a bloodline that *inspires commanders*, a marshal recruit can
   be a **legendary, named hero** — a unique nickname and a stronger set of traits. Likewise,
   if your realm has a **wonder that inspires learning** (a great library, House of Wisdom),
   a chaplain recruit picks up extra scholarly traits.
 - Recruits also pick up **faith-appropriate touches** where they fit (a caste trait for
-  Indian religions, a zodiac sign for astrological faiths, and so on), and a commander may
+  Indian religions, a zodiac sign for astrological faiths, and so on), and a marshal may
   turn up a **holy-war veteran** trait matching their faith (Crusader, Mujahid, and the like).
 
 The baseline is always "a reliably excellent specialist"; the random flavor is the
@@ -88,8 +93,8 @@ Costs are tuned per council role, so each office has its own flavor:
 
 - **Steward** — pure coin: the heaviest gold cost, only a token Prestige.
 - **Spymaster** — more gold than Prestige.
-- **Commander** — balanced gold and Prestige.
-- **Diplomat** — more Prestige than gold.
+- **Marshal** — balanced gold and Prestige.
+- **Chancellor** — more Prestige than gold.
 - **Court Chaplain** — mostly Piety, with a little gold.
 
 **Gold** is charged as a **fraction of your yearly income** (so it scales with your realm), with
@@ -102,8 +107,8 @@ and mid realms, the floor is what you actually pay.
 |---|---|---|---|---|---|
 | Steward | 25% (12) | 50% (25) | 100% (50) | 200% (100) | 400% (200) |
 | Spymaster | 18.75% (10) | 37.5% (20) | 75% (40) | 150% (80) | 300% (160) |
-| Commander | 12.5% (8) | 25% (15) | 50% (30) | 100% (60) | 200% (120) |
-| Diplomat | 6.25% (5) | 12.5% (10) | 25% (20) | 50% (40) | 100% (80) |
+| Marshal | 12.5% (8) | 25% (15) | 50% (30) | 100% (60) | 200% (120) |
+| Chancellor | 6.25% (5) | 12.5% (10) | 25% (20) | 50% (40) | 100% (80) |
 | Court Chaplain | 6.25% (5) | 12.5% (10) | 25% (20) | 50% (40) | 100% (80) |
 
 **Secondary cost** — flat Prestige (secular advisors) or Piety (the chaplain):
@@ -112,8 +117,8 @@ and mid realms, the floor is what you actually pay.
 |---|---|---|---|---|---|---|
 | Steward | Prestige | 5 | 10 | 25 | 50 | 100 |
 | Spymaster | Prestige | 10 | 25 | 50 | 100 | 200 |
-| Commander | Prestige | 25 | 50 | 100 | 200 | 400 |
-| Diplomat | Prestige | 35 | 75 | 150 | 300 | 600 |
+| Marshal | Prestige | 25 | 50 | 100 | 200 | 400 |
+| Chancellor | Prestige | 35 | 75 | 150 | 300 | 600 |
 | Court Chaplain | Piety | 35 | 75 | 150 | 300 | 600 |
 
 ## Requirements
@@ -123,12 +128,12 @@ and mid realms, the floor is what you actually pay.
 Several optional flourishes appear only if you own the relevant DLC. Without it, that content
 is simply skipped — the mod still works:
 
-- **Holy Fury** — legendary, named commanders (when the ruler carries an *inspire commanders*
+- **Holy Fury** — legendary, named marshals (when the ruler carries an *inspire commanders*
   bloodline), warrior-lodge sponsorship and the lodge's command trait, and faith flavor
   (zodiac signs, reformed-pagan traits).
 - **Jade Dragon** — Chinese "Way of the…" commander traits for Chinese-culture realms.
 - **Rajas of India** — Indian flavor: a caste trait and the *War Elephant Leader* trait.
-- **The Reaper's Due** — the rare *One-Eyed* commander flourish.
+- **The Reaper's Due** — the rare *One-Eyed* marshal flourish.
 
 ## Installation
 
@@ -170,11 +175,10 @@ overhaul is replacing the decisions folder and loading after this mod.
 
 ## Notes
 
-- The decisions reuse vanilla icons as placeholders — the "Employ Soldier" icon for
-  commanders, the "Employ Steward"/"Employ Stewardess" icons for stewards, the **Diplomacy**
-  attribute icon (a sealed scroll) for diplomats, the **Intrigue** attribute icon (a dagger)
-  for spymasters, and the **Learning** attribute icon (an open book) for chaplains. Custom
-  icons are planned. They'll automatically use a 4K-UI mod's higher-res icons (e.g.
+- Each decision uses its council attribute's vanilla icon — **Martial** (crossed swords) for
+  marshals, **Stewardship** for stewards, **Diplomacy** (a sealed scroll) for chancellors,
+  **Intrigue** (a dagger) for spymasters, and **Learning** (an open book) for chaplains.
+  Bespoke art is planned. They'll automatically use a 4K-UI mod's higher-res icons (e.g.
   Proper4KUI) if one is installed.
 
 ## License

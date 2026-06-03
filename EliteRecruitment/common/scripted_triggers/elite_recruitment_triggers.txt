@@ -15,8 +15,8 @@ realm_allows_female_courtiers_trigger = {
   }
 }
 
-# Whether the Elite Recruitment commander decisions are enabled (game-rule gate)
-elite_recruitment_commanders_enabled_trigger = {
+# Whether the Elite Recruitment marshal decisions are enabled (game-rule gate)
+elite_recruitment_marshals_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
@@ -25,8 +25,8 @@ elite_recruitment_stewards_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
-# Whether the Elite Recruitment diplomat decisions are enabled (game-rule gate)
-elite_recruitment_diplomats_enabled_trigger = {
+# Whether the Elite Recruitment chancellor decisions are enabled (game-rule gate)
+elite_recruitment_chancellors_enabled_trigger = {
   NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
 }
 
@@ -59,7 +59,7 @@ in_warrior_lodge_trigger = {
 # checks: scaled_wealth (income fraction) and wealth (the firm floor). The secondary
 # currency check matches the role. Modicum is the default and rule-absent fallback.
 
-elite_recruitment_commander_can_afford_trigger = {
+elite_recruitment_marshal_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
     scaled_wealth = 0.125
@@ -123,7 +123,7 @@ elite_recruitment_steward_can_afford_trigger = {
   }
 }
 
-elite_recruitment_diplomat_can_afford_trigger = {
+elite_recruitment_chancellor_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
     scaled_wealth = 0.0625

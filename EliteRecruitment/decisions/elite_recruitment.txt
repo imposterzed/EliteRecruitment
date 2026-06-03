@@ -7,38 +7,36 @@
 
 decisions = {
 
-  # Recruit male commander
-  recruit_male_elite_commander = {
+  # Recruit male marshal
+  recruit_male_elite_marshal = {
     ai = no
 
     potential = {
-      elite_recruitment_commanders_enabled_trigger = yes
+      elite_recruitment_marshals_enabled_trigger = yes
       NOT = { has_religion_feature = religion_matriarchal }
-      NOT = { has_law = enatic_succession }
-      NOT = { has_law = enatic_cognatic_succession }
     }
 
     allow = {
-      elite_recruitment_commander_can_afford_trigger = yes
+      elite_recruitment_marshal_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_commander_cost = yes
+      pay_elite_marshal_cost = yes
 
       custom_tooltip = {
-        text = promoted_commander_TT
+        text = recruit_marshal_TT
 
-        create_male_soldier_dynasty_lottery = yes
+        create_male_marshal_dynasty_lottery = yes
 
         new_character = {
           assign_random_adult_age = yes
-          assign_commander_base_attributes = yes
-          assign_commander_traits = yes
+          assign_marshal_base_attributes = yes
+          assign_marshal_traits = yes
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -46,12 +44,12 @@ decisions = {
     }
   }
 
-  # Recruit female commander
-  recruit_female_elite_commander = {
+  # Recruit female marshal
+  recruit_female_elite_marshal = {
     ai = no
 
     potential = {
-      elite_recruitment_commanders_enabled_trigger = yes
+      elite_recruitment_marshals_enabled_trigger = yes
       OR = {
         realm_allows_female_courtiers_trigger = yes
         has_law = status_of_women_4
@@ -59,26 +57,26 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_commander_can_afford_trigger = yes
+      elite_recruitment_marshal_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_commander_cost = yes
+      pay_elite_marshal_cost = yes
 
       custom_tooltip = {
-        text = promoted_commander_TT
+        text = recruit_marshal_TT
 
-        create_female_soldier_dynasty_lottery = yes
+        create_female_marshal_dynasty_lottery = yes
 
         new_character = {
           assign_random_adult_age = yes
-          assign_commander_base_attributes = yes
-          assign_commander_traits = yes
+          assign_marshal_base_attributes = yes
+          assign_marshal_traits = yes
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -115,7 +113,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -155,7 +153,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -163,36 +161,36 @@ decisions = {
     }
   }
 
-  # Recruit elite diplomat (male)
-  recruit_male_elite_diplomat = {
+  # Recruit elite chancellor (male)
+  recruit_male_elite_chancellor = {
     ai = no
 
     potential = {
-      elite_recruitment_diplomats_enabled_trigger = yes
+      elite_recruitment_chancellors_enabled_trigger = yes
       NOT = { has_religion_feature = religion_matriarchal }
     }
 
     allow = {
-      elite_recruitment_diplomat_can_afford_trigger = yes
+      elite_recruitment_chancellor_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_diplomat_cost = yes
+      pay_elite_chancellor_cost = yes
 
       custom_tooltip = {
-        text = recruit_diplomat_TT
+        text = recruit_chancellor_TT
 
-        create_male_diplomat_dynasty_lottery = yes
+        create_male_chancellor_dynasty_lottery = yes
 
         new_character = {
           assign_random_adult_age = yes
-          assign_diplomat_base_attributes = yes
-          assign_diplomat_traits = yes
+          assign_chancellor_base_attributes = yes
+          assign_chancellor_traits = yes
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -200,12 +198,12 @@ decisions = {
     }
   }
 
-  # Recruit elite diplomat (female)
-  recruit_female_elite_diplomat = {
+  # Recruit elite chancellor (female)
+  recruit_female_elite_chancellor = {
     ai = no
 
     potential = {
-      elite_recruitment_diplomats_enabled_trigger = yes
+      elite_recruitment_chancellors_enabled_trigger = yes
       OR = {
         realm_allows_female_courtiers_trigger = yes
         has_law = status_of_women_4
@@ -213,26 +211,26 @@ decisions = {
     }
 
     allow = {
-      elite_recruitment_diplomat_can_afford_trigger = yes
+      elite_recruitment_chancellor_can_afford_trigger = yes
       in_seclusion = no
     }
 
     effect = {
-      pay_elite_diplomat_cost = yes
+      pay_elite_chancellor_cost = yes
 
       custom_tooltip = {
-        text = recruit_diplomat_TT
+        text = recruit_chancellor_TT
 
-        create_female_diplomat_dynasty_lottery = yes
+        create_female_chancellor_dynasty_lottery = yes
 
         new_character = {
           assign_random_adult_age = yes
-          assign_diplomat_base_attributes = yes
-          assign_diplomat_traits = yes
+          assign_chancellor_base_attributes = yes
+          assign_chancellor_traits = yes
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -269,7 +267,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -318,7 +316,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -358,7 +356,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {
@@ -400,7 +398,7 @@ decisions = {
         }
       }
 
-      character_event = { id = NE.1 }
+      character_event = { id = ER.1 }
     }
 
     ai_will_do = {

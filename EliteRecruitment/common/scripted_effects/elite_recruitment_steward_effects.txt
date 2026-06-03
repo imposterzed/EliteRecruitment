@@ -91,7 +91,7 @@ assign_steward_traits = {
   assign_steward_flavor = yes
   assign_religion_traits = yes
 
-  set_character_flag = invited_steward
+  set_character_flag = elite_recruit_steward
   save_event_target_as = invited_character
 }
 

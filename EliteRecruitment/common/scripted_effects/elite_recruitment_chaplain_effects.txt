@@ -86,14 +86,13 @@ assign_chaplain_base_attributes = {
 
 # Assign the chaplain traits to the base character (orchestrator)
 assign_chaplain_traits = {
-  set_character_flag = elite_recruit_clergy   # makes the shared assign_religion_traits grant the brahmin (priest) caste
+  set_character_flag = elite_recruit_chaplain   # set first so the shared assign_religion_traits grants the brahmin (priest) caste; also the chaplain's recruit marker
   remove_chaplain_negative_traits = yes
   set_elite_chaplain_education = yes
   assign_chaplain_flavor = yes
   assign_chaplain_wonder_bonus = yes
   assign_religion_traits = yes
 
-  set_character_flag = invited_chaplain
   save_event_target_as = invited_character
 }
 
@@ -196,7 +195,7 @@ assign_chaplain_flavor = {
 
 # If the ruler owns a wonder/upgrade that inspires learning (a great library, House of
 # Wisdom, etc.), the chaplain recruit is enhanced -- the scholarly counterpart to the
-# commander's inspire-commanders bloodline bonus. The top education (mastermind_theologian)
+# marshal's inspire-commanders bloodline bonus. The top education (mastermind_theologian)
 # is already guaranteed, so this grants the other learning boons vanilla's employ_priest
 # rolls there.
 assign_chaplain_wonder_bonus = {

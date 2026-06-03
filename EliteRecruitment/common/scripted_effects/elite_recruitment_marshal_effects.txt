@@ -1,12 +1,12 @@
 ##################################################
-##       Elite Recruitment Soldier Helpers      ##
+##       Elite Recruitment Marshal Helpers      ##
 ##################################################
-## Soldier helper effects to add flavor to the  ##
+## Marshal helper effects to add flavor to the  ##
 ## Elite Recruitment mod.                       ##
 ##################################################
 
-# Create male soldier in your culture and religion with dynasty lottery
-create_male_soldier_dynasty_lottery = {
+# Create male marshal in your culture and religion with dynasty lottery
+create_male_marshal_dynasty_lottery = {
   random_list = {
     # New random house
     33 = { create_random_soldier = {
@@ -40,8 +40,8 @@ create_male_soldier_dynasty_lottery = {
   }
 }
 
-# Create female soldier in your culture and religion with dynasty lottery
-create_female_soldier_dynasty_lottery = {
+# Create female marshal in your culture and religion with dynasty lottery
+create_female_marshal_dynasty_lottery = {
   random_list = {
     # New random house
     33 = { create_random_soldier = {
@@ -75,8 +75,8 @@ create_female_soldier_dynasty_lottery = {
   }
 }
 
-# Assign the base commander attributes to the base character
-assign_commander_base_attributes = {
+# Assign the base marshal attributes to the base character
+assign_marshal_base_attributes = {
   change_martial = 12
   change_diplomacy = 4
   change_intrigue = 4
@@ -84,31 +84,31 @@ assign_commander_base_attributes = {
   change_stewardship = 4
 }
 
-# Assign the commander traits to the base character (orchestrator)
-assign_commander_traits = {
-  remove_commander_negative_traits = yes
-  set_elite_commander_education = yes
+# Assign the marshal traits to the base character (orchestrator)
+assign_marshal_traits = {
+  remove_marshal_negative_traits = yes
+  set_elite_marshal_education = yes
   remove_existing_leadership_traits = yes
-  assign_commander_leadership_trait = yes
-  assign_elite_chinese_commander_trait = yes
-  assign_commander_warrior_lodge = yes
-  assign_commander_flavor = yes
-  assign_commander_legendary_chance = yes
+  assign_marshal_leadership_trait = yes
+  assign_elite_chinese_marshal_trait = yes
+  assign_marshal_warrior_lodge = yes
+  assign_marshal_flavor = yes
+  assign_marshal_legendary_chance = yes
   assign_religion_traits = yes
-  assign_commander_crusade_trait = yes
+  assign_marshal_crusade_trait = yes
 
-  set_character_flag = invited_soldier
+  set_character_flag = elite_recruit_marshal
   save_event_target_as = invited_character
 }
 
-# Remove physical/martial drawbacks unbecoming of an elite commander
-remove_commander_negative_traits = {
+# Remove physical/martial drawbacks unbecoming of an elite marshal
+remove_marshal_negative_traits = {
   remove_trait = weak
   remove_trait = slow
   remove_trait = imbecile
   remove_trait = dull
   remove_trait = dwarf
-  # giant not stripped -- net-positive for a commander (combat rating)
+  # giant not stripped -- net-positive for a marshal (combat rating)
   remove_trait = hunchback
   remove_trait = clubfooted
   remove_trait = craven
@@ -120,7 +120,7 @@ remove_commander_negative_traits = {
   remove_lifestyle_trait_effect = yes
 }
 
-# Strip any leadership trait the base soldier was generated with, so our curated roll is the
+# Strip any leadership trait the base marshal was generated with, so our curated roll is the
 # only standard leadership trait and there's room for a bonus (cap is 2). remove_trait on an
 # absent trait is a no-op; build-renamed traits are cleared via the trait_compat utility.
 remove_existing_leadership_traits = {
@@ -163,14 +163,14 @@ remove_existing_leadership_traits = {
 }
 
 # Guaranteed top martial education
-set_elite_commander_education = {
+set_elite_marshal_education = {
   clear_education_trait = yes
   add_trait = brilliant_strategist
 }
 
 # Roll one leadership trait, grouped by the wiki's categories.
 # Build-specific IDs go through the trait_compat hooks.
-assign_commander_leadership_trait = {
+assign_marshal_leadership_trait = {
   random_list = {
     # General
     10 = { add_trait = aggressive_leader } # Aggressive Leader
@@ -205,7 +205,7 @@ assign_commander_leadership_trait = {
 
 # Chinese (Jade Dragon) bonus: a Chinese-culture recruit has a ~50% chance at a second
 # leadership trait (the cap is MAX_LEADERSHIP_TRAITS = 2), as vanilla grants these.
-assign_elite_chinese_commander_trait = {
+assign_elite_chinese_marshal_trait = {
   if = {
     limit = {
       has_dlc = "Jade Dragon"
@@ -223,7 +223,7 @@ assign_elite_chinese_commander_trait = {
 
 # If the recruiting ruler belongs to a warrior lodge, sponsor the recruit into it,
 # with a 25% chance they have already earned the lodge's command trait.
-assign_commander_warrior_lodge = {
+assign_marshal_warrior_lodge = {
   if = {
     limit = { ROOT = { in_warrior_lodge_trigger = yes } }
     ROOT = { society = { save_event_target_as = elite_ruler_lodge } }
@@ -256,7 +256,7 @@ assign_commander_warrior_lodge = {
 
 # Small chance the recruit is a holy-war veteran, with the trait matching their faith.
 # Dharmic faiths have no such trait, so they are excluded.
-assign_commander_crusade_trait = {
+assign_marshal_crusade_trait = {
   if = {
     limit = { has_dharmic_religion_trigger = no }
     random = {
@@ -267,7 +267,7 @@ assign_commander_crusade_trait = {
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_commander_flavor = {
+assign_marshal_flavor = {
   random_list = {
     30 = {
       assign_elite_physique_trait = yes
@@ -307,8 +307,8 @@ assign_commander_flavor = {
   }
 }
 
-# Small chance of a legendary, named commander if the ruler owns an inspire-commanders bloodline
-assign_commander_legendary_chance = {
+# Small chance of a legendary, named marshal if the ruler owns an inspire-commanders bloodline
+assign_marshal_legendary_chance = {
   if = {
     limit = {  ROOT = {
       any_owned_bloodline = {
@@ -319,7 +319,7 @@ assign_commander_legendary_chance = {
     random_list = {
       95 = {}
       5 = {
-        assign_legendary_commander = yes
+        assign_legendary_marshal = yes
         opinion = {
           modifier = opinion_legendary_commander
           years = 50
@@ -330,8 +330,8 @@ assign_commander_legendary_chance = {
   }
 }
 
-# Assign the as a legendary commander per common/scripted_effects/00_scripted_effects.txt
-assign_legendary_commander = {
+# Assign the as a legendary marshal per common/scripted_effects/00_scripted_effects.txt
+assign_legendary_marshal = {
   random_list = {
     20 = {
       add_trait = giant

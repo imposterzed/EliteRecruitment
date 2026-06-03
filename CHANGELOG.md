@@ -9,6 +9,40 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-06-02
+
+### Added
+- **Council-appointment arrival event.** When an elite recruit arrives, a mod-owned pop-up
+  now offers to seat them in their council role on the spot — Marshal, Chancellor, Steward,
+  Spymaster, or Court Chaplain — dismissing the current officeholder first if the seat is
+  filled (the appoint button warns when it will replace a sitting officeholder). A Marshal can
+  also be granted an army command, and a Court Chaplain can be made court physician (The
+  Reaper's Due) or court tutor (Conclave) when suited. Replaces the borrowed vanilla `NE.1`
+  notification with the mod's own `ER.1` event.
+
+### Changed
+- **The martial recruit is now the Marshal and the diplomacy recruit is now the Chancellor.**
+  Both were renamed to match their council seat (joining the Steward, Spymaster, and Chaplain)
+  across decisions, scripted effects, triggers, GFX sprite names, and localisation (EN/FR/DE/ES);
+  the scripted-effects files are now `elite_recruitment_marshal_effects.txt` and
+  `elite_recruitment_chancellor_effects.txt`. Decision descriptions keep "commander" and
+  "diplomat" as trade descriptors.
+- **Per-recruit marker flags standardized to `elite_recruit_<role>`** (were `invited_soldier`,
+  `invited_diplomat`, `invited_steward`, `invited_spymaster`, `invited_chaplain`); the
+  `elite_recruit_clergy` caste flag is folded into `elite_recruit_chaplain`. The shared
+  `save_event_target_as = invited_character` target the arrival event reads is unchanged.
+- **Marshal and Steward decisions now use their council-attribute icon** (Martial,
+  Stewardship), matching the Chancellor, Spymaster, and Chaplain — replacing the old "Employ
+  Soldier" / "Employ Steward" decision icons.
+
+### Fixed
+- **Male Marshal no longer over-gated by succession law.** Dropped the `enatic_succession` /
+  `enatic_cognatic_succession` exclusions from the male decision — succession law governs
+  title inheritance, not the marshal seat (vanilla `can_be_marshal_trigger` has no such clause).
+  The `NOT matriarchal` gate is kept.
+- **Marshal tooltip is now mod-owned** — replaced the borrowed vanilla `promoted_commander_TT`
+  ("A soldier appears…") with `recruit_marshal_TT` ("A marshal appears…").
+
 ## [0.10.0] - 2026-06-01
 
 ### Changed

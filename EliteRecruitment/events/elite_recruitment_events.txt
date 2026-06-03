@@ -1,0 +1,340 @@
+namespace = ER
+
+##################################################
+##           Elite Recruitment Events           ##
+##################################################
+## The recruit-arrival pop-up: offers to seat   ##
+## the new recruit in their council role.       ##
+##################################################
+
+# Fired on the recruiting ruler by every recruit decision, after the recruit is
+# created and saved as event_target:invited_character. The recruit carries an
+# elite_recruit_<role> flag, so only that role's options show. If a seat is
+# already filled the current holder is dismissed first; the dismissal portrait
+# and penalty only render when someone actually holds the job. The bonus minor
+# titles only appear when a slot is free.
+character_event = {
+	id = ER.1
+	desc = EVTDESC_ER_1
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	# --- Seat them in their council role (dismisses the current holder first if filled) ---
+
+	option = {
+		name = {
+			text = ER_1_marshal_replace
+			trigger = {
+				OR = {
+					any_courtier = { has_job_title = job_marshal }
+					any_vassal = { has_job_title = job_marshal }
+				}
+			}
+		}
+		name = {
+			text = ER_1_marshal
+			trigger = {
+				NOR = {
+					any_courtier = { has_job_title = job_marshal }
+					any_vassal = { has_job_title = job_marshal }
+				}
+			}
+		}
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_marshal
+				can_be_marshal_trigger = yes
+			}
+		}
+		# If the seat is filled, dismiss the holder first; this block's portrait and
+		# penalty only render when someone actually holds the job, so an empty seat stays clean.
+		if = {
+			limit = { any_courtier = { has_job_title = job_marshal } }
+			custom_tooltip = { text = ER_1_replace }
+			any_courtier = {
+				limit = { has_job_title = job_marshal }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_marshal
+			}
+		}
+		if = {
+			limit = { any_vassal = { has_job_title = job_marshal } }
+			custom_tooltip = { text = ER_1_replace }
+			any_vassal = {
+				limit = { has_job_title = job_marshal }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_marshal
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_job_title = job_marshal
+		}
+	}
+
+	option = {
+		name = {
+			text = ER_1_chancellor_replace
+			trigger = {
+				OR = {
+					any_courtier = { has_job_title = job_chancellor }
+					any_vassal = { has_job_title = job_chancellor }
+				}
+			}
+		}
+		name = {
+			text = ER_1_chancellor
+			trigger = {
+				NOR = {
+					any_courtier = { has_job_title = job_chancellor }
+					any_vassal = { has_job_title = job_chancellor }
+				}
+			}
+		}
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_chancellor
+				can_be_chancellor_trigger = yes
+			}
+		}
+		# If the seat is filled, dismiss the holder first; this block's portrait and
+		# penalty only render when someone actually holds the job, so an empty seat stays clean.
+		if = {
+			limit = { any_courtier = { has_job_title = job_chancellor } }
+			custom_tooltip = { text = ER_1_replace }
+			any_courtier = {
+				limit = { has_job_title = job_chancellor }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_chancellor
+			}
+		}
+		if = {
+			limit = { any_vassal = { has_job_title = job_chancellor } }
+			custom_tooltip = { text = ER_1_replace }
+			any_vassal = {
+				limit = { has_job_title = job_chancellor }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_chancellor
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_job_title = job_chancellor
+		}
+	}
+
+	option = {
+		name = {
+			text = ER_1_steward_replace
+			trigger = {
+				OR = {
+					any_courtier = { has_job_title = job_treasurer }
+					any_vassal = { has_job_title = job_treasurer }
+				}
+			}
+		}
+		name = {
+			text = ER_1_steward
+			trigger = {
+				NOR = {
+					any_courtier = { has_job_title = job_treasurer }
+					any_vassal = { has_job_title = job_treasurer }
+				}
+			}
+		}
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_steward
+				can_be_treasurer_trigger = yes
+			}
+		}
+		# If the seat is filled, dismiss the holder first; this block's portrait and
+		# penalty only render when someone actually holds the job, so an empty seat stays clean.
+		if = {
+			limit = { any_courtier = { has_job_title = job_treasurer } }
+			custom_tooltip = { text = ER_1_replace }
+			any_courtier = {
+				limit = { has_job_title = job_treasurer }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_treasurer
+			}
+		}
+		if = {
+			limit = { any_vassal = { has_job_title = job_treasurer } }
+			custom_tooltip = { text = ER_1_replace }
+			any_vassal = {
+				limit = { has_job_title = job_treasurer }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_treasurer
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_job_title = job_treasurer
+		}
+	}
+
+	option = {
+		name = {
+			text = ER_1_spymaster_replace
+			trigger = {
+				OR = {
+					any_courtier = { has_job_title = job_spymaster }
+					any_vassal = { has_job_title = job_spymaster }
+				}
+			}
+		}
+		name = {
+			text = ER_1_spymaster
+			trigger = {
+				NOR = {
+					any_courtier = { has_job_title = job_spymaster }
+					any_vassal = { has_job_title = job_spymaster }
+				}
+			}
+		}
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_spymaster
+				can_be_spymaster_trigger = yes
+			}
+		}
+		# If the seat is filled, dismiss the holder first; this block's portrait and
+		# penalty only render when someone actually holds the job, so an empty seat stays clean.
+		if = {
+			limit = { any_courtier = { has_job_title = job_spymaster } }
+			custom_tooltip = { text = ER_1_replace }
+			any_courtier = {
+				limit = { has_job_title = job_spymaster }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_spymaster
+			}
+		}
+		if = {
+			limit = { any_vassal = { has_job_title = job_spymaster } }
+			custom_tooltip = { text = ER_1_replace }
+			any_vassal = {
+				limit = { has_job_title = job_spymaster }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_spymaster
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_job_title = job_spymaster
+		}
+	}
+
+	option = {
+		name = {
+			text = ER_1_chaplain_replace
+			trigger = {
+				OR = {
+					any_courtier = { has_job_title = job_spiritual }
+					any_vassal = { has_job_title = job_spiritual }
+				}
+			}
+		}
+		name = {
+			text = ER_1_chaplain
+			trigger = {
+				NOR = {
+					any_courtier = { has_job_title = job_spiritual }
+					any_vassal = { has_job_title = job_spiritual }
+				}
+			}
+		}
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_chaplain
+				can_be_spiritual_trigger = yes
+			}
+		}
+		# If the seat is filled, dismiss the holder first; this block's portrait and
+		# penalty only render when someone actually holds the job, so an empty seat stays clean.
+		if = {
+			limit = { any_courtier = { has_job_title = job_spiritual } }
+			custom_tooltip = { text = ER_1_replace }
+			any_courtier = {
+				limit = { has_job_title = job_spiritual }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_spiritual
+			}
+		}
+		if = {
+			limit = { any_vassal = { has_job_title = job_spiritual } }
+			custom_tooltip = { text = ER_1_replace }
+			any_vassal = {
+				limit = { has_job_title = job_spiritual }
+				opinion = { modifier = opinion_fired_from_council who = ROOT years = 5 }
+				remove_title = job_spiritual
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_job_title = job_spiritual
+		}
+	}
+
+	# --- Marshal bonus: a field command, only while a command slot is free (vanilla caps) ---
+	option = {
+		name = ER_1_command
+		trigger = {
+			event_target:invited_character = { has_character_flag = elite_recruit_marshal }
+			OR = {
+				AND = { tier = COUNT    NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
+				AND = { tier = DUKE     NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
+				AND = { tier = KING     is_nomadic = no  NOT = { any_realm_character = { count = 6 liege = { character = ROOT } has_minor_title = title_commander } } }
+				AND = { tier = EMPEROR  is_nomadic = no  NOT = { any_realm_character = { count = 8 liege = { character = ROOT } has_minor_title = title_commander } } }
+				AND = { tier = KING     is_nomadic = yes NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
+				AND = { tier = EMPEROR  is_nomadic = yes NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
+			}
+		}
+		event_target:invited_character = {
+			show_scope_change = no
+			give_minor_title = title_commander
+		}
+	}
+
+	# --- Chaplain bonus: court physician, if a trained physician and the post is open (Reaper's Due) ---
+	option = {
+		name = ER_1_physician
+		trigger = {
+			has_dlc = "Reapers"
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_chaplain
+				trait = physician
+			}
+			NOT = { any_realm_character = { liege = { character = ROOT } has_minor_title = title_court_physician } }
+		}
+		custom_tooltip = { text = ER_1_physician_suited }
+		event_target:invited_character = {
+			show_scope_change = no
+			give_minor_title = title_court_physician
+		}
+	}
+
+	# --- Chaplain bonus: court tutor, if a scholar and the post is open (Conclave; not theocracies) ---
+	option = {
+		name = ER_1_tutor
+		trigger = {
+			has_dlc = "Zeus"
+			is_theocracy = no
+			event_target:invited_character = {
+				has_character_flag = elite_recruit_chaplain
+				trait = scholar
+			}
+			NOT = { any_realm_character = { liege = { character = ROOT } has_minor_title = title_teacher } }
+		}
+		custom_tooltip = { text = ER_1_tutor_suited }
+		event_target:invited_character = {
+			show_scope_change = no
+			give_minor_title = title_teacher
+		}
+	}
+
+	# --- Decline: keep them on as a courtier ---
+	option = {
+		name = ER_1_welcome
+	}
+}

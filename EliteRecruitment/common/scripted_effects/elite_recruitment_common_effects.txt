@@ -51,10 +51,10 @@ assign_religion_traits = {
   if = {
     limit = { has_dharmic_religion_trigger = yes }
 
-    # Priest caste (brahmin) for a clergy recruit flagged elite_recruit_clergy (the chaplain);
+    # Priest caste (brahmin) for a clergy recruit flagged elite_recruit_chaplain (the chaplain);
     # the warrior caste (kshatriya) for everyone else.
     if = {
-      limit = { has_character_flag = elite_recruit_clergy }
+      limit = { has_character_flag = elite_recruit_chaplain }
       add_trait = brahmin
     }
     else = {
@@ -96,7 +96,7 @@ assign_religion_traits = {
 # Piety for the chaplain. Modicum is the default tier and the rule-absent fallback.
 
 # Marshal: balanced gold and Prestige.
-pay_elite_commander_cost = {
+pay_elite_marshal_cost = {
   if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
     scaled_wealth = { value = -0.125 min = -8 }
@@ -152,7 +152,7 @@ pay_elite_steward_cost = {
 }
 
 # Chancellor: light gold, heaviest Prestige.
-pay_elite_diplomat_cost = {
+pay_elite_chancellor_cost = {
   if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
     scaled_wealth = { value = -0.0625 min = -5 }

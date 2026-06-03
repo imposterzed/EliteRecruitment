@@ -91,7 +91,7 @@ assign_spymaster_traits = {
   assign_spymaster_flavor = yes
   assign_religion_traits = yes
 
-  set_character_flag = invited_spymaster
+  set_character_flag = elite_recruit_spymaster
   save_event_target_as = invited_character
 }
 

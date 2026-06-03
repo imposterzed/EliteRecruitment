@@ -9,32 +9,32 @@ spriteTypes = {
 	# EliteRecruitment/gfx/interface/ and repoint the texturefile below.
 
 	spriteType = {
-		name = "GFX_recruit_male_elite_commander"
-		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
+		name = "GFX_recruit_male_elite_marshal"
+		texturefile = "gfx\\interface\\icon_martial.dds"
 	}
 
 	spriteType = {
-		name = "GFX_recruit_female_elite_commander"
-		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
+		name = "GFX_recruit_female_elite_marshal"
+		texturefile = "gfx\\interface\\icon_martial.dds"
 	}
 
 	spriteType = {
 		name = "GFX_recruit_male_elite_steward"
-		texturefile = "gfx\\interface\\decision_icon_employ_steward.dds"
+		texturefile = "gfx\\interface\\icon_stewardship.dds"
 	}
 
 	spriteType = {
 		name = "GFX_recruit_female_elite_steward"
-		texturefile = "gfx\\interface\\decision_icon_employ_stewardess.dds"
+		texturefile = "gfx\\interface\\icon_stewardship.dds"
 	}
 
 	spriteType = {
-		name = "GFX_recruit_male_elite_diplomat"
+		name = "GFX_recruit_male_elite_chancellor"
 		texturefile = "gfx\\interface\\icon_diplomacy.dds"
 	}
 
 	spriteType = {
-		name = "GFX_recruit_female_elite_diplomat"
+		name = "GFX_recruit_female_elite_chancellor"
 		texturefile = "gfx\\interface\\icon_diplomacy.dds"
 	}
 

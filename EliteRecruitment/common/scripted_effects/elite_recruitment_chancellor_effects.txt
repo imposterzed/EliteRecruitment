@@ -5,8 +5,8 @@
 ## Elite Recruitment mod.                       ##
 ##################################################
 
-# Create male diplomat in your culture and religion with dynasty lottery
-create_male_diplomat_dynasty_lottery = {
+# Create male chancellor in your culture and religion with dynasty lottery
+create_male_chancellor_dynasty_lottery = {
   random_list = {
     # New random house
     33 = { create_random_diplomat = {
@@ -40,8 +40,8 @@ create_male_diplomat_dynasty_lottery = {
   }
 }
 
-# Create female diplomat in your culture and religion with dynasty lottery
-create_female_diplomat_dynasty_lottery = {
+# Create female chancellor in your culture and religion with dynasty lottery
+create_female_chancellor_dynasty_lottery = {
   random_list = {
     # New random house
     33 = { create_random_diplomat = {
@@ -75,8 +75,8 @@ create_female_diplomat_dynasty_lottery = {
   }
 }
 
-# Assign the base diplomat attributes to the base character
-assign_diplomat_base_attributes = {
+# Assign the base chancellor attributes to the base character
+assign_chancellor_base_attributes = {
   change_diplomacy = 12
   change_learning = 4
   change_stewardship = 4
@@ -84,19 +84,19 @@ assign_diplomat_base_attributes = {
   change_martial = 4
 }
 
-# Assign the diplomat traits to the base character (orchestrator)
-assign_diplomat_traits = {
-  remove_diplomat_negative_traits = yes
-  set_elite_diplomat_education = yes
-  assign_diplomat_flavor = yes
+# Assign the chancellor traits to the base character (orchestrator)
+assign_chancellor_traits = {
+  remove_chancellor_negative_traits = yes
+  set_elite_chancellor_education = yes
+  assign_chancellor_flavor = yes
   assign_religion_traits = yes
 
-  set_character_flag = invited_diplomat
+  set_character_flag = elite_recruit_chancellor
   save_event_target_as = invited_character
 }
 
-# Remove social and physical drawbacks unbecoming of an elite diplomat
-remove_diplomat_negative_traits = {
+# Remove social and physical drawbacks unbecoming of an elite chancellor
+remove_chancellor_negative_traits = {
   # spawn_fantastic_diplomat removals
   remove_trait = weak
   remove_trait = slow
@@ -119,13 +119,13 @@ remove_diplomat_negative_traits = {
 }
 
 # Guaranteed top diplomacy education
-set_elite_diplomat_education = {
+set_elite_chancellor_education = {
   clear_education_trait = yes
   add_trait = grey_eminence
 }
 
-# Weighted "flavor" roll for diplomats
-assign_diplomat_flavor = {
+# Weighted "flavor" roll for chancellors
+assign_chancellor_flavor = {
   random_list = {
     # spawn_fantastic_diplomat flavor
     5 = {
