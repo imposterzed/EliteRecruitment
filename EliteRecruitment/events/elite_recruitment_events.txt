@@ -3,8 +3,12 @@ namespace = ER
 ##################################################
 ##           Elite Recruitment Events           ##
 ##################################################
-## The recruit-arrival pop-up: offers to seat   ##
-## the new recruit in their council role.       ##
+## ER.1 = recruit-arrival pop-up, offering to   ##
+## seat the new recruit on their council.       ##
+## ER.10/11/12/13/14 = the Recruit an Elite     ##
+## Specialist decision's menu chain (gender,    ##
+## then role; ER.13/14 are page 2 when all      ##
+## five roles are simultaneously visible).      ##
 ##################################################
 
 # Fired on the recruiting ruler by every recruit decision, after the recruit is
@@ -336,5 +340,512 @@ character_event = {
 	# --- Decline: keep them on as a courtier ---
 	option = {
 		name = ER_1_welcome
+	}
+}
+
+# Menu events: Recruit an Elite Specialist
+# ER.10 = gender picker; ER.11 / ER.12 = per-sex job pickers. The decision
+# opens ER.10 when both sexes have eligible roles, else it auto-skips
+# directly to ER.11 (male) or ER.12 (female).
+
+# ER.10 -- Gender picker. Only fired when both sexes have at least one
+# eligible role; the decision auto-skips this event otherwise. No per-option
+# trigger needed: the auto-skip guarantees both options have a populated
+# menu to lead to when ER.10 fires.
+character_event = {
+	id = ER.10
+	desc = EVTDESC_ER_10
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	option = {
+		name = ER_10_male
+		character_event = { id = ER.11 }
+	}
+
+	option = {
+		name = ER_10_female
+		character_event = { id = ER.12 }
+	}
+
+	option = {
+		name = ER_10_cancel
+	}
+}
+
+# ER.11 -- Male role picker. One event handles both single-page (<=4 roles
+# visible) and paginated (all 5 visible) layouts: Spymaster and Chaplain hide
+# here when all 5 would be visible at once (deferred to ER.13), and the
+# "Or perhaps another..." button appears in their place. Otherwise the visible
+# roles show directly with no nav button. Roles list in council order
+# (Chancellor, Marshal, Steward, Spymaster, Chaplain). Marshal/Steward/Chancellor
+# /Spymaster share the "NOT matriarchal" sex-gate; the chaplain uses the
+# faith-ordination gate instead, independent of liege patriarchy.
+character_event = {
+	id = ER.11
+	desc = EVTDESC_ER_11
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	# Chancellor
+	option = {
+		name = ER_11_chancellor
+		trigger = {
+			NOT = { has_religion_feature = religion_matriarchal }
+			elite_recruitment_chancellor_can_afford_trigger = yes
+		}
+
+		pay_elite_chancellor_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chancellor_TT
+
+			create_male_chancellor_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chancellor_base_attributes = yes
+				assign_chancellor_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Marshal
+	option = {
+		name = ER_11_marshal
+		trigger = {
+			NOT = { has_religion_feature = religion_matriarchal }
+			elite_recruitment_marshal_can_afford_trigger = yes
+		}
+
+		pay_elite_marshal_cost = yes
+
+		custom_tooltip = {
+			text = recruit_marshal_TT
+
+			create_male_marshal_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_marshal_base_attributes = yes
+				assign_marshal_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Steward
+	option = {
+		name = ER_11_steward
+		trigger = {
+			NOT = { has_religion_feature = religion_matriarchal }
+			elite_recruitment_steward_can_afford_trigger = yes
+		}
+
+		pay_elite_steward_cost = yes
+
+		custom_tooltip = {
+			text = recruit_steward_TT
+
+			create_male_steward_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_steward_base_attributes = yes
+				assign_steward_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Spymaster -- hidden when all 5 are visible (deferred to ER.13)
+	option = {
+		name = ER_11_spymaster
+		trigger = {
+			NOT = { has_religion_feature = religion_matriarchal }
+			elite_recruitment_spymaster_can_afford_trigger = yes
+			NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
+		}
+
+		pay_elite_spymaster_cost = yes
+
+		custom_tooltip = {
+			text = recruit_spymaster_TT
+
+			create_male_spymaster_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_spymaster_base_attributes = yes
+				assign_spymaster_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Chaplain -- faith-ordination, not liege patriarchy. Hidden when all 5
+	# are visible (deferred to ER.13).
+	option = {
+		name = ER_11_chaplain
+		trigger = {
+			OR = {
+				religion_allows_male_temple_holders = yes
+				has_religion_feature = religion_patriarchal
+			}
+			elite_recruitment_chaplain_can_afford_trigger = yes
+			NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
+		}
+
+		pay_elite_chaplain_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chaplain_TT
+
+			create_male_chaplain_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chaplain_base_attributes = yes
+				assign_chaplain_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Or perhaps another... -- shown only when all 5 are visible, forcing
+	# pagination to ER.13 where Spymaster and Chaplain wait.
+	option = {
+		name = ER_11_more
+		trigger = { elite_recruitment_all_5_male_visible_trigger = yes }
+		character_event = { id = ER.13 }
+	}
+}
+
+# ER.12 -- Female role picker. Mirror of ER.11 with female sex-gates and
+# female-create effects. One event handles both single-page (<=4 roles visible)
+# and paginated (all 5 visible) layouts: Spymaster and Chaplain hide here when
+# all 5 would be visible at once (deferred to ER.14), and the "Or perhaps
+# another..." button appears in their place. Roles list in council order.
+# Marshal/Steward/Chancellor share the standard gender-equality gate (gender=all
+# rule / status_of_women_4 / matriarchal, equal, or feature_bon faith). The
+# spymaster widens this with pagan-non-patriarchal + Cathar + Messalian carve-
+# outs; the chaplain uses the female-temple-holders / matriarchal-faith gate.
+character_event = {
+	id = ER.12
+	desc = EVTDESC_ER_12
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	# Chancellor
+	option = {
+		name = ER_12_chancellor
+		trigger = {
+			OR = {
+				realm_allows_female_courtiers_trigger = yes
+				has_law = status_of_women_4
+			}
+			elite_recruitment_chancellor_can_afford_trigger = yes
+		}
+
+		pay_elite_chancellor_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chancellor_TT
+
+			create_female_chancellor_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chancellor_base_attributes = yes
+				assign_chancellor_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Marshal
+	option = {
+		name = ER_12_marshal
+		trigger = {
+			OR = {
+				realm_allows_female_courtiers_trigger = yes
+				has_law = status_of_women_4
+			}
+			elite_recruitment_marshal_can_afford_trigger = yes
+		}
+
+		pay_elite_marshal_cost = yes
+
+		custom_tooltip = {
+			text = recruit_marshal_TT
+
+			create_female_marshal_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_marshal_base_attributes = yes
+				assign_marshal_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Steward
+	option = {
+		name = ER_12_steward
+		trigger = {
+			OR = {
+				realm_allows_female_courtiers_trigger = yes
+				has_law = status_of_women_4
+			}
+			elite_recruitment_steward_can_afford_trigger = yes
+		}
+
+		pay_elite_steward_cost = yes
+
+		custom_tooltip = {
+			text = recruit_steward_TT
+
+			create_female_steward_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_steward_base_attributes = yes
+				assign_steward_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Spymaster -- widened by pagan-non-patriarchal / Cathar / Messalian.
+	# Hidden when all 5 are visible (deferred to ER.14).
+	option = {
+		name = ER_12_spymaster
+		trigger = {
+			OR = {
+				realm_allows_female_courtiers_trigger = yes
+				has_law = status_of_women_4
+				AND = {
+					religion_group = pagan_group
+					NOT = { has_religion_feature = religion_patriarchal }
+				}
+				religion = cathar
+				religion = messalian
+			}
+			elite_recruitment_spymaster_can_afford_trigger = yes
+			NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
+		}
+
+		pay_elite_spymaster_cost = yes
+
+		custom_tooltip = {
+			text = recruit_spymaster_TT
+
+			create_female_spymaster_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_spymaster_base_attributes = yes
+				assign_spymaster_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Chaplain -- faith-ordination, not liege gender law. Hidden when all 5
+	# are visible (deferred to ER.14).
+	option = {
+		name = ER_12_chaplain
+		trigger = {
+			OR = {
+				religion_allows_female_temple_holders = yes
+				has_religion_feature = religion_matriarchal
+			}
+			elite_recruitment_chaplain_can_afford_trigger = yes
+			NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
+		}
+
+		pay_elite_chaplain_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chaplain_TT
+
+			create_female_chaplain_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chaplain_base_attributes = yes
+				assign_chaplain_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Or perhaps another... -- shown only when all 5 are visible, forcing
+	# pagination to ER.14 where Spymaster and Chaplain wait.
+	option = {
+		name = ER_12_more
+		trigger = { elite_recruitment_all_5_female_visible_trigger = yes }
+		character_event = { id = ER.14 }
+	}
+}
+
+# ER.13 -- Male role picker, page 2. Only fired by ER.11's "Or perhaps
+# another..." button (itself gated by all_5_male_visible), so Spymaster and
+# Chaplain are guaranteed eligible+affordable at fire-time. Holds the two
+# roles that page 1 deferred when the menu was overcrowded. The back option
+# returns to ER.11; no cancel option (player committed to recruit by clicking
+# the decision).
+character_event = {
+	id = ER.13
+	desc = EVTDESC_ER_13
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	# Spymaster
+	option = {
+		name = ER_13_spymaster
+		trigger = {
+			NOT = { has_religion_feature = religion_matriarchal }
+			elite_recruitment_spymaster_can_afford_trigger = yes
+		}
+
+		pay_elite_spymaster_cost = yes
+
+		custom_tooltip = {
+			text = recruit_spymaster_TT
+
+			create_male_spymaster_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_spymaster_base_attributes = yes
+				assign_spymaster_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Chaplain -- faith-ordination, not liege patriarchy
+	option = {
+		name = ER_13_chaplain
+		trigger = {
+			OR = {
+				religion_allows_male_temple_holders = yes
+				has_religion_feature = religion_patriarchal
+			}
+			elite_recruitment_chaplain_can_afford_trigger = yes
+		}
+
+		pay_elite_chaplain_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chaplain_TT
+
+			create_male_chaplain_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chaplain_base_attributes = yes
+				assign_chaplain_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Back to page 1
+	option = {
+		name = ER_13_back
+		character_event = { id = ER.11 }
+	}
+}
+
+# ER.14 -- Female role picker, page 2. Mirror of ER.13 with female sex-gates
+# and female-create effects.
+character_event = {
+	id = ER.14
+	desc = EVTDESC_ER_14
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	# Spymaster -- widened by pagan-non-patriarchal / Cathar / Messalian
+	option = {
+		name = ER_14_spymaster
+		trigger = {
+			OR = {
+				realm_allows_female_courtiers_trigger = yes
+				has_law = status_of_women_4
+				AND = {
+					religion_group = pagan_group
+					NOT = { has_religion_feature = religion_patriarchal }
+				}
+				religion = cathar
+				religion = messalian
+			}
+			elite_recruitment_spymaster_can_afford_trigger = yes
+		}
+
+		pay_elite_spymaster_cost = yes
+
+		custom_tooltip = {
+			text = recruit_spymaster_TT
+
+			create_female_spymaster_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_spymaster_base_attributes = yes
+				assign_spymaster_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Chaplain -- faith-ordination, not liege gender law
+	option = {
+		name = ER_14_chaplain
+		trigger = {
+			OR = {
+				religion_allows_female_temple_holders = yes
+				has_religion_feature = religion_matriarchal
+			}
+			elite_recruitment_chaplain_can_afford_trigger = yes
+		}
+
+		pay_elite_chaplain_cost = yes
+
+		custom_tooltip = {
+			text = recruit_chaplain_TT
+
+			create_female_chaplain_dynasty_lottery = yes
+
+			new_character = {
+				assign_random_adult_age = yes
+				assign_chaplain_base_attributes = yes
+				assign_chaplain_traits = yes
+			}
+		}
+
+		character_event = { id = ER.1 }
+	}
+
+	# Back to page 1
+	option = {
+		name = ER_14_back
+		character_event = { id = ER.12 }
 	}
 }

@@ -1,404 +1,58 @@
 ##################################################
 ##              Elite Recruitment               ##
 ##################################################
-## Helper effects to add flavor to the Elite    ##
-## Recruitment mod.                             ##
+## The Recruit an Elite Specialist decision.    ##
+## Opens the ER.10/11/12 menu chain so the      ##
+## player picks the recruit's sex and council   ##
+## role; auto-skips the gender picker when      ##
+## only one sex has any eligible role.          ##
 ##################################################
 
 decisions = {
 
-  # Recruit male marshal
-  recruit_male_elite_marshal = {
+  recruit_elite_specialist = {
     ai = no
 
     potential = {
-      elite_recruitment_marshals_enabled_trigger = yes
-      NOT = { has_religion_feature = religion_matriarchal }
-    }
-
-    allow = {
-      elite_recruitment_marshal_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_marshal_cost = yes
-
-      custom_tooltip = {
-        text = recruit_marshal_TT
-
-        create_male_marshal_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_marshal_base_attributes = yes
-          assign_marshal_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit female marshal
-  recruit_female_elite_marshal = {
-    ai = no
-
-    potential = {
-      elite_recruitment_marshals_enabled_trigger = yes
+      elite_recruitment_enabled_trigger = yes
       OR = {
-        realm_allows_female_courtiers_trigger = yes
-        has_law = status_of_women_4
+        elite_recruitment_any_male_role_eligible_trigger = yes
+        elite_recruitment_any_female_role_eligible_trigger = yes
       }
     }
 
     allow = {
-      elite_recruitment_marshal_can_afford_trigger = yes
       in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_marshal_cost = yes
-
-      custom_tooltip = {
-        text = recruit_marshal_TT
-
-        create_female_marshal_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_marshal_base_attributes = yes
-          assign_marshal_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite steward (male)
-  recruit_male_elite_steward = {
-    ai = no
-
-    potential = {
-      elite_recruitment_stewards_enabled_trigger = yes
-      NOT = { has_religion_feature = religion_matriarchal }
-    }
-
-    allow = {
-      elite_recruitment_steward_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_steward_cost = yes
-
-      custom_tooltip = {
-        text = recruit_steward_TT
-
-        create_male_steward_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_steward_base_attributes = yes
-          assign_steward_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite steward (female)
-  recruit_female_elite_steward = {
-    ai = no
-
-    potential = {
-      elite_recruitment_stewards_enabled_trigger = yes
       OR = {
-        realm_allows_female_courtiers_trigger = yes
-        has_law = status_of_women_4
+        elite_recruitment_marshal_can_afford_trigger = yes
+        elite_recruitment_steward_can_afford_trigger = yes
+        elite_recruitment_chancellor_can_afford_trigger = yes
+        elite_recruitment_spymaster_can_afford_trigger = yes
+        elite_recruitment_chaplain_can_afford_trigger = yes
       }
-    }
-
-    allow = {
-      elite_recruitment_steward_can_afford_trigger = yes
-      in_seclusion = no
     }
 
     effect = {
-      pay_elite_steward_cost = yes
-
       custom_tooltip = {
-        text = recruit_steward_TT
+        text = recruit_elite_specialist_TT
 
-        create_female_steward_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_steward_base_attributes = yes
-          assign_steward_traits = yes
+        # Auto-skip the gender picker when only one sex has eligible roles.
+        # Otherwise open ER.10 to ask the player.
+        if = {
+          limit = {
+            elite_recruitment_any_male_role_eligible_trigger = yes
+            elite_recruitment_any_female_role_eligible_trigger = yes
+          }
+          character_event = { id = ER.10 }
+        }
+        else_if = {
+          limit = { elite_recruitment_any_male_role_eligible_trigger = yes }
+          character_event = { id = ER.11 }
+        }
+        else = {
+          character_event = { id = ER.12 }
         }
       }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite chancellor (male)
-  recruit_male_elite_chancellor = {
-    ai = no
-
-    potential = {
-      elite_recruitment_chancellors_enabled_trigger = yes
-      NOT = { has_religion_feature = religion_matriarchal }
-    }
-
-    allow = {
-      elite_recruitment_chancellor_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_chancellor_cost = yes
-
-      custom_tooltip = {
-        text = recruit_chancellor_TT
-
-        create_male_chancellor_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_chancellor_base_attributes = yes
-          assign_chancellor_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite chancellor (female)
-  recruit_female_elite_chancellor = {
-    ai = no
-
-    potential = {
-      elite_recruitment_chancellors_enabled_trigger = yes
-      OR = {
-        realm_allows_female_courtiers_trigger = yes
-        has_law = status_of_women_4
-      }
-    }
-
-    allow = {
-      elite_recruitment_chancellor_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_chancellor_cost = yes
-
-      custom_tooltip = {
-        text = recruit_chancellor_TT
-
-        create_female_chancellor_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_chancellor_base_attributes = yes
-          assign_chancellor_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite spymaster (male)
-  recruit_male_elite_spymaster = {
-    ai = no
-
-    potential = {
-      elite_recruitment_spymasters_enabled_trigger = yes
-      NOT = { has_religion_feature = religion_matriarchal }
-    }
-
-    allow = {
-      elite_recruitment_spymaster_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_spymaster_cost = yes
-
-      custom_tooltip = {
-        text = recruit_spymaster_TT
-
-        create_male_spymaster_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_spymaster_base_attributes = yes
-          assign_spymaster_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite spymaster (female).
-  # can_be_spymaster_trigger is more permissive than the other council roles: besides full
-  # gender equality and equal/matriarchal faiths, pagan-group realms (not patriarchal) and
-  # Cathar/Messalian faiths allow a female spymaster without status-of-women laws.
-  recruit_female_elite_spymaster = {
-    ai = no
-
-    potential = {
-      elite_recruitment_spymasters_enabled_trigger = yes
-      OR = {
-        realm_allows_female_courtiers_trigger = yes
-        has_law = status_of_women_4
-        AND = {
-          religion_group = pagan_group
-          NOT = { has_religion_feature = religion_patriarchal }
-        }
-        religion = cathar
-        religion = messalian
-      }
-    }
-
-    allow = {
-      elite_recruitment_spymaster_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_spymaster_cost = yes
-
-      custom_tooltip = {
-        text = recruit_spymaster_TT
-
-        create_female_spymaster_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_spymaster_base_attributes = yes
-          assign_spymaster_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite court chaplain (male)
-  recruit_male_elite_chaplain = {
-    ai = no
-
-    potential = {
-      elite_recruitment_chaplains_enabled_trigger = yes
-      OR = {
-        religion_allows_male_temple_holders = yes
-        has_religion_feature = religion_patriarchal
-      }
-    }
-
-    allow = {
-      elite_recruitment_chaplain_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_chaplain_cost = yes
-
-      custom_tooltip = {
-        text = recruit_chaplain_TT
-
-        create_male_chaplain_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_chaplain_base_attributes = yes
-          assign_chaplain_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
-    }
-
-    ai_will_do = {
-      factor = 0
-    }
-  }
-
-  # Recruit elite court chaplain (female).
-  # A court chaplain must belong to a faith that ordains the recruit's sex; many faiths
-  # (e.g. Catholicism) ordain no women, so the female decision is religion-gated.
-  recruit_female_elite_chaplain = {
-    ai = no
-
-    potential = {
-      elite_recruitment_chaplains_enabled_trigger = yes
-      OR = {
-        religion_allows_female_temple_holders = yes
-        has_religion_feature = religion_matriarchal
-      }
-    }
-
-    allow = {
-      elite_recruitment_chaplain_can_afford_trigger = yes
-      in_seclusion = no
-    }
-
-    effect = {
-      pay_elite_chaplain_cost = yes
-
-      custom_tooltip = {
-        text = recruit_chaplain_TT
-
-        create_female_chaplain_dynasty_lottery = yes
-
-        new_character = {
-          assign_random_adult_age = yes
-          assign_chaplain_base_attributes = yes
-          assign_chaplain_traits = yes
-        }
-      }
-
-      character_event = { id = ER.1 }
     }
 
     ai_will_do = {

@@ -2,10 +2,46 @@
 ##          Elite Recruitment Triggers          ##
 ##################################################
 ## Shared eligibility helpers, plus each role's ##
-## game-rule and affordability gates.           ##
+## affordability gate.                          ##
 ##################################################
 
 # --- Shared helpers ---
+
+# Whether the elite_recruitment rule is anything but disabled (gates the
+# Recruit an Elite Specialist decision and each option inside the menu)
+elite_recruitment_enabled_trigger = {
+  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
+}
+
+# Whether any male role's sex-gate passes. Used by the decision to auto-skip
+# the gender picker when only one sex qualifies. Marshal/Steward/Chancellor/
+# Spymaster all share "NOT matriarchal"; the male Chaplain widens this when a
+# matriarchal faith still ordains men.
+elite_recruitment_any_male_role_eligible_trigger = {
+  OR = {
+    NOT = { has_religion_feature = religion_matriarchal }
+    religion_allows_male_temple_holders = yes
+  }
+}
+
+# Whether any female role's sex-gate passes. Union of every female decision's
+# gate: realm_allows_female_courtiers covers gender=all / matriarchal / equal
+# / feature_bon; the rest are status_of_women_4 (the secular ladder threshold),
+# the spymaster's wider pagan-non-patriarchal / Cathar / Messalian carve-outs,
+# and the female chaplain's faith-ordination clause.
+elite_recruitment_any_female_role_eligible_trigger = {
+  OR = {
+    realm_allows_female_courtiers_trigger = yes
+    has_law = status_of_women_4
+    AND = {
+      religion_group = pagan_group
+      NOT = { has_religion_feature = religion_patriarchal }
+    }
+    religion = cathar
+    religion = messalian
+    religion_allows_female_temple_holders = yes
+  }
+}
 
 # Whether women may hold court roles regardless of the status_of_women laws
 realm_allows_female_courtiers_trigger = {
@@ -32,19 +68,12 @@ in_warrior_lodge_trigger = {
   }
 }
 
-# --- Per-role gates ---
-# Each role below pairs an enabled check (the elite_recruitment rule is not Disabled)
-# with an affordability check mirroring its pay_elite_*_cost effect. Gold needs both
+# --- Per-role affordability gates ---
+# Each role's check mirrors its pay_elite_*_cost effect. Gold needs both
 # scaled_wealth (income fraction) and wealth (the firm floor); the secondary currency
 # matches the role. Modicum is the default and the rule-absent fallback.
 
 # Marshal: balanced gold and Prestige.
-# Decisions enabled unless the elite_recruitment rule is Disabled
-elite_recruitment_marshals_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Can afford the cost (mirrors pay_elite_marshal_cost)
 elite_recruitment_marshal_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -78,12 +107,6 @@ elite_recruitment_marshal_can_afford_trigger = {
 }
 
 # Steward: heaviest gold, lightest Prestige.
-# Decisions enabled unless the elite_recruitment rule is Disabled
-elite_recruitment_stewards_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Can afford the cost (mirrors pay_elite_steward_cost)
 elite_recruitment_steward_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -117,12 +140,6 @@ elite_recruitment_steward_can_afford_trigger = {
 }
 
 # Chancellor: light gold, heaviest Prestige.
-# Decisions enabled unless the elite_recruitment rule is Disabled
-elite_recruitment_chancellors_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Can afford the cost (mirrors pay_elite_chancellor_cost)
 elite_recruitment_chancellor_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -156,12 +173,6 @@ elite_recruitment_chancellor_can_afford_trigger = {
 }
 
 # Spymaster: more gold than Prestige.
-# Decisions enabled unless the elite_recruitment rule is Disabled
-elite_recruitment_spymasters_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Can afford the cost (mirrors pay_elite_spymaster_cost)
 elite_recruitment_spymaster_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -195,12 +206,6 @@ elite_recruitment_spymaster_can_afford_trigger = {
 }
 
 # Chaplain: heaviest Piety, a little gold.
-# Decisions enabled unless the elite_recruitment rule is Disabled
-elite_recruitment_chaplains_enabled_trigger = {
-  NOT = { has_game_rule = { name = elite_recruitment value = disabled } }
-}
-
-# Can afford the cost (mirrors pay_elite_chaplain_cost)
 elite_recruitment_chaplain_can_afford_trigger = {
   trigger_if = {
     limit = { has_game_rule = { name = elite_recruitment value = pittance } }
@@ -231,4 +236,41 @@ elite_recruitment_chaplain_can_afford_trigger = {
     wealth = 20
     piety = 150
   }
+}
+
+# --- Menu pagination helpers ---
+# True when all 5 male recruit options would be visible simultaneously (every
+# sex-gate passes and every role's affordability check passes). The role picker
+# uses this to switch between single-page (<=4 visible) and paginated (all 5
+# visible) layouts: when true, Spymaster and Chaplain hide from page 1 and the
+# "Or perhaps another..." button shows; when false, page 1 shows whichever
+# roles are visible directly with no nav button.
+elite_recruitment_all_5_male_visible_trigger = {
+  NOT = { has_religion_feature = religion_matriarchal }
+  OR = {
+    religion_allows_male_temple_holders = yes
+    has_religion_feature = religion_patriarchal
+  }
+  elite_recruitment_marshal_can_afford_trigger = yes
+  elite_recruitment_steward_can_afford_trigger = yes
+  elite_recruitment_chancellor_can_afford_trigger = yes
+  elite_recruitment_spymaster_can_afford_trigger = yes
+  elite_recruitment_chaplain_can_afford_trigger = yes
+}
+
+# Female mirror.
+elite_recruitment_all_5_female_visible_trigger = {
+  OR = {
+    realm_allows_female_courtiers_trigger = yes
+    has_law = status_of_women_4
+  }
+  OR = {
+    religion_allows_female_temple_holders = yes
+    has_religion_feature = religion_matriarchal
+  }
+  elite_recruitment_marshal_can_afford_trigger = yes
+  elite_recruitment_steward_can_afford_trigger = yes
+  elite_recruitment_chancellor_can_afford_trigger = yes
+  elite_recruitment_spymaster_can_afford_trigger = yes
+  elite_recruitment_chaplain_can_afford_trigger = yes
 }

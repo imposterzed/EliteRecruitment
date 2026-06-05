@@ -9,6 +9,62 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-06-05
+
+### Changed
+- **Ten recruitment decisions collapsed into one.** The Decisions tab now shows a single
+  **Recruit an Elite Specialist** decision; clicking it opens a short menu where you choose
+  the recruit's sex (where your laws and faith permit a choice) and then their council
+  role. The male/female gating, per-role costs, and post-arrival appointment pop-up
+  (ER.1) are unchanged -- this is a UX refactor of the entry point, not a balance change.
+- **Auto-skip the gender picker** when only one sex has any eligible role, so a
+  patriarchal-faith realm (the majority case) goes straight from the decision to the role
+  menu -- same click count as the previous ten-decision flow.
+- **Roles list in council order** on the role picker: Chancellor, Marshal, Steward,
+  Spymaster, Chaplain -- matching the order the player sees in the council UI.
+- **Dynamic council titles in EN role-option labels.** Each option uses the player's
+  actual council title via `[Root.GetChancellorName]`, `[Root.GetMarshalName]`,
+  `[Root.GetTreasurerName]`, `[Root.GetSpymasterName]`, `[Root.GetLordSpiritualName]` --
+  so a Tibetan-Buddhist ruler sees "Chief Minister"/"Treasurer"/"Chief Diviner" exactly
+  as their council UI does, while a Chinese-culture ruler sees "Xingjun Sima" for the
+  marshal seat. FR/DE/ES keep their existing static gendered translations.
+- **`Recruit an Elite Specialist` icon** is the **Diplomacy** attribute's sealed-scroll
+  icon, fitting for the menu's "letters out, candidates come to court" framing. (Bespoke
+  art planned.)
+
+### Added
+- **Adaptive role-picker pagination.** When all five recruit roles would be visible at once
+  (every sex-gate and affordability check passes), the picker paginates: page 1 shows
+  Chancellor/Marshal/Steward plus an "Or perhaps another..." button leading to page 2,
+  which holds Spymaster and Chaplain. Otherwise (the common case) all visible roles show
+  on a single page with no nav button. CK2's event window hard-caps at four visible
+  options, so this shape is required to fit a five-role menu without clipping.
+- **Five new menu events:** **ER.10** (gender picker), **ER.11**/**ER.12** (role picker
+  page 1, per sex), **ER.13**/**ER.14** (role picker page 2, only fired when all five
+  roles are simultaneously visible). Each role option pays its per-role cost, creates the
+  recruit, and fires the existing ER.1 arrival pop-up.
+- **Decision hover-tooltip flavor** (`recruit_elite_specialist_TT`) renders the player's
+  titled name in yellow: *"The court of §Y[Root.GetTitledName]§! sends word in search of
+  an elite specialist."*
+- **Five new shared scripted triggers** powering the menu branching:
+  `elite_recruitment_enabled_trigger` (rule not Disabled),
+  `elite_recruitment_any_<male|female>_role_eligible_trigger` (gender-step auto-skip),
+  `elite_recruitment_all_5_<male|female>_visible_trigger` (pagination control).
+- **26 new localisation rows in EN/FR/DE/ES**: decision name + desc + hover tooltip; the
+  three event descs (gender picker + two role-picker pages); per-sex per-role option
+  names; gender-picker cancel; pagination "Or perhaps another..." (per sex) and "Let me
+  reconsider the others." back buttons (per sex).
+
+### Removed
+- The ten old per-sex-per-role decisions
+  (`recruit_<male|female>_elite_<marshal|steward|chancellor|spymaster|chaplain>`). Their
+  loc rows (20 keys) are deleted; the role-specific tooltip strings (`recruit_<role>_TT`)
+  remain because the new menu options still call them.
+- Five per-role `*s_enabled_trigger` scripted triggers, replaced by the single shared
+  `elite_recruitment_enabled_trigger`.
+- The ten `GFX_recruit_<male|female>_elite_<role>` sprite registrations from
+  `interface/elite_recruitment.gfx`, replaced by one `GFX_recruit_elite_specialist`.
+
 ## [0.12.9] - 2026-06-03
 
 ### Changed

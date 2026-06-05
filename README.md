@@ -1,14 +1,13 @@
 # Elite Recruitment
 
-Elite Recruitment adds court decisions that let you spend a mix of **Gold** and a fitting
-secondary currency — **Prestige** for the secular advisors, **Piety** for the court chaplain —
-to bring an elite, ready-made specialist into your court:
-
-- **Recruit Elite Male Marshal** / **Recruit Elite Female Marshal**
-- **Recruit Elite Male Steward** / **Recruit Elite Female Steward**
-- **Recruit Elite Male Chancellor** / **Recruit Elite Female Chancellor**
-- **Recruit Elite Male Spymaster** / **Recruit Elite Female Spymaster**
-- **Recruit Elite Male Chaplain** / **Recruit Elite Female Chaplain**
+Elite Recruitment adds a single court decision — **Recruit an Elite Specialist** — that
+opens a short menu where you choose the recruit's sex (where your laws and faith permit a
+choice) and then their council role: **Marshal**, **Steward**, **Chancellor**, **Spymaster**,
+or **Court Chaplain**. Each costs **Gold** plus a fitting secondary currency — **Prestige**
+for the secular advisors, **Piety** for the court chaplain. The menu uses your realm's own
+council titles, so a Tibetan-Buddhist ruler picks from **Chief Minister**, **Treasurer**, and
+**Chief Diviner** rather than the generic English names; the role-noun matches whatever your
+council UI shows.
 
 ## What it does
 
@@ -20,11 +19,11 @@ elite* specialist in any of those roles has no real vanilla counterpart. Each co
 clean, deliberate **male vs. female** choice instead of leaving the recruit's gender up to
 the game:
 
-- The **male** decision is available to most realms.
-- The **female** decision appears for realms whose laws or faith support women holding that
+- The **male** option is available to most realms.
+- The **female** option appears for realms whose laws or faith support women holding that
   post. A brought-in courtier is unrelated and unlanded, and for most roles vanilla only
   seats such a woman on the council (or in command) under full gender equality (or an
-  equal/matriarchal faith) — so the Female Marshal, Stewardess, and Chancellor share that
+  equal/matriarchal faith) — so the Female Marshal, Steward, and Chancellor share that
   gate. The **Female Spymaster** is available more widely (pagan-group realms and the
   Cathar/Messalian faiths allow it without those laws), while the **chaplain** is gated by
   faith instead: a court chaplain must belong to a religion that ordains the recruit's sex,
@@ -88,7 +87,7 @@ the **Game Rules** screen when you start a new game (it lives under the "Various
 
 > Pittance · Trifle · **Modicum** (default) · Bounty · Fortune · Disabled
 
-- **Disabled** turns off every recruitment decision.
+- **Disabled** turns off the recruitment decision.
 - The tiers scale all costs together by a shared multiplier: **Pittance ×0.25 · Trifle ×0.5 ·
   Modicum ×1 · Bounty ×2 · Fortune ×4**.
 
@@ -173,7 +172,7 @@ overhaul on its own, and the CK2 launcher has no manual "reorder" — so you nor
 have to do anything. This mod was built and tested alongside the **CleanSlate** overhaul,
 which also fixes a large number of vanilla bugs by itself. CleanSlate is **not required**,
 but running it (it's free) is recommended for the cleanest overall experience. If you run a
-*different* overhaul and the decisions don't appear, that's a load-order conflict — the
+*different* overhaul and the decision doesn't appear, that's a load-order conflict — the
 overhaul is replacing the decisions folder and loading after this mod.
 
 ## For modders
@@ -208,11 +207,10 @@ Markdown (this README, the changelog) is plain UTF-8 and needs none of this.
 
 ## Notes
 
-- Each decision uses its council attribute's vanilla icon — **Martial** (crossed swords) for
-  marshals, **Stewardship** for stewards, **Diplomacy** (a sealed scroll) for chancellors,
-  **Intrigue** (a dagger) for spymasters, and **Learning** (an open book) for chaplains.
-  Bespoke art is planned. They'll automatically use a 4K-UI mod's higher-res icons (e.g.
-  Proper4KUI) if one is installed.
+- The **Recruit an Elite Specialist** decision uses the **Diplomacy** attribute's vanilla
+  icon (a sealed scroll), fitting for the menu's "letters out, candidates come to court"
+  framing. Bespoke art is planned. It'll automatically use a 4K-UI mod's higher-res icon
+  (e.g. Proper4KUI) if one is installed.
 
 ## License
 
