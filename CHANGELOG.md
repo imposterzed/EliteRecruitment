@@ -9,6 +9,20 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-06-06
+
+### Added
+- **Community files for public-release prep:** `.github/ISSUE_TEMPLATE/` with bug,
+  compat, and feature templates (plus a `config.yml` that disables blank issues
+  and routes users to Discussions and the Paradox CK2 forums); `AGENTS.md` for
+  AI coding agents and humans (technical onboarding — encoding rules,
+  scripted-effect syntax, `replace_path` quirks, file layout, graphics
+  conventions, commit style, vanilla resource pointers); `CONTRIBUTING.md` with
+  in-game testing notes and a console-commands cheat sheet; `SUPPORT.md` routing
+  bug vs compat vs feature vs "how do I" questions; `CODE_OF_CONDUCT.md`
+  adopting the Contributor Covenant v2.1.
+- GitHub Discussions enabled on the repo (settings change, no committed file).
+
 ## [0.13.4] - 2026-06-06
 
 ### Added

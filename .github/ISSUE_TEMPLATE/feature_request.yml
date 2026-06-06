@@ -1,0 +1,46 @@
+name: Feature request
+description: Suggest a new feature or enhancement for Elite Recruitment.
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees:
+  - imposterzed
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Two quick fields help me understand what you're proposing and why.
+
+        For bugs, please use the **Bug report** template instead. For mod-vs-mod conflicts, use **Compatibility issue**.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One-line description of the feature.
+      placeholder: "Recruit option for a Court Physician (Reaper's Due) without it being tied to the Chaplain"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this valuable?
+      description: What does the player gain that vanilla or current Elite Recruitment doesn't already provide? A specific use-case helps a lot.
+      placeholder: |
+        I play a lot of plague-era saves where my court physician dies, and recruiting a replacement through normal court-invite is unreliable. A targeted "Recruit an Elite Court Physician" decision parallel to the council ones would let me staff that role specifically.
+    validations:
+      required: true
+
+  - type: textarea
+    id: design
+    attributes:
+      label: How might it work in-game?
+      description: Optional — your imagined design. Decision? Event? Tweak to existing? Helps figure out if it fits the existing architecture.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: |
+        References to similar mods, related ideas, edge cases, screenshots.
+        *You can drag-and-drop or paste screenshots directly into this field.*

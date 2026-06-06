@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & general discussion
+    url: https://github.com/imposterzed/EliteRecruitment/discussions
+    about: For "how do I..." questions, "anyone else seeing X?", or general modding chat, please use Discussions instead of opening an issue.
+  - name: CK2 modding community
+    url: https://forum.paradoxplaza.com/forum/forums/crusader-kings-ii.749/
+    about: The Paradox official forums — the long-standing community space for CK2 modding questions and discussion.

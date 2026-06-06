@@ -1,0 +1,88 @@
+name: Bug report
+description: Report something not working as expected in Elite Recruitment.
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - imposterzed
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! A few quick fields help me reproduce and fix it faster.
+
+        For general "how do I..." questions, please use [Discussions](../discussions) instead.
+
+  - type: dropdown
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: |
+        Found in the mod's `.mod` file or on the [Releases page](../releases). If you're on a pre-1.0 development build, pick "Older / unknown" and note the specific version in the description.
+      options:
+        - v1.0.0 (latest)
+        - Older / unknown
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: mod-stack
+    attributes:
+      label: Mods loaded alongside Elite Recruitment
+      description: Check all that apply.
+      options:
+        - label: CleanSlate
+        - label: Proper4KUI (with the Elite Recruitment - Proper4KUI Patch)
+        - label: Other mods (please list them in the description)
+        - label: None — vanilla CK2 only
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A short paragraph describing the bug. What did you do, what did you expect, and what did the game do instead?
+      placeholder: |
+        I clicked Recruit an Elite Specialist on a Catholic king with full gender equality, and the female chaplain option was missing from the role picker.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: |
+        If you can reproduce the bug deliberately, please share the steps. If it was a one-off, leave this blank.
+      placeholder: |
+        1. New game as <ruler>
+        2. Set <game rule / law>
+        3. Click <decision>
+        4. Observe <unexpected result>
+
+  - type: textarea
+    id: log-snippets
+    attributes:
+      label: Log snippets
+      description: |
+        Logs live at `Documents/Paradox Interactive/Crusader Kings II/logs/`.
+        - Paste any lines from **`error.log`** that mention Elite Recruitment, the `ER.X` events, or the mod's files.
+        - For "something isn't appearing" bugs (decision missing, rule missing), also check **`setup.log`** — search for `elite_recruitment` and paste the lines you find (or note that there are none, which is itself diagnostic).
+      render: text
+
+  - type: textarea
+    id: context
+    attributes:
+      label: In-game context
+      description: Optional — helpful if the bug seems linked to a specific religion, culture, law, or DLC.
+      value: |
+        - Religion:
+        - Culture:
+        - Government:
+        - DLC enabled:
+        - Decision / event used:
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: |
+        Screenshots, save files, hunches, anything else that might help.
+        *You can drag-and-drop or paste screenshots directly into this field — GitHub will upload them automatically.*

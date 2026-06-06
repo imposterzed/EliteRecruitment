@@ -1,0 +1,74 @@
+name: Compatibility issue
+description: Report a conflict between Elite Recruitment and another mod (overhaul, total conversion, etc.).
+title: "[Compat]: "
+labels: ["compat"]
+assignees:
+  - imposterzed
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for **mod-vs-mod conflicts** — typically when a large overhaul that uses `replace_path` (HIP, AGOT, etc.) suppresses Elite Recruitment's content.
+
+        For bugs that aren't caused by another mod, please use the **Bug report** template instead.
+
+        **CleanSlate and Proper4KUI are already handled** — see the README's *Compatibility* section if you're hitting an issue with one of those specifically.
+
+  - type: dropdown
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: |
+        Found in the mod's `.mod` file or on the [Releases page](../releases). If you're on a pre-1.0 development build, pick "Older / unknown" and note the specific version in the description.
+      options:
+        - v1.0.0 (latest)
+        - Older / unknown
+    validations:
+      required: true
+
+  - type: input
+    id: conflicting-mod
+    attributes:
+      label: Conflicting mod
+      description: Name of the other mod, and a link if you have one (Steam Workshop, GitHub, ModDB, etc.).
+      placeholder: "Historical Immersion Project — https://steamcommunity.com/sharedfiles/filedetails/?id=..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's missing or broken?
+      description: What does Elite Recruitment do (or fail to do) when this other mod is loaded? Be as specific as you can.
+      placeholder: |
+        With <conflicting mod> loaded, the "Recruit an Elite Specialist" decision doesn't appear in the Decisions tab at all. The Elite Recruitment rule is also missing from the game-rules screen at new-game setup. With <conflicting mod> disabled, both appear and work normally.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      description: |
+        Helps me triage. Check whichever applies. Skip if neither fits and explain in the description.
+      options:
+        - label: Elite Recruitment works correctly when the conflicting mod is disabled (i.e., I've confirmed it's not a separate bug).
+        - label: The conflicting mod is a total conversion (e.g., AGOT, Elder Kings, After the End) — toggling it off isn't a meaningful test.
+
+  - type: textarea
+    id: log-snippets
+    attributes:
+      label: Log snippets
+      description: |
+        Logs live at `Documents/Paradox Interactive/Crusader Kings II/logs/`.
+        - **`setup.log`** is usually the key diagnostic for compat issues. Search for `elite_recruitment` — if you find lines like `Events loaded events/elite_recruitment_events.txt`, ER's content IS loading and the conflict is something else. If you find nothing, the conflicting mod is suppressing ER's files (most commonly via `replace_path`).
+        - Also paste any lines from **`error.log`** that mention Elite Recruitment, the `ER.X` events, or the mod's files.
+      render: text
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: |
+        Screenshots, save files, hunches, anything else that might help.
+        *You can drag-and-drop or paste screenshots directly into this field — GitHub will upload them automatically.*
