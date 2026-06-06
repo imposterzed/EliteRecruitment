@@ -355,7 +355,7 @@ character_event = {
 character_event = {
 	id = ER.10
 	desc = EVTDESC_ER_10
-	picture = GFX_evt_emissary
+	picture = GFX_event_elite_recruitment_menu_gender
 	is_triggered_only = yes
 
 	option = {

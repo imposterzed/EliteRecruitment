@@ -9,6 +9,14 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.13.2] - 2026-06-06
+
+### Added
+- **Bespoke banner** for **ER.10's gender-picker menu**: two court figures painted on
+  a parchment scroll, with a gloved hand reaching in between them. Replaces the
+  placeholder `GFX_evt_emissary` borrowed from vanilla since 0.13.0. 450x150 base,
+  810x270 in the Proper4KUI Patch (same file-overlay pattern as the decision icon).
+
 ## [0.13.1] - 2026-06-05
 
 ### Added
