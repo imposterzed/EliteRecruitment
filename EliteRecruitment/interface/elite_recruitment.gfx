@@ -23,4 +23,46 @@ spriteTypes = {
 		name = "GFX_event_elite_recruitment_menu_role_female"
 		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_female.dds"
 	}
+
+	# ER.1 arrival banners -- one per role + sex.
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_marshal_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_male.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_marshal_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_female.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_steward_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_male.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_steward_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_female.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_chancellor_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_male.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_chancellor_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_female.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_spymaster_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_male.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_spymaster_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_female.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_chaplain_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_male.dds"
+	}
+	spriteType = {
+		name = "GFX_event_elite_recruitment_arrival_chaplain_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_female.dds"
+	}
 }

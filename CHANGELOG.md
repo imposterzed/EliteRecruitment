@@ -9,6 +9,19 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.13.4] - 2026-06-06
+
+### Added
+- **Bespoke arrival banners** for the **ER.1 recruit arrival event**: 10 painted
+  banners covering all role + sex combinations (Marshal/Steward/Chancellor/
+  Spymaster/Chaplain × M/F). Each is an in-character action shot with the recruit's
+  face naturally obscured by the pose (helmet, hood, downcast head over work) --
+  the recruit reads as a real person, not an abstract candidate. Wired via ER.1's
+  `picture =` conditional blocks keyed off the recruit's `elite_recruit_<role>` flag
+  and `is_female`. Replaces the placeholder `GFX_evt_emissary` used for ER.1 since
+  the council-seating feature shipped in 0.11.0. 450x150 base, 810x270 in the
+  Proper4KUI Patch.
+
 ## [0.13.3] - 2026-06-06
 
 ### Added

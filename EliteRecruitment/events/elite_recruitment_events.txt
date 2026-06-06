@@ -20,7 +20,46 @@ namespace = ER
 character_event = {
 	id = ER.1
 	desc = EVTDESC_ER_1
-	picture = GFX_evt_emissary
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_marshal    is_female = no  } }
+		picture = GFX_event_elite_recruitment_arrival_marshal_male
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_marshal    is_female = yes } }
+		picture = GFX_event_elite_recruitment_arrival_marshal_female
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_steward    is_female = no  } }
+		picture = GFX_event_elite_recruitment_arrival_steward_male
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_steward    is_female = yes } }
+		picture = GFX_event_elite_recruitment_arrival_steward_female
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_chancellor is_female = no  } }
+		picture = GFX_event_elite_recruitment_arrival_chancellor_male
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_chancellor is_female = yes } }
+		picture = GFX_event_elite_recruitment_arrival_chancellor_female
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_spymaster  is_female = no  } }
+		picture = GFX_event_elite_recruitment_arrival_spymaster_male
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_spymaster  is_female = yes } }
+		picture = GFX_event_elite_recruitment_arrival_spymaster_female
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_chaplain   is_female = no  } }
+		picture = GFX_event_elite_recruitment_arrival_chaplain_male
+	}
+	picture = {
+		trigger = { event_target:invited_character = { has_character_flag = elite_recruit_chaplain   is_female = yes } }
+		picture = GFX_event_elite_recruitment_arrival_chaplain_female
+	}
 	is_triggered_only = yes
 
 	# --- Seat them in their council role (dismisses the current holder first if filled) ---
