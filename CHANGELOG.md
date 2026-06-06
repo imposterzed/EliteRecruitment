@@ -9,6 +9,18 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.13.3] - 2026-06-06
+
+### Added
+- **Bespoke banners** for the **ER.11/12 role-picker menus**: five male court figures
+  for the male picker (ER.11/13), five female court figures for the female picker
+  (ER.12/14), each holding a tool of their council office (chancellor scroll,
+  marshal sword, steward ledger, spymaster dagger-cloak, chaplain holy book).
+  Same painterly parchment-scroll composition as the ER.10 gender-picker banner.
+  Page 2 (ER.13/14) reuses page 1's banner -- the picture conveys "your candidate
+  pool," consistent across both pages. 450x150 base, 810x270 in the Proper4KUI
+  Patch.
+
 ## [0.13.2] - 2026-06-06
 
 ### Added

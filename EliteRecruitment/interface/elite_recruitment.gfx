@@ -11,4 +11,16 @@ spriteTypes = {
 		name = "GFX_event_elite_recruitment_menu_gender"
 		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_gender.dds"
 	}
+
+	# ER.11 male role-picker -- five male court figures on a parchment scroll.
+	spriteType = {
+		name = "GFX_event_elite_recruitment_menu_role_male"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_male.dds"
+	}
+
+	# ER.12 female role-picker -- five female court figures on a parchment scroll.
+	spriteType = {
+		name = "GFX_event_elite_recruitment_menu_role_female"
+		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_female.dds"
+	}
 }

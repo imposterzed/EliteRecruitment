@@ -384,7 +384,7 @@ character_event = {
 character_event = {
 	id = ER.11
 	desc = EVTDESC_ER_11
-	picture = GFX_evt_emissary
+	picture = GFX_event_elite_recruitment_menu_role_male
 	is_triggered_only = yes
 
 	# Chancellor
@@ -539,7 +539,7 @@ character_event = {
 character_event = {
 	id = ER.12
 	desc = EVTDESC_ER_12
-	picture = GFX_evt_emissary
+	picture = GFX_event_elite_recruitment_menu_role_female
 	is_triggered_only = yes
 
 	# Chancellor
@@ -710,7 +710,7 @@ character_event = {
 character_event = {
 	id = ER.13
 	desc = EVTDESC_ER_13
-	picture = GFX_evt_emissary
+	picture = GFX_event_elite_recruitment_menu_role_male
 	is_triggered_only = yes
 
 	# Spymaster
@@ -778,7 +778,7 @@ character_event = {
 character_event = {
 	id = ER.14
 	desc = EVTDESC_ER_14
-	picture = GFX_evt_emissary
+	picture = GFX_event_elite_recruitment_menu_role_female
 	is_triggered_only = yes
 
 	# Spymaster -- widened by pagan-non-patriarchal / Cathar / Messalian
