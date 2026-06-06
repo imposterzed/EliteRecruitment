@@ -9,6 +9,38 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-06-05
+
+### Added
+- **Bespoke decision icon** for **Recruit an Elite Specialist** — a painted red wax seal
+  impressed with a laurel wreath on aged parchment, in the warm-sepia painterly style of
+  vanilla CK2 decision icons. Replaces the borrowed `icon_diplomacy.dds` attribute icon
+  used since 0.13.0.
+- **New optional companion mod, Elite Recruitment - Proper4KUI Patch**, which overrides
+  the base mod's decision icon with a 50×50 hi-res version pixel-flush with Proper4KUI's
+  icon standard. Declares `dependencies = { "Elite Recruitment" "Proper4KUI" }` so it
+  silent-no-loads on installs lacking either, and its later load order ensures its DDS
+  wins via the engine's mod-stack file resolution when both are loaded. Same file-overlay
+  pattern Proper4KUI itself uses to override vanilla icons. The patch will hold further
+  hi-res asset overrides as the `0.13.x` line adds them (e.g. the planned bespoke menu
+  event banners).
+
+### Changed
+- The base mod's `GFX_recruit_elite_specialist` sprite now points at
+  `gfx/interface/elite_recruitment_specialist_decision.dds` — a 28×28 uncompressed BGRA
+  DDS shipped in the mod, matching vanilla's native decision-icon size. CK2 renders
+  decision icons at the texture's native pixel size; pure-vanilla players see pixel-flush
+  parity. (Proper4KUI players: install the optional patch sub-mod for hi-res parity.)
+
+### Fixed
+- **CleanSlate load-order interaction.** This mod now declares
+  `dependencies = { "CleanSlate" }` in its `.mod` file so the launcher loads CleanSlate
+  first when both are present. Without that, CleanSlate's `replace_path` claims on shared
+  folders (`decisions/`, `events/`, `localisation/`, …) silently blocked this mod's
+  content unless another mod with a CleanSlate dependency (e.g. Proper4KUI) was also
+  loaded. The dependency is not a hard requirement; without CleanSlate installed it's
+  silently ignored.
+
 ## [0.13.0] - 2026-06-05
 
 ### Changed

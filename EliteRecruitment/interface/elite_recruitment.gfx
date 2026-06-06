@@ -1,15 +1,17 @@
 spriteTypes = {
 
 	# CK2 shows the sprite named GFX_<decision_name> as that decision's icon.
-	# This points at a vanilla UI texture rather than shipping our own, so no
-	# third-party art is redistributed. The game resolves the path through the
-	# load order: vanilla's 28x28 normally, or a 4K UI mod's higher-res version
-	# automatically if one (e.g. Proper4KUI) is active and overrides that path.
-	# To use bespoke art instead, drop a .dds into EliteRecruitment/gfx/interface/
-	# and repoint the texturefile below.
+	# Bespoke art for the Recruit an Elite Specialist decision: a red wax seal
+	# impressed with a laurel wreath on aged parchment, painted to match the
+	# vanilla decision-icon style. 28x28 uncompressed BGRA DDS, matching
+	# vanilla's native decision-icon size. Players running Proper4KUI can
+	# install the optional Elite Recruitment - Proper4KUI Patch sub-mod, which
+	# overrides this file with a 50x50 hi-res version via load-order resolution
+	# (the engine renders decision icons at native pixel size, so the patch's
+	# later-loaded file wins).
 
 	spriteType = {
 		name = "GFX_recruit_elite_specialist"
-		texturefile = "gfx\\interface\\icon_diplomacy.dds"
+		texturefile = "gfx\\interface\\elite_recruitment_specialist_decision.dds"
 	}
 }

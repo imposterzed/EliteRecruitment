@@ -55,6 +55,8 @@ lift to their other skills) and **Elusive Shadow**, the top intrigue education.
 **Court chaplains** are elite theologians — guaranteed a large **Learning** boost (plus a
 smaller lift to their other skills) and **Mastermind Theologian**, the top learning education.
 
+### Flavor rolls
+
 On top of that, every recruit gets a **weighted "flavor" roll** that adds a little
 personality — tuned so it *adds* character without changing what they fundamentally are:
 
@@ -125,7 +127,11 @@ and mid realms, the floor is what you actually pay.
 
 ## Requirements
 
+### Base game
+
 - **Crusader Kings II `3.3.x`.** The base game is all you need — nothing below is required.
+
+### Optional DLC
 
 Several optional flourishes appear only if you own the relevant DLC. Without it, that content
 is simply skipped — the mod still works:
@@ -147,33 +153,38 @@ Documents/Paradox Interactive/Crusader Kings II/mod/
 
 …then enable **Elite Recruitment** in the launcher.
 
-## Compatibility, fixes & recommendations
+**Proper4KUI users:** also install the **Elite Recruitment - Proper4KUI Patch** companion
+sub-mod for a 50×50 hi-res version of the decision icon, pixel-flush with Proper4KUI's
+larger UI. Vanilla players don't need it.
+
+## Compatibility
 
 Elite Recruitment works on plain vanilla and adds only new content (it doesn't overwrite
 base-game files), so it's friendly with most mods.
 
-**Built-in fixes.** Where vanilla's courtier generation has rough edges or out-of-date
-bits, this mod uses corrected, current conditions and trait handling — several of them
-borrowed from the excellent **CleanSlate** overhaul — so it behaves properly on a modern,
-fully-patched game.
+### Overhauls
 
-**Built for vanilla; auto-adapts to CleanSlate.** Every trait this mod uses exists in
-vanilla CK2, so it's vanilla-safe out of the box. CleanSlate renames several of those traits
-(physique, beauty, and some leadership traits like *Battlefield Terrain Master* and the
-terrain experts). The mod detects CleanSlate automatically: CleanSlate sets a
-`cleanslate_active` flag at startup, and when that flag is present the mod uses CleanSlate's
-trait names instead. **CleanSlate users — make sure you're on the latest version from
-[GitHub](https://github.com/ck2plus/CleanSlate)**, as that startup flag is a recent addition.
-On an older CleanSlate that lacks it the mod still works; recruits just won't roll those
-renamed trait variants.
+Larger overhauls typically use `replace_path` in their `.mod` file to take over shared
+folders (`decisions/`, `events/`, `localisation/`, …). If this mod loads before the
+overhaul, those `replace_path` claims wipe this mod's content from the affected folders.
+The fix is a `dependencies = { "OverhaulName" }` line in this mod's `.mod` file — purely
+a load-order hint telling the launcher to load the overhaul first. Dependencies are not
+hard requirements; if the overhaul isn't installed, the line is silently ignored.
 
-**Overhauls & CleanSlate.** CK2 generally loads small add-ons like this *after* a larger
-overhaul on its own, and the CK2 launcher has no manual "reorder" — so you normally don't
-have to do anything. This mod was built and tested alongside the **CleanSlate** overhaul,
-which also fixes a large number of vanilla bugs by itself. CleanSlate is **not required**,
-but running it (it's free) is recommended for the cleanest overall experience. If you run a
-*different* overhaul and the decision doesn't appear, that's a load-order conflict — the
-overhaul is replacing the decisions folder and loading after this mod.
+For overhaul support, please open an issue.
+
+#### CleanSlate
+
+Already handled. This mod ships with `dependencies = { "CleanSlate" }` declared, so it
+works with CleanSlate enabled and on plain vanilla.
+
+Trait IDs are also auto-adapted. CleanSlate renames several traits (physique, beauty,
+some leadership traits like *Battlefield Terrain Master* and the terrain experts) and
+sets a `cleanslate_active` global flag at startup; when that flag is present, this mod
+uses CleanSlate's trait names instead of vanilla's. **CleanSlate users — make sure
+you're on the latest version from [GitHub](https://github.com/ck2plus/CleanSlate)** —
+the startup flag is a recent addition. On an older CleanSlate that lacks it, the mod
+still works; recruits just won't roll those renamed trait variants.
 
 ## For modders
 
@@ -204,13 +215,6 @@ for contributors:
   `git add --renormalize .` before committing and confirm `git status` is clean.
 
 Markdown (this README, the changelog) is plain UTF-8 and needs none of this.
-
-## Notes
-
-- The **Recruit an Elite Specialist** decision uses the **Diplomacy** attribute's vanilla
-  icon (a sealed scroll), fitting for the menu's "letters out, candidates come to court"
-  framing. Bespoke art is planned. It'll automatically use a 4K-UI mod's higher-res icon
-  (e.g. Proper4KUI) if one is installed.
 
 ## License
 
