@@ -9,6 +9,18 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-06-06
+
+### Changed
+- **Dynamic council titles extended to all EN strings.** Completes the
+  dynamic-titles work started in v0.13.0: previously only the menu role-picker
+  labels (ER.11/12) used `[Root.Get*Name]` getters; now the decision description,
+  per-role tooltips, and the ER.1 appoint/replace option labels all resolve to
+  the player's actual council title too. A Tibetan-Buddhist ruler now sees "I
+  shall make Jifu my Banchenpo" instead of "...my court chaplain"; a Chinese
+  ruler sees "...my Xingjun Sima" for marshal; etc. EN only — FR/DE/ES keep
+  their existing gendered translations.
+
 ## [0.14.0] - 2026-06-06
 
 ### Added
