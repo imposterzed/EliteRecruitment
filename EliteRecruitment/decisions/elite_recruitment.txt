@@ -23,12 +23,17 @@ decisions = {
 
     allow = {
       in_seclusion = no
+      # At least one specific (sex x role) combination must be both eligible
+      # AND affordable. The combined triggers below mirror the per-option gates
+      # in ER.11/ER.12 so the decision can never be clicked into an empty role
+      # picker. The looser "any role affordable" check the decision used to
+      # have here let the player into a dead-end menu when, e.g., Catholic +
+      # Gender=All + only chaplain affordable: women satisfied SoW4 for the
+      # eligibility union but female Catholic chaplain is faith-blocked, so
+      # ER.12 surfaced zero options.
       OR = {
-        elite_recruitment_marshal_can_afford_trigger = yes
-        elite_recruitment_steward_can_afford_trigger = yes
-        elite_recruitment_chancellor_can_afford_trigger = yes
-        elite_recruitment_spymaster_can_afford_trigger = yes
-        elite_recruitment_chaplain_can_afford_trigger = yes
+        elite_recruitment_any_male_role_eligible_and_affordable_trigger = yes
+        elite_recruitment_any_female_role_eligible_and_affordable_trigger = yes
       }
     }
 
@@ -36,17 +41,19 @@ decisions = {
       custom_tooltip = {
         text = recruit_elite_specialist_TT
 
-        # Auto-skip the gender picker when only one sex has eligible roles.
-        # Otherwise open ER.10 to ask the player.
+        # Route to the gender picker only when both sexes have an eligible AND
+        # affordable role; otherwise auto-skip to whichever sex does. The
+        # eligible-and-affordable triggers mirror the per-option gates inside
+        # ER.11/12 so the routing matches the per-role visibility exactly.
         if = {
           limit = {
-            elite_recruitment_any_male_role_eligible_trigger = yes
-            elite_recruitment_any_female_role_eligible_trigger = yes
+            elite_recruitment_any_male_role_eligible_and_affordable_trigger = yes
+            elite_recruitment_any_female_role_eligible_and_affordable_trigger = yes
           }
           character_event = { id = ER.10 }
         }
         else_if = {
-          limit = { elite_recruitment_any_male_role_eligible_trigger = yes }
+          limit = { elite_recruitment_any_male_role_eligible_and_affordable_trigger = yes }
           character_event = { id = ER.11 }
         }
         else = {

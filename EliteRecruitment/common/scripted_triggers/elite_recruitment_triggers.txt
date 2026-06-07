@@ -43,6 +43,76 @@ elite_recruitment_any_female_role_eligible_trigger = {
   }
 }
 
+# Whether any male role would be CLICKABLE on ER.11 -- at least one role's
+# per-option trigger (its sex-gate AND its affordability) passes. The decision
+# allow and the effect's gender-routing chain use this so the player can never
+# be routed into an empty role picker. The lax _eligible_trigger above only
+# checks sex-gates; this tightens to "can we actually afford something".
+elite_recruitment_any_male_role_eligible_and_affordable_trigger = {
+  OR = {
+    AND = {
+      # Marshal/Steward/Chancellor/Spymaster share the standard male sex-gate.
+      NOT = { has_religion_feature = religion_matriarchal }
+      OR = {
+        elite_recruitment_marshal_can_afford_trigger = yes
+        elite_recruitment_steward_can_afford_trigger = yes
+        elite_recruitment_chancellor_can_afford_trigger = yes
+        elite_recruitment_spymaster_can_afford_trigger = yes
+      }
+    }
+    AND = {
+      # Male chaplain has the widened gate (matriarchal faiths may still ordain men).
+      OR = {
+        religion_allows_male_temple_holders = yes
+        has_religion_feature = religion_patriarchal
+      }
+      elite_recruitment_chaplain_can_afford_trigger = yes
+    }
+  }
+}
+
+# Female mirror. The three branches reflect the per-option gates inside ER.12:
+# (a) standard female gate for marshal/steward/chancellor (gender law);
+# (b) widened spymaster gate (pagan-non-patriarchal / Cathar / Messalian);
+# (c) female chaplain faith-ordination gate. Each branch is AND'd with the
+# matching role's can-afford trigger, so the combined OR is true only when
+# at least one specific role is BOTH eligible AND affordable.
+elite_recruitment_any_female_role_eligible_and_affordable_trigger = {
+  OR = {
+    AND = {
+      OR = {
+        realm_allows_female_courtiers_trigger = yes
+        has_law = status_of_women_4
+      }
+      OR = {
+        elite_recruitment_marshal_can_afford_trigger = yes
+        elite_recruitment_steward_can_afford_trigger = yes
+        elite_recruitment_chancellor_can_afford_trigger = yes
+      }
+    }
+    AND = {
+      OR = {
+        realm_allows_female_courtiers_trigger = yes
+        has_law = status_of_women_4
+        AND = {
+          religion_group = pagan_group
+          NOT = { has_religion_feature = religion_patriarchal }
+        }
+        religion = cathar
+        religion = messalian
+      }
+      elite_recruitment_spymaster_can_afford_trigger = yes
+    }
+    AND = {
+      OR = {
+        religion_allows_female_temple_holders = yes
+        has_religion_feature = religion_matriarchal
+      }
+      elite_recruitment_chaplain_can_afford_trigger = yes
+    }
+  }
+}
+
 # Whether women may hold court roles regardless of the status_of_women laws
 realm_allows_female_courtiers_trigger = {
   OR = {

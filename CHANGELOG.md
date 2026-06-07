@@ -9,6 +9,25 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.4] - 2026-06-07
+
+### Fixed
+- **Empty-menu trap on ER.11/ER.12.** Catholic + `gender = all` + only
+  chaplain affordable let the decision pass and ER.10 offer both sexes,
+  but picking the female route landed on an empty ER.12 (Catholic
+  faith-blocks female chaplain; the other four female roles unaffordable).
+  Since CK2 popups can't be dismissed with Esc and the role pickers have
+  no cancel option by design, the player was trapped in a dead-end menu.
+  Two new triggers
+  `elite_recruitment_any_male_role_eligible_and_affordable_trigger` and
+  `elite_recruitment_any_female_role_eligible_and_affordable_trigger`
+  AND-combine each per-role sex-gate with its can-afford trigger,
+  mirroring the per-option visibility logic inside ER.11/12. The decision
+  `allow` and the orchestrator's gender-routing chain both use these
+  combined triggers, so the routing into ER.10 / ER.11 / ER.12 now matches
+  per-role visibility exactly -- the player can never be routed into an
+  empty role picker.
+
 ## [0.15.3] - 2026-06-07
 
 ### Changed
