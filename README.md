@@ -1,4 +1,6 @@
-# Elite Recruitment
+<p align="center">
+  <img src="docs/banner.jpg" alt="Elite Recruitment — Your Realm Needs You!" width="100%" />
+</p>
 
 Elite Recruitment adds a single court decision — **Recruit an Elite Specialist** — that
 opens a short menu where you choose the recruit's sex (where your laws and faith permit a
@@ -8,6 +10,15 @@ for the secular advisors, **Piety** for the court chaplain. The menu uses your r
 council titles, so a Tibetan-Buddhist ruler picks from **Chief Minister**, **Treasurer**, and
 **Chief Diviner** rather than the generic English names; the role-noun matches whatever your
 council UI shows.
+
+<p align="center">
+  <img src="docs/decisions.jpg" alt="Recruit an Elite Specialist in the decisions panel" height="200" />
+  <img src="docs/gender-picker.jpg" alt="Gender picker — choose the recruit's sex" height="200" />
+  <img src="docs/role-picker.jpg" alt="Role picker — choose the council role" height="200" />
+  <img src="docs/arrival.jpg" alt="Recruit arrival — appoint or replace" height="200" />
+</p>
+
+<p align="center"><sub><em>Screenshots taken with the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3054987840">Proper 4K UI Project</a> mod enabled.</em></sub></p>
 
 ## What it does
 

@@ -9,6 +9,22 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-06-07
+
+First public release.
+
+### Added
+- **README banner.** Added at the top of the file, replacing the
+  bare `# Elite Recruitment` heading.
+- **Social preview image.** A 2:1 variant of the banner
+  (`docs/social-preview.jpg`) for GitHub's link-thumbnail card.
+- **README screenshots.** Four in-game shots (decisions panel,
+  gender picker, role picker, recruit arrival) inserted after the
+  lede paragraph.
+- **`SECURITY.md`** community-profile file pointing security reports
+  through GitHub's Private vulnerability reporting feature.
+- `Council` tag added to `EliteRecruitment.mod`'s tag set.
+
 ## [0.15.5] - 2026-06-07
 
 ### Changed
