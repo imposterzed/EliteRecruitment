@@ -195,7 +195,7 @@ assign_marshal_leadership_trait = {
     10 = { add_trait = heavy_infantry_leader } # Heavy Infantry Leader
     10 = { add_trait = light_foot_leader } # Light Foot Leader
     10 = {
-      trigger = { ROOT = { culture_group = indian_group } }
+      trigger = { ROOT = { OR = { culture_group = indo_aryan_group culture_group = dravidian_group } } }
       add_trait = war_elephant_leader # War Elephant Leader (Indian culture only)
     }
 

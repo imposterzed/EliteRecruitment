@@ -9,6 +9,23 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.1] - 2026-06-06
+
+### Fixed
+- **War Elephant Leader culture gate.** Marshal recruits in Indian-cultured realms
+  never rolled the `war_elephant_leader` trait because the gate used
+  `culture_group = indian_group`, which doesn't exist in CK2. Replaced with
+  `OR = { culture_group = indo_aryan_group culture_group = dravidian_group }`
+  (Bengali / Punjabi / Rajput / Tamil / Telugu / Kannada all qualify). Verified
+  live on the 22nd Bengali Kshatriya marshal post-fix.
+
+### Added
+- **Four missing loc keys** for the ER.11/ER.12 single-page layouts:
+  `ER_11_spymaster`, `ER_11_chaplain`, `ER_12_spymaster`, `ER_12_chaplain`. These
+  surface when affordability hides enough roles that the spymaster or chaplain
+  collapses from page 2 onto page 1 -- previously the player saw the raw loc
+  keys. Text cloned from the existing ER_13/ER_14 page-2 counterparts.
+
 ## [0.15.0] - 2026-06-06
 
 ### Changed
