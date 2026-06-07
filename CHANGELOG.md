@@ -9,6 +9,35 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.3] - 2026-06-07
+
+### Changed
+- **En-dash unification.** Replaced ASCII `--` with the W1252 en-dash (`–`) in
+  the decision description and the gender-picker description across all four
+  languages. Aligns with Paradox's house style -- vanilla CK2 uses en-dash
+  500+ times in its loc files and never uses ` -- ` as in-sentence punctuation.
+  Also unifies Spanish, which previously used `:` as a stylistic alternative.
+- **Decision-description role order** reordered to council order (Chancellor →
+  Marshal → Treasurer → Spymaster → Lord Spiritual), matching the order the
+  role pickers display. Previously listed Marshal first.
+- **Dynamic titles extended to FR / DE / ES** in male-or-neutral strings: the
+  decision description, the male menu options (ER.11/13), the arrival
+  tooltips (`recruit_*_TT`), and the ER.1 appoint and replace options. 22
+  rows in total now resolve to localized cultural titles instead of
+  hardcoded male nouns (e.g., a French Bon ruler now sees
+  `un Grand médium` instead of `un aumônier` for the chaplain). The female
+  menu rows (`ER_12_*`, `ER_14_*`) are deliberately unchanged -- they keep
+  their explicit feminine declensions (`maréchale`, `Marschallin`,
+  `mariscala`) since the getters return masculine cultural titles only.
+- **German ER.1 appoint rows restructured** from the genitive
+  `Ich gebe X das Amt des Marschalls` to the accusative
+  `Ich ernenne X zum §Y[Root.GetMarshalName]§!`. The nominative getter
+  output is grammatically correct with the accusative `zum`, where the
+  earlier genitive case would have dropped the `-s` suffix.
+- **Added §Y§! highlighting** around the new getter references in FR / DE /
+  ES rows that previously rendered the role noun without highlighting, so
+  the cultural title visually pops the same way it does in EN.
+
 ## [0.15.2] - 2026-06-07
 
 ### Fixed
