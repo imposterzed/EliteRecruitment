@@ -261,12 +261,72 @@ assign_marshal_warrior_lodge = {
 
 # Small chance the recruit is a holy-war veteran, with the trait matching their faith.
 # Dharmic faiths have no such trait, so they are excluded.
+#
+# Inlined to bypass vanilla add_crusade_trait_effect: its per-branch `break = yes`
+# propagates out of new_character and silently aborts ER.1. Five trait IDs differ
+# between vanilla and CleanSlate, gated on cleanslate_active.
 assign_marshal_crusade_trait = {
   if = {
     limit = { has_dharmic_religion_trigger = no }
     random = {
       chance = 15
-      add_crusade_trait_effect = yes
+
+      if = {
+        limit = { religion_group = muslim }
+        add_trait = mujahid
+      }
+      else_if = {
+        limit = { religion_group = christian }
+        add_trait = crusader
+      }
+      else_if = {
+        limit = { religion_openly_norse_or_reformed_trigger = yes }
+        add_trait = valhalla_bound
+      }
+      else_if = {
+        limit = { religion_openly_tengri_or_reformed_trigger = yes }
+        assign_elite_tengri_crusade_trait = yes
+      }
+      else_if = {
+        limit = { religion_openly_finnish_or_reformed_trigger = yes }
+        assign_elite_finnish_crusade_trait = yes
+      }
+      else_if = {
+        limit = { religion_openly_slavic_or_reformed_trigger = yes }
+        add_trait = peruns_chosen
+      }
+      else_if = {
+        limit = { religion_openly_west_african_or_reformed_trigger = yes }
+        add_trait = nyames_shield
+      }
+      else_if = {
+        limit = { religion_openly_baltic_or_reformed_trigger = yes }
+        assign_elite_baltic_crusade_trait = yes
+      }
+      else_if = {
+        limit = { religion_openly_bon_or_reformed_trigger = yes }
+        add_trait = kailash_guardian
+      }
+      else_if = {
+        limit = { religion_openly_zun_or_reformed_trigger = yes }
+        add_trait = sun_warrior
+      }
+      else_if = {
+        limit = { religion_openly_aztec_or_reformed_trigger = yes }
+        assign_elite_aztec_crusade_trait = yes
+      }
+      else_if = {
+        limit = { religion_openly_hellenic_or_reformed_trigger = yes }
+        add_trait = ares_own
+      }
+      else_if = {
+        limit = { religion_group = zoroastrian_group }
+        add_trait = gondi_shahansha
+      }
+      else_if = {
+        limit = { religion_group = jewish_group }
+        assign_elite_jewish_crusade_trait = yes
+      }
     }
   }
 }

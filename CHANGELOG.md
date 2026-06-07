@@ -9,6 +9,30 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.2] - 2026-06-07
+
+### Fixed
+- **Vanilla marshal ER.1 abort on holy-war trait roll.** On the vanilla stack
+  (no CleanSlate), the 15% chance to roll a holy-war trait via
+  `add_crusade_trait_effect` silently killed the marshal recruit's ER.1
+  arrival pop-up -- the recruit joined court, but the appoint/replace prompt
+  never fired. Vanilla's `add_crusade_trait_effect` is a sequence of bare
+  `if` blocks each ending with `break = yes`, and that break propagates up
+  through the marshal trait orchestrator, out of the `new_character` scope,
+  and into the parent option block, aborting the
+  `character_event = { id = ER.1 }` call. CleanSlate's version uses a clean
+  `if`/`else_if` chain without break, so the bug only surfaced on the
+  vanilla stack. Inlined the religion -> holy-war trait dispatch inside
+  `assign_marshal_crusade_trait` so vanilla's broken effect is never called.
+
+### Added
+- **Five new `assign_elite_*_crusade_trait` compat hooks** in
+  `elite_recruitment_trait_compat.txt` for the five trait IDs CleanSlate
+  renamed: `tengri_warrior`/`skylord`, `ukkos_shield`/`ukkos_hammer`,
+  `romuvas_own`/`hound_of_dievas`, `eagle_warrior`/`eagle_knight`,
+  `shaddai`/`kanai`. Used by the inlined crusade-trait dispatch above so
+  the right ID lands on the recruit on both stacks.
+
 ## [0.15.1] - 2026-06-06
 
 ### Fixed

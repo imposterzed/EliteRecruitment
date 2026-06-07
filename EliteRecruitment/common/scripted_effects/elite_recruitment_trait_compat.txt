@@ -169,3 +169,62 @@ assign_elite_seducer_trait = {
     }
   }
 }
+
+# Holy-war veteran traits (called from assign_marshal_crusade_trait). Five of
+# the fourteen religion->trait mappings have CleanSlate-renamed trait IDs and
+# need a compat switch; the other nine share IDs and are added inline.
+
+# Tengri: tengri_warrior (vanilla) / skylord (CleanSlate)
+assign_elite_tengri_crusade_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = skylord
+  }
+  else = {
+    add_trait = tengri_warrior
+  }
+}
+
+# Finnish: ukkos_shield (vanilla) / ukkos_hammer (CleanSlate)
+assign_elite_finnish_crusade_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = ukkos_hammer
+  }
+  else = {
+    add_trait = ukkos_shield
+  }
+}
+
+# Baltic: romuvas_own (vanilla) / hound_of_dievas (CleanSlate)
+assign_elite_baltic_crusade_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = hound_of_dievas
+  }
+  else = {
+    add_trait = romuvas_own
+  }
+}
+
+# Aztec: eagle_warrior (vanilla) / eagle_knight (CleanSlate)
+assign_elite_aztec_crusade_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = eagle_knight
+  }
+  else = {
+    add_trait = eagle_warrior
+  }
+}
+
+# Jewish: shaddai (vanilla) / kanai (CleanSlate)
+assign_elite_jewish_crusade_trait = {
+  if = {
+    limit = { has_global_flag = cleanslate_active }
+    add_trait = kanai
+  }
+  else = {
+    add_trait = shaddai
+  }
+}
