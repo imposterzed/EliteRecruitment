@@ -9,6 +9,19 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [0.15.5] - 2026-06-07
+
+### Changed
+- **Debug events extracted into a sibling sub-mod (Elite Recruitment -
+  Debug).** The `ERD.*` event family (currently just `ERD.1` granting
+  `legendary_commander_bloodline`) moved out of `EliteRecruitment/events/`
+  and into a new `EliteRecruitmentDebug` sub-mod that declares
+  `dependencies = { "Elite Recruitment" }`. The sub-mod is opt-in: only
+  loaded when explicitly enabled in the launcher. Pre-1.0 hygiene -- the
+  player-facing Workshop release no longer ships console cheat events,
+  while the dev tool is preserved for future testing of hard-to-reach
+  paths (bloodline grants, SCM-gap edge cases, etc.).
+
 ## [0.15.4] - 2026-06-07
 
 ### Fixed

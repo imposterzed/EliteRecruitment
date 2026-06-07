@@ -199,6 +199,12 @@ Two flags let other mods detect Elite Recruitment and the specialists it recruit
   `elite_recruit_spymaster`, or `elite_recruit_chaplain` — so you can match them with
   `has_character_flag`.
 
+**Dev/test events.** Hard-to-reach paths (legendary bloodlines, SCM-gap edges, etc.) have
+console-grant helpers in a sibling sub-mod, **Elite Recruitment - Debug**. Enable it in the
+launcher alongside Elite Recruitment to use the `ERD.*` events — e.g.
+`event ERD.1 <charID>` grants `legendary_commander_bloodline`. The base mod doesn't ship
+these events.
+
 ## Development
 
 The mod's script and localisation files (`.txt`, `.csv`) are kept as **UTF-8** in git for
