@@ -9,6 +9,17 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-06-07
+
+### Added
+- **`docs/thumbs/`** — 180-px-tall thumbnail versions of the four
+  in-game screenshots (`decisions`, `gender-picker`, `role-picker`,
+  `arrival`), for use in forum posts where inline `[img width=X]`
+  sizing isn't supported by the forum's BBCode parser.
+- **README "Community" section** linking the four discussion channels:
+  Steam Workshop discussions, Paradox forum thread, GitHub Issues, and
+  GitHub Discussions.
+
 ## [1.0.1] - 2026-06-07
 
 ### Added

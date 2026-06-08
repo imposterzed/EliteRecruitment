@@ -202,6 +202,13 @@ you're on the latest version from [GitHub](https://github.com/ck2plus/CleanSlate
 the startup flag is a recent addition. On an older CleanSlate that lacks it, the mod
 still works; recruits just won't roll those renamed trait variants.
 
+## Community
+
+- **[Steam Workshop discussions](https://steamcommunity.com/sharedfiles/filedetails/?id=3740738464)** — pinned welcome thread, comments, bug reports.
+- **[Paradox forum thread](https://forum.paradoxplaza.com/forum/threads/mod-elite-recruitment.1927182/)** — CK2 user modifications subforum.
+- **[GitHub Issues](https://github.com/imposterzed/EliteRecruitment/issues/new/choose)** — structured templates for bug reports, compatibility issues, and feature requests.
+- **[GitHub Discussions](https://github.com/imposterzed/EliteRecruitment/discussions)** — general questions and discussion.
+
 ## For modders
 
 Two flags let other mods detect Elite Recruitment and the specialists it recruits:
