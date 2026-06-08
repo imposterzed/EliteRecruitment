@@ -9,6 +9,24 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-06-07
+
+### Added
+- **README Steam Workshop links.** Installation section now leads with
+  Workshop subscribe links for the base mod and the Proper4KUI Patch;
+  manual install instructions kept as a fallback.
+- **`picture =` field** in the Proper4KUI Patch's `.mod` descriptor so
+  Steam Workshop auto-populates the Patch's thumbnail at upload time
+  (CK2's Workshop doesn't allow setting a thumbnail after the initial
+  upload). Reuses the base mod's `elite_recruitment.jpg` for visual
+  brand consistency.
+
+### Changed
+- **Proper4KUI Patch scope** in README updated to reflect the actual
+  art coverage (all 14 bespoke assets — decision icon + menu and
+  arrival banners — not just the icon). The line was written during
+  the Patch's early life when only the icon shipped at hi-res.
+
 ## [1.0.0] - 2026-06-07
 
 First public release.

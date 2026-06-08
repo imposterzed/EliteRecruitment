@@ -156,7 +156,12 @@ is simply skipped — the mod still works:
 
 ## Installation
 
-Copy the `EliteRecruitment` folder and `EliteRecruitment.mod` into:
+**Steam Workshop** (recommended):
+
+- [**Elite Recruitment**](https://steamcommunity.com/sharedfiles/filedetails/?id=3740738464)
+- [**Elite Recruitment - Proper4KUI Patch**](https://steamcommunity.com/sharedfiles/filedetails/?id=3740747484) — only needed if you use [Proper 4K UI Project](https://steamcommunity.com/sharedfiles/filedetails/?id=3054987840)
+
+**Manual install:** copy the `EliteRecruitment` folder and `EliteRecruitment.mod` into:
 
 ```
 Documents/Paradox Interactive/Crusader Kings II/mod/
@@ -165,8 +170,8 @@ Documents/Paradox Interactive/Crusader Kings II/mod/
 …then enable **Elite Recruitment** in the launcher.
 
 **Proper4KUI users:** also install the **Elite Recruitment - Proper4KUI Patch** companion
-sub-mod for a 50×50 hi-res version of the decision icon, pixel-flush with Proper4KUI's
-larger UI. Vanilla players don't need it.
+sub-mod for hi-res versions of all 14 bespoke art assets (decision icon + menu and arrival
+banners), sized to match Proper4KUI's larger UI. Vanilla players don't need it.
 
 ## Compatibility
 
