@@ -9,6 +9,15 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-07-13
+
+### Added
+- **Sub-mod thumbnails.** The Debug and Proper4KUI Patch sub-mods now
+  have their own thumbnails (badged variants of the base thumbnail).
+
+### Changed
+- Small descriptor and doc housekeeping.
+
 ## [1.0.2] - 2026-06-07
 
 ### Added

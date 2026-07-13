@@ -164,7 +164,7 @@ body.
   the vanilla script is an invaluable reference (same syntax as the mod).
   Common locations:
   - Steam: `C:\Program Files (x86)\Steam\steamapps\common\Crusader Kings II\`
-  - GOG: `C:\Games\GOG Galaxy\Crusader Kings II\`
+  - GOG: `C:\Program Files (x86)\GOG Galaxy\Games\Crusader Kings II\`
 
   Key folders:
   - `events/` — vanilla events; the canonical syntax reference
