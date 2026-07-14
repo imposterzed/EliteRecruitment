@@ -61,7 +61,7 @@ body:
       label: Log snippets
       description: |
         Logs live at `Documents/Paradox Interactive/Crusader Kings II/logs/`.
-        - **`setup.log`** is usually the key diagnostic for compat issues. Search for `elite_recruitment` — if you find lines like `Events loaded events/elite_recruitment_events.txt`, ER's content IS loading and the conflict is something else. If you find nothing, the conflicting mod is suppressing ER's files (most commonly via `replace_path`).
+        - **`setup.log`** is usually the key diagnostic for compat issues. Search for `elite_recruitment` — if you find lines like `Events loaded events/elite_recruitment_*.txt`, ER's content IS loading and the conflict is something else. If you find nothing, the conflicting mod is suppressing ER's files (most commonly via `replace_path`).
         - Also paste any lines from **`error.log`** that mention Elite Recruitment, the `ER.X` events, or the mod's files.
       render: text
 

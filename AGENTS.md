@@ -58,7 +58,8 @@ EliteRecruitment.mod                            top-level mod descriptor
 EliteRecruitment/                               the actual mod content
   descriptor.mod                                inner descriptor (mirror)
   decisions/elite_recruitment.txt               the one decision
-  events/elite_recruitment_events.txt           the ER.* event chain
+  events/elite_recruitment_arrival.txt          the ER.1 arrival pop-up
+  events/elite_recruitment_menu.txt             the ER.10-14 menu chain
   common/scripted_effects/*.txt                 per-role effect files + shared
   common/scripted_triggers/*.txt                gates + helpers
   common/game_rules/elite_recruitment_rules.txt the cost-tier rule
@@ -67,6 +68,8 @@ EliteRecruitment/                               the actual mod content
   gfx/interface/*.dds                           decision-icon textures
   gfx/event_pictures/*.dds                      event-banner textures
   localisation/*.csv                            Win-1252 strings
+EliteRecruitmentDebug/                          debug sub-mod (opt-in)
+EliteRecruitmentDebug.mod                       debug sub-mod descriptor
 EliteRecruitmentProper4KUIPatch/                hi-res asset overrides
 EliteRecruitmentProper4KUIPatch.mod             patch top-level descriptor
 CHANGELOG.md                                    version history (Keep a Changelog)

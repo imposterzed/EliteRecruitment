@@ -9,6 +9,12 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.9] - 2026-07-14
+
+### Changed
+- Split `events/elite_recruitment_events.txt` into `elite_recruitment_arrival.txt` (ER.1) and `elite_recruitment_menu.txt` (ER.10–14).
+- Update AGENTS.md repo-layout table and the compat-issue template to match the split. Also add the Debug sub-mod to the layout table.
+
 ## [1.0.8] - 2026-07-14
 
 ### Changed
