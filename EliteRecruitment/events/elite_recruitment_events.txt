@@ -20,6 +20,8 @@ namespace = ER
 # titles only appear when a slot is free.
 character_event = {
   id = ER.1
+
+  is_triggered_only = yes # ER.11 / ER.12 / ER.13 / ER.14 recruit options
   desc = EVTDESC_ER_1
   picture = {
     trigger = { event_target:invited_character = { has_character_flag = elite_recruit_marshal    is_female = no  } }
@@ -61,7 +63,6 @@ character_event = {
     trigger = { event_target:invited_character = { has_character_flag = elite_recruit_chaplain   is_female = yes } }
     picture = GFX_event_elite_recruitment_arrival_chaplain_female
   }
-  is_triggered_only = yes
 
   # --- Seat them in their council role (dismisses the current holder first if filled) ---
 
@@ -341,12 +342,12 @@ character_event = {
     trigger = {
       event_target:invited_character = { has_character_flag = elite_recruit_marshal }
       OR = {
-        AND = { tier = COUNT    NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { tier = DUKE     NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { tier = KING     is_nomadic = no  NOT = { any_realm_character = { count = 6 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { tier = EMPEROR  is_nomadic = no  NOT = { any_realm_character = { count = 8 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { tier = KING     is_nomadic = yes NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { tier = EMPEROR  is_nomadic = yes NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = COUNT    NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = DUKE     NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = KING     is_nomadic = no  NOT = { any_realm_character = { count = 6 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = EMPEROR  is_nomadic = no  NOT = { any_realm_character = { count = 8 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = KING     is_nomadic = yes NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
+        AND = { real_tier = EMPEROR  is_nomadic = yes NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
       }
     }
     event_target:invited_character = {
@@ -409,9 +410,10 @@ character_event = {
 # menu to lead to when ER.10 fires.
 character_event = {
   id = ER.10
+
+  is_triggered_only = yes # recruit_elite_specialist decision
   desc = EVTDESC_ER_10
   picture = GFX_event_elite_recruitment_menu_gender
-  is_triggered_only = yes
 
   option = {
     name = ER_10_male
@@ -438,9 +440,10 @@ character_event = {
 # faith-ordination gate instead, independent of liege patriarchy.
 character_event = {
   id = ER.11
+
+  is_triggered_only = yes # recruit_elite_specialist decision / ER.10 male option / ER.13 back button
   desc = EVTDESC_ER_11
   picture = GFX_event_elite_recruitment_menu_role_male
-  is_triggered_only = yes
 
   # Chancellor
   option = {
@@ -605,9 +608,10 @@ character_event = {
 # outs; the chaplain uses the female-temple-holders / matriarchal-faith gate.
 character_event = {
   id = ER.12
+
+  is_triggered_only = yes # recruit_elite_specialist decision / ER.10 female option / ER.14 back button
   desc = EVTDESC_ER_12
   picture = GFX_event_elite_recruitment_menu_role_female
-  is_triggered_only = yes
 
   # Chancellor
   option = {
@@ -770,9 +774,10 @@ character_event = {
 # the decision).
 character_event = {
   id = ER.13
+
+  is_triggered_only = yes # ER.11 nav button
   desc = EVTDESC_ER_13
   picture = GFX_event_elite_recruitment_menu_role_male
-  is_triggered_only = yes
 
   # Spymaster
   option = {
@@ -841,9 +846,10 @@ character_event = {
 # and female-create effects.
 character_event = {
   id = ER.14
+
+  is_triggered_only = yes # ER.12 nav button
   desc = EVTDESC_ER_14
   picture = GFX_event_elite_recruitment_menu_role_female
-  is_triggered_only = yes
 
   # Spymaster -- widened by pagan-non-patriarchal / Cathar / Messalian
   option = {

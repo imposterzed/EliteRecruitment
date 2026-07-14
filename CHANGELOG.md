@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-07-14
+
+### Changed
+- Use `real_tier` instead of `tier` in the commander cap logic.
+- Move `is_triggered_only = yes` above `desc` and `picture` per style guide event block order.
+- Add caller annotations to `is_triggered_only` on 7 events (ER.1, ER.10–14, ERD.1).
+
 ## [1.0.6] - 2026-07-14
 
 ### Changed

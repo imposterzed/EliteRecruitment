@@ -29,8 +29,9 @@ namespace = ERD
 # Console:  event ERD.1 <charID>
 character_event = {
   id = ERD.1
+
+  is_triggered_only = yes # console
   hide_window = yes
-  is_triggered_only = yes
 
   immediate = {
     if = {
