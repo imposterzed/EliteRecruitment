@@ -1,68 +1,68 @@
 spriteTypes = {
 
-	# Decision icon -- wax seal with laurel wreath, on parchment.
-	spriteType = {
-		name = "GFX_recruit_elite_specialist"
-		texturefile = "gfx\\interface\\elite_recruitment_specialist_decision.dds"
-	}
+  # Decision icon -- wax seal with laurel wreath, on parchment.
+  spriteType = {
+    name = "GFX_recruit_elite_specialist"
+    texturefile = "gfx\\interface\\elite_recruitment_specialist_decision.dds"
+  }
 
-	# ER.10 gender-picker -- two court figures on a parchment scroll.
-	spriteType = {
-		name = "GFX_event_elite_recruitment_menu_gender"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_gender.dds"
-	}
+  # ER.10 gender-picker -- two court figures on a parchment scroll.
+  spriteType = {
+    name = "GFX_event_elite_recruitment_menu_gender"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_menu_gender.dds"
+  }
 
-	# ER.11 male role-picker -- five male court figures on a parchment scroll.
-	spriteType = {
-		name = "GFX_event_elite_recruitment_menu_role_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_male.dds"
-	}
+  # ER.11 male role-picker -- five male court figures on a parchment scroll.
+  spriteType = {
+    name = "GFX_event_elite_recruitment_menu_role_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_male.dds"
+  }
 
-	# ER.12 female role-picker -- five female court figures on a parchment scroll.
-	spriteType = {
-		name = "GFX_event_elite_recruitment_menu_role_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_female.dds"
-	}
+  # ER.12 female role-picker -- five female court figures on a parchment scroll.
+  spriteType = {
+    name = "GFX_event_elite_recruitment_menu_role_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_menu_role_female.dds"
+  }
 
-	# ER.1 arrival banners -- one per role + sex.
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_marshal_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_male.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_marshal_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_female.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_steward_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_male.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_steward_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_female.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_chancellor_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_male.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_chancellor_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_female.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_spymaster_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_male.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_spymaster_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_female.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_chaplain_male"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_male.dds"
-	}
-	spriteType = {
-		name = "GFX_event_elite_recruitment_arrival_chaplain_female"
-		texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_female.dds"
-	}
+  # ER.1 arrival banners -- one per role + sex.
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_marshal_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_male.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_marshal_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_marshal_female.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_steward_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_male.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_steward_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_steward_female.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_chancellor_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_male.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_chancellor_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chancellor_female.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_spymaster_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_male.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_spymaster_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_spymaster_female.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_chaplain_male"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_male.dds"
+  }
+  spriteType = {
+    name = "GFX_event_elite_recruitment_arrival_chaplain_female"
+    texturefile = "gfx\\event_pictures\\elite_recruitment_arrival_chaplain_female.dds"
+  }
 }

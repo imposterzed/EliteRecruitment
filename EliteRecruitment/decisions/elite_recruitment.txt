@@ -9,7 +9,6 @@
 ##################################################
 
 decisions = {
-
   recruit_elite_specialist = {
     ai = no
 

@@ -2,7 +2,7 @@
 ##       Elite Recruitment Debug Events         ##
 ##################################################
 ## Dev/test events. Not part of the shipped     ##
-## feature surface â€” never wired to a decision  ##
+## feature surface – never wired to a decision  ##
 ## or on_action. Fire from the in-game console: ##
 ##   event ERD.<id> <charID>                    ##
 ##                                              ##
@@ -22,7 +22,7 @@
 namespace = ERD
 
 
-# ERD.1 â€” Grant legendary_commander_bloodline (carries the
+# ERD.1 – Grant legendary_commander_bloodline (carries the
 # bloodline_inspire_commanders flag). Use to test the marshal
 # legendary build path in assign_marshal_legendary_chance,
 # which gates on has_bloodline_flag = bloodline_inspire_commanders

@@ -61,7 +61,6 @@ assign_religion_traits = {
       add_trait = kshatriya
     }
     character_event = { id = RoI.30121 }
-
   } else_if = {
     limit = {
       OR = {

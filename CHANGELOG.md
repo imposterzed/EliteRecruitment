@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-07-14
+
+### Changed
+- Convert leading tabs to 2-space indent in the events file and the interface `.gfx`.
+- Rewrite the Debug sub-mod's events file with CRLF line endings and CP1252 en-dashes.
+- Drop two blank-in-block lines.
+
 ## [1.0.4] - 2026-07-14
 
 ### Added
