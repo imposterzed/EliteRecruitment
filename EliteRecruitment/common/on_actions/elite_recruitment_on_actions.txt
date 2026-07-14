@@ -1,11 +1,13 @@
-##################################################
-##         Elite Recruitment On Actions         ##
-##################################################
-## Sets a global flag at game start so other    ##
-## mods can detect Elite Recruitment is loaded, ##
-## mirroring the cleanslate_active flag we read ##
-## for trait-name compatibility.                ##
-##################################################
+############################################################
+##              Elite Recruitment On Actions              ##
+############################################################
+##                                                        ##
+## Sets a global flag at game start so other mods can     ##
+## detect Elite Recruitment is loaded, mirroring the      ##
+## cleanslate_active flag we read for trait-name          ##
+## compatibility.                                         ##
+##                                                        ##
+############################################################
 
 # Runs on every game start and save load.
 on_startup = {

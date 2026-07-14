@@ -1,9 +1,11 @@
-##################################################
-##     Elite Recruitment Chaplain Helpers       ##
-##################################################
-## Chaplain helper effects to add flavor to     ##
-## the Elite Recruitment mod.                   ##
-##################################################
+############################################################
+##           Elite Recruitment Chaplain Helpers           ##
+############################################################
+##                                                        ##
+## Chaplain helper effects to add flavor to the Elite     ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Create male chaplain in your culture and religion with dynasty lottery
 create_male_chaplain_dynasty_lottery = {
@@ -234,4 +236,3 @@ assign_chaplain_wonder_bonus = {
     }
   }
 }
-

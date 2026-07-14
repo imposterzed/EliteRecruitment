@@ -1,26 +1,24 @@
-##################################################
-##       Elite Recruitment Debug Events         ##
-##################################################
-## Dev/test events. Not part of the shipped     ##
-## feature surface – never wired to a decision  ##
-## or on_action. Fire from the in-game console: ##
-##   event ERD.<id> <charID>                    ##
-##                                              ##
-## Useful when an effect we depend on can only  ##
-## be reached via a long vanilla chain (e.g.    ##
-## warrior lodge legendary journey for the      ##
-## legendary_commander_bloodline). Each event   ##
-## here is a one-shot, no event_target deps,    ##
-## hide_window so it fires silently.            ##
-##                                              ##
-## Add a new debug grant by following the same  ##
-## pattern: character_event { id = ERD.N        ##
-## hide_window = yes is_triggered_only = yes    ##
-## immediate = { <effect> } }                   ##
-##################################################
-
 namespace = ERD
 
+############################################################
+##             Elite Recruitment Debug Events             ##
+############################################################
+##                                                        ##
+## Dev/test events. Not part of the shipped feature       ##
+## surface – never wired to a decision or on_action. Fire ##
+## from the in-game console: event ERD.<id> <charID>      ##
+##                                                        ##
+## Useful when an effect we depend on can only be reached ##
+## via a long vanilla chain (e.g. warrior lodge legendary ##
+## journey for the legendary_commander_bloodline). Each   ##
+## event here is a one-shot, no event_target deps,        ##
+## hide_window so it fires silently.                      ##
+##                                                        ##
+## Add a new debug grant by following the same pattern:   ##
+## character_event { id = ERD.N hide_window = yes         ##
+## is_triggered_only = yes immediate = { <effect> } }     ##
+##                                                        ##
+############################################################
 
 # ERD.1 – Grant legendary_commander_bloodline (carries the
 # bloodline_inspire_commanders flag). Use to test the marshal

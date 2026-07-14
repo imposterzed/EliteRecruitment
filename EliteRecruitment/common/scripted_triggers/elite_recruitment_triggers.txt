@@ -1,10 +1,12 @@
-##################################################
-##          Elite Recruitment Triggers          ##
-##################################################
-## Shared eligibility helpers, per-role gender  ##
-## gates, aggregate visibility, per-role        ##
-## affordability, and pagination checks.        ##
-##################################################
+############################################################
+##               Elite Recruitment Triggers               ##
+############################################################
+##                                                        ##
+## Shared eligibility helpers, per-role gender gates,     ##
+## aggregate visibility, per-role affordability, and      ##
+## pagination checks.                                     ##
+##                                                        ##
+############################################################
 
 ## --- Shared helpers --- ##
 

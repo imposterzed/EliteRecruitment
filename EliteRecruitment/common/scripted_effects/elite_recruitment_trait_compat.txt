@@ -1,13 +1,14 @@
-##################################################
-##    Elite Recruitment Trait Compatibility     ##
-##################################################
-## Maps the flavor and leadership traits that   ##
-## CleanSlate renames. The base uses vanilla    ##
-## IDs; when CleanSlate's cleanslate_active     ##
-## flag is set (it sets this at startup) the    ##
-## CleanSlate IDs are used instead. Per-trait   ##
-## mapping is noted on each effect below.       ##
-##################################################
+############################################################
+##         Elite Recruitment Trait Compatibility          ##
+############################################################
+##                                                        ##
+## Maps the flavor and leadership traits that CleanSlate  ##
+## renames. The base uses vanilla IDs. When CleanSlate's  ##
+## cleanslate_active flag is set (it sets this at         ##
+## startup) the CleanSlate IDs are used instead.          ##
+## Per-trait mapping is noted on each effect below.       ##
+##                                                        ##
+############################################################
 
 # Physique flavor trait:
 # Robust (vanilla) / Brawny (CleanSlate)

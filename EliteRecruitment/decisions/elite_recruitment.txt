@@ -1,12 +1,13 @@
-##################################################
-##              Elite Recruitment               ##
-##################################################
-## The Recruit an Elite Specialist decision.    ##
-## Opens the ER.10/11/12 menu chain so the      ##
-## player picks the recruit's sex and council   ##
-## role; auto-skips the gender picker when      ##
-## only one sex has any eligible role.          ##
-##################################################
+############################################################
+##                   Elite Recruitment                    ##
+############################################################
+##                                                        ##
+## The Recruit an Elite Specialist decision. Opens the    ##
+## ER.10/11/12 menu chain so the player picks the         ##
+## recruit's sex and council role. Auto-skips the gender  ##
+## picker when only one sex has any eligible role.        ##
+##                                                        ##
+############################################################
 
 decisions = {
   recruit_elite_specialist = {

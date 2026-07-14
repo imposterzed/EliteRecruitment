@@ -1,9 +1,11 @@
-##################################################
-##     Elite Recruitment Chancellor Helpers     ##
-##################################################
-## Chancellor helper effects to add flavor to   ##
-## the Elite Recruitment mod.                   ##
-##################################################
+############################################################
+##          Elite Recruitment Chancellor Helpers          ##
+############################################################
+##                                                        ##
+## Chancellor helper effects to add flavor to the Elite   ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Create male chancellor in your culture and religion with dynasty lottery
 create_male_chancellor_dynasty_lottery = {

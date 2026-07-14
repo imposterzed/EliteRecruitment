@@ -1,13 +1,14 @@
-##################################################
-##         Elite Recruitment Game Rules         ##
-##################################################
-## Cost tier scales recruit costs across all    ##
-## roles. Modicum is the default. Disabled      ##
-## hides all recruit decisions. Gender gating   ##
-## controls whether council law and faith       ##
-## ordination gate recruit gender. Adhere is    ##
-## the default. Bypass ignores both.            ##
-##################################################
+############################################################
+##              Elite Recruitment Game Rules              ##
+############################################################
+##                                                        ##
+## Cost tier scales recruit costs across all roles.       ##
+## Modicum is the default. Disabled hides all recruit     ##
+## decisions. Gender gating controls whether council law  ##
+## and faith ordination gate recruit gender. Adhere is    ##
+## the default. Bypass ignores both.                      ##
+##                                                        ##
+############################################################
 
 elite_recruitment = {
   name = "RULE_ELITE_RECRUITMENT"

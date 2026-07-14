@@ -1,9 +1,11 @@
-##################################################
-##     Elite Recruitment Spymaster Helpers      ##
-##################################################
-## Spymaster helper effects to add flavor to    ##
-## the Elite Recruitment mod.                   ##
-##################################################
+############################################################
+##          Elite Recruitment Spymaster Helpers           ##
+############################################################
+##                                                        ##
+## Spymaster helper effects to add flavor to the Elite    ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Create male spymaster in your culture and religion with dynasty lottery
 create_male_spymaster_dynasty_lottery = {

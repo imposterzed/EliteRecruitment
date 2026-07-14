@@ -1,9 +1,11 @@
-##################################################
-##       Elite Recruitment Steward Helpers      ##
-##################################################
-## Steward helper effects to add flavor to the  ##
-## Elite Recruitment mod.                       ##
-##################################################
+############################################################
+##           Elite Recruitment Steward Helpers            ##
+############################################################
+##                                                        ##
+## Steward helper effects to add flavor to the Elite      ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Create male steward in your culture and religion with dynasty lottery
 create_male_steward_dynasty_lottery = {

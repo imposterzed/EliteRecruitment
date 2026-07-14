@@ -1,9 +1,11 @@
-##################################################
-##       Elite Recruitment Common Helpers       ##
-##################################################
-## Common helper effects to add flavor to the   ##
-## Elite Recruitment mod.                       ##
-##################################################
+############################################################
+##            Elite Recruitment Common Helpers            ##
+############################################################
+##                                                        ##
+## Common helper effects to add flavor to the Elite       ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Assign a random age to the base character
 assign_random_adult_age = {

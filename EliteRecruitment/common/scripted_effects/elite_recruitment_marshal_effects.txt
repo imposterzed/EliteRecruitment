@@ -1,9 +1,11 @@
-##################################################
-##       Elite Recruitment Marshal Helpers      ##
-##################################################
-## Marshal helper effects to add flavor to the  ##
-## Elite Recruitment mod.                       ##
-##################################################
+############################################################
+##           Elite Recruitment Marshal Helpers            ##
+############################################################
+##                                                        ##
+## Marshal helper effects to add flavor to the Elite      ##
+## Recruitment mod.                                       ##
+##                                                        ##
+############################################################
 
 # Create male marshal in your culture and religion with dynasty lottery
 create_male_marshal_dynasty_lottery = {

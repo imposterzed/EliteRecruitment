@@ -1,15 +1,16 @@
 namespace = ER
 
-##################################################
-##           Elite Recruitment Events           ##
-##################################################
-## ER.1 = recruit-arrival pop-up, offering to   ##
-## seat the new recruit on their council.       ##
-## ER.10/11/12/13/14 = the Recruit an Elite     ##
-## Specialist decision's menu chain (gender,    ##
-## then role; ER.13/14 are page 2 when all      ##
-## five roles are simultaneously visible).      ##
-##################################################
+############################################################
+##                Elite Recruitment Events                ##
+############################################################
+##                                                        ##
+## ER.1 = recruit-arrival pop-up, offering to seat the    ##
+## new recruit on their council. ER.10/11/12/13/14 = the  ##
+## Recruit an Elite Specialist decision's menu chain      ##
+## (gender, then role. ER.13/14 are page 2 when all five  ##
+## roles are simultaneously visible).                     ##
+##                                                        ##
+############################################################
 
 # Fired on the recruiting ruler by every recruit decision, after the recruit is
 # created and saved as event_target:invited_character. The recruit carries an

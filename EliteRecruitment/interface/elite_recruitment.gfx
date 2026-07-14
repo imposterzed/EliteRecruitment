@@ -1,3 +1,13 @@
+############################################################
+##               Elite Recruitment Sprites                ##
+############################################################
+##                                                        ##
+## Sprite registrations for the decision icon, the        ##
+## ER.10/11/12 role-picker banners, and the ER.1 arrival  ##
+## banners.                                               ##
+##                                                        ##
+############################################################
+
 spriteTypes = {
 
   # Decision icon -- wax seal with laurel wreath, on parchment.

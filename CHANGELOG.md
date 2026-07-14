@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-07-14
+
+### Changed
+- Refit all script-file banners to 60-column boxes.
+- Add a banner to the interface `.gfx` file.
+- Move the Debug sub-mod's namespace above its banner.
+
 ## [1.0.5] - 2026-07-14
 
 ### Changed
