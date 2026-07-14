@@ -8,7 +8,7 @@
 ############################################################
 
 # Create male marshal in your culture and religion with dynasty lottery
-create_male_marshal_dynasty_lottery = {
+create_male_marshal_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_soldier = {
@@ -43,7 +43,7 @@ create_male_marshal_dynasty_lottery = {
 }
 
 # Create female marshal in your culture and religion with dynasty lottery
-create_female_marshal_dynasty_lottery = {
+create_female_marshal_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_soldier = {
@@ -78,7 +78,7 @@ create_female_marshal_dynasty_lottery = {
 }
 
 # Assign the base marshal attributes to the base character
-assign_marshal_base_attributes = {
+assign_marshal_base_attributes_effect = {
   change_martial = 12
   change_diplomacy = 4
   change_intrigue = 4
@@ -87,18 +87,18 @@ assign_marshal_base_attributes = {
 }
 
 # Assign the marshal traits to the base character (orchestrator)
-assign_marshal_traits = {
-  remove_marshal_negative_traits = yes
-  set_elite_marshal_education = yes
-  remove_existing_leadership_traits = yes
-  assign_marshal_leadership_trait = yes
-  assign_elite_chinese_marshal_trait = yes
-  assign_marshal_warrior_lodge = yes
-  assign_marshal_flavor = yes
-  assign_marshal_battle_wounds = yes
-  assign_marshal_legendary_chance = yes
-  assign_religion_traits = yes
-  assign_marshal_crusade_trait = yes
+assign_marshal_traits_effect = {
+  remove_marshal_negative_traits_effect = yes
+  set_elite_marshal_education_effect = yes
+  remove_existing_leadership_traits_effect = yes
+  assign_marshal_leadership_trait_effect = yes
+  assign_elite_chinese_marshal_trait_effect = yes
+  assign_marshal_warrior_lodge_effect = yes
+  assign_marshal_flavor_effect = yes
+  assign_marshal_battle_wounds_effect = yes
+  assign_marshal_legendary_chance_effect = yes
+  assign_religion_traits_effect = yes
+  assign_marshal_crusade_trait_effect = yes
 
   set_character_flag = elite_recruit_marshal
   save_event_target_as = invited_character
@@ -106,7 +106,7 @@ assign_marshal_traits = {
 
 # Remove physical and martial drawbacks unbecoming of an elite marshal: a battle-leader
 # must be hale and brave. giant and paranoid are deliberately kept (see inline notes).
-remove_marshal_negative_traits = {
+remove_marshal_negative_traits_effect = {
   remove_trait = weak
   remove_trait = slow
   remove_trait = imbecile
@@ -128,7 +128,7 @@ remove_marshal_negative_traits = {
 # Strip any leadership trait the base marshal was generated with, so our curated roll is the
 # only standard leadership trait and there's room for a bonus (cap is 2). remove_trait on an
 # absent trait is a no-op; build-renamed traits are cleared via the trait_compat utility.
-remove_existing_leadership_traits = {
+remove_existing_leadership_traits_effect = {
   # General
   remove_trait = aggressive_leader
   remove_trait = defensive_leader
@@ -166,18 +166,18 @@ remove_existing_leadership_traits = {
   remove_trait = hellenic_leader
 
   # Build-renamed leadership traits (Battlefield Terrain Master, Direct Leader, terrain)
-  remove_elite_compat_leadership_traits = yes
+  remove_elite_compat_leadership_traits_effect = yes
 }
 
 # Guaranteed top martial education
-set_elite_marshal_education = {
+set_elite_marshal_education_effect = {
   clear_education_trait = yes
   add_trait = brilliant_strategist
 }
 
 # Roll one leadership trait, grouped by the wiki's categories.
 # Build-specific IDs go through the trait_compat hooks.
-assign_marshal_leadership_trait = {
+assign_marshal_leadership_trait_effect = {
   random_list = {
     # General
     10 = { add_trait = aggressive_leader } # Aggressive Leader
@@ -189,8 +189,8 @@ assign_marshal_leadership_trait = {
     10 = { add_trait = organizer } # Organizer
     10 = { add_trait = siege_leader } # Siege Leader
     10 = { add_trait = winter_soldier } # Winter Soldier
-    10 = { assign_elite_battlefield_terrain_master_trait = yes } # Battlefield Terrain Master
-    10 = { assign_elite_direct_leader_trait = yes } # Direct Leader
+    10 = { assign_elite_battlefield_terrain_master_trait_effect = yes } # Battlefield Terrain Master
+    10 = { assign_elite_direct_leader_trait_effect = yes } # Direct Leader
 
     # Unit-specific
     10 = { add_trait = cavalry_leader } # Cavalry Leader
@@ -202,17 +202,17 @@ assign_marshal_leadership_trait = {
     }
 
     # Terrain expertise
-    10 = { assign_elite_desert_terrain_trait = yes } # Desert
-    10 = { assign_elite_flat_terrain_trait = yes } # Flatland
-    10 = { assign_elite_jungle_terrain_trait = yes } # Jungle
-    10 = { assign_elite_mountain_terrain_trait = yes } # Mountain
-    10 = { assign_elite_rough_terrain_trait = yes } # Rough
+    10 = { assign_elite_desert_terrain_trait_effect = yes } # Desert
+    10 = { assign_elite_flat_terrain_trait_effect = yes } # Flatland
+    10 = { assign_elite_jungle_terrain_trait_effect = yes } # Jungle
+    10 = { assign_elite_mountain_terrain_trait_effect = yes } # Mountain
+    10 = { assign_elite_rough_terrain_trait_effect = yes } # Rough
   }
 }
 
 # Chinese (Jade Dragon) bonus: a Chinese-culture recruit has a ~50% chance at a second
 # leadership trait (the cap is MAX_LEADERSHIP_TRAITS = 2), as vanilla grants these.
-assign_elite_chinese_marshal_trait = {
+assign_elite_chinese_marshal_trait_effect = {
   if = {
     limit = {
       has_dlc = "Jade Dragon"
@@ -230,7 +230,7 @@ assign_elite_chinese_marshal_trait = {
 
 # If the recruiting ruler belongs to a warrior lodge, sponsor the recruit into it,
 # with a 25% chance they have already earned the lodge's command trait.
-assign_marshal_warrior_lodge = {
+assign_marshal_warrior_lodge_effect = {
   if = {
     limit = { ROOT = { in_warrior_lodge_trigger = yes } }
     ROOT = { society = { save_event_target_as = elite_ruler_lodge } }
@@ -267,7 +267,7 @@ assign_marshal_warrior_lodge = {
 # Inlined to bypass vanilla add_crusade_trait_effect: its per-branch `break = yes`
 # propagates out of new_character and silently aborts ER.1. Five trait IDs differ
 # between vanilla and CleanSlate, gated on cleanslate_active.
-assign_marshal_crusade_trait = {
+assign_marshal_crusade_trait_effect = {
   if = {
     limit = { has_dharmic_religion_trigger = no }
     random = {
@@ -287,11 +287,11 @@ assign_marshal_crusade_trait = {
       }
       else_if = {
         limit = { religion_openly_tengri_or_reformed_trigger = yes }
-        assign_elite_tengri_crusade_trait = yes
+        assign_elite_tengri_crusade_trait_effect = yes
       }
       else_if = {
         limit = { religion_openly_finnish_or_reformed_trigger = yes }
-        assign_elite_finnish_crusade_trait = yes
+        assign_elite_finnish_crusade_trait_effect = yes
       }
       else_if = {
         limit = { religion_openly_slavic_or_reformed_trigger = yes }
@@ -303,7 +303,7 @@ assign_marshal_crusade_trait = {
       }
       else_if = {
         limit = { religion_openly_baltic_or_reformed_trigger = yes }
-        assign_elite_baltic_crusade_trait = yes
+        assign_elite_baltic_crusade_trait_effect = yes
       }
       else_if = {
         limit = { religion_openly_bon_or_reformed_trigger = yes }
@@ -315,7 +315,7 @@ assign_marshal_crusade_trait = {
       }
       else_if = {
         limit = { religion_openly_aztec_or_reformed_trigger = yes }
-        assign_elite_aztec_crusade_trait = yes
+        assign_elite_aztec_crusade_trait_effect = yes
       }
       else_if = {
         limit = { religion_openly_hellenic_or_reformed_trigger = yes }
@@ -327,17 +327,17 @@ assign_marshal_crusade_trait = {
       }
       else_if = {
         limit = { religion_group = jewish_group }
-        assign_elite_jewish_crusade_trait = yes
+        assign_elite_jewish_crusade_trait_effect = yes
       }
     }
   }
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_marshal_flavor = {
+assign_marshal_flavor_effect = {
   random_list = {
     30 = {
-      assign_elite_physique_trait = yes
+      assign_elite_physique_trait_effect = yes
     }
     15 = {
       change_martial = 2
@@ -375,7 +375,7 @@ assign_marshal_flavor = {
 
 # A veteran commander sometimes carries the marks of past battles. The penalty wounds
 # are paired with a hardening trait so the roll is always worth getting.
-assign_marshal_battle_wounds = {
+assign_marshal_battle_wounds_effect = {
   random = {
     chance = 15
     random_list = {
@@ -404,7 +404,7 @@ assign_marshal_battle_wounds = {
 }
 
 # Small chance of a legendary, named marshal if the ruler owns an inspire-commanders bloodline
-assign_marshal_legendary_chance = {
+assign_marshal_legendary_chance_effect = {
   if = {
     limit = {  ROOT = {
       any_owned_bloodline = {
@@ -415,7 +415,7 @@ assign_marshal_legendary_chance = {
     random_list = {
       95 = {}
       5 = {
-        assign_legendary_marshal = yes
+        assign_legendary_marshal_effect = yes
         opinion = {
           modifier = opinion_legendary_commander
           years = 50
@@ -427,11 +427,11 @@ assign_marshal_legendary_chance = {
 }
 
 # Build a legendary, named marshal: one of many hero archetypes, each a themed trait set
-assign_legendary_marshal = {
+assign_legendary_marshal_effect = {
   random_list = {
     20 = {
       add_trait = giant
-      assign_elite_physique_trait = yes
+      assign_elite_physique_trait_effect = yes
       if = { limit = { NOT = { religion = jain } }  add_trait = hunter }  # incidental here; Jain cannot have Hunter
       change_martial = 2
       give_nickname = nick_the_giant
@@ -441,7 +441,7 @@ assign_legendary_marshal = {
       trigger = { has_dlc = "Reapers" }
 
       add_trait = giant
-      assign_elite_physique_trait = yes
+      assign_elite_physique_trait_effect = yes
       add_trait = strategist
       add_trait = one_eyed
       change_martial = 1
@@ -463,7 +463,7 @@ assign_legendary_marshal = {
     }
 
     20 = {
-      assign_elite_physique_trait = yes
+      assign_elite_physique_trait_effect = yes
       remove_trait = temperate
       add_trait = wroth
       add_trait = falconer
@@ -495,7 +495,7 @@ assign_legendary_marshal = {
     }
 
     20 = {
-      assign_elite_physique_trait = yes
+      assign_elite_physique_trait_effect = yes
       add_trait = strategist
       change_martial = 1
       give_nickname = nick_the_strong
@@ -567,7 +567,7 @@ assign_legendary_marshal = {
     }
 
     20 = {
-      assign_elite_beauty_trait = yes
+      assign_elite_beauty_trait_effect = yes
       add_trait = strategist
       change_martial = 4
       give_nickname = nick_the_lion

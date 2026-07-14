@@ -22,7 +22,7 @@ namespace = ERD
 
 # ERD.1 – Grant legendary_commander_bloodline (carries the
 # bloodline_inspire_commanders flag). Use to test the marshal
-# legendary build path in assign_marshal_legendary_chance,
+# legendary build path in assign_marshal_legendary_chance_effect,
 # which gates on has_bloodline_flag = bloodline_inspire_commanders
 # and rolls 5% per marshal recruit for the legendary archetype.
 #

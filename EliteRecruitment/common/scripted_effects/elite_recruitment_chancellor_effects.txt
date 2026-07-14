@@ -8,7 +8,7 @@
 ############################################################
 
 # Create male chancellor in your culture and religion with dynasty lottery
-create_male_chancellor_dynasty_lottery = {
+create_male_chancellor_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_diplomat = {
@@ -43,7 +43,7 @@ create_male_chancellor_dynasty_lottery = {
 }
 
 # Create female chancellor in your culture and religion with dynasty lottery
-create_female_chancellor_dynasty_lottery = {
+create_female_chancellor_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_diplomat = {
@@ -78,7 +78,7 @@ create_female_chancellor_dynasty_lottery = {
 }
 
 # Assign the base chancellor attributes to the base character
-assign_chancellor_base_attributes = {
+assign_chancellor_base_attributes_effect = {
   change_diplomacy = 12
   change_learning = 4
   change_stewardship = 4
@@ -87,11 +87,11 @@ assign_chancellor_base_attributes = {
 }
 
 # Assign the chancellor traits to the base character (orchestrator)
-assign_chancellor_traits = {
-  remove_chancellor_negative_traits = yes
-  set_elite_chancellor_education = yes
-  assign_chancellor_flavor = yes
-  assign_religion_traits = yes
+assign_chancellor_traits_effect = {
+  remove_chancellor_negative_traits_effect = yes
+  set_elite_chancellor_education_effect = yes
+  assign_chancellor_flavor_effect = yes
+  assign_religion_traits_effect = yes
 
   set_character_flag = elite_recruit_chancellor
   save_event_target_as = invited_character
@@ -100,7 +100,7 @@ assign_chancellor_traits = {
 # Remove social and physical drawbacks unbecoming of an elite chancellor. An envoy is the
 # realm's face abroad, so frailty, cowardice, and abrasive or off-putting manners are
 # stripped (the imposing giant is the one deliberate exception below).
-remove_chancellor_negative_traits = {
+remove_chancellor_negative_traits_effect = {
   # Incompetence / frailty
   remove_trait = weak
   remove_trait = slow
@@ -129,13 +129,13 @@ remove_chancellor_negative_traits = {
 }
 
 # Guaranteed top diplomacy education
-set_elite_chancellor_education = {
+set_elite_chancellor_education_effect = {
   clear_education_trait = yes
   add_trait = grey_eminence
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_chancellor_flavor = {
+assign_chancellor_flavor_effect = {
   random_list = {
     5 = {
       add_trait = shrewd
@@ -144,7 +144,7 @@ assign_chancellor_flavor = {
       add_trait = quick
     }
     20 = {
-      assign_elite_beauty_trait = yes
+      assign_elite_beauty_trait_effect = yes
     }
     20 = {
       change_diplomacy = 2

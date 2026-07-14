@@ -8,7 +8,7 @@
 ############################################################
 
 # Create male spymaster in your culture and religion with dynasty lottery
-create_male_spymaster_dynasty_lottery = {
+create_male_spymaster_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_intriguer = {
@@ -43,7 +43,7 @@ create_male_spymaster_dynasty_lottery = {
 }
 
 # Create female spymaster in your culture and religion with dynasty lottery
-create_female_spymaster_dynasty_lottery = {
+create_female_spymaster_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_intriguer = {
@@ -78,7 +78,7 @@ create_female_spymaster_dynasty_lottery = {
 }
 
 # Assign the base spymaster attributes to the base character
-assign_spymaster_base_attributes = {
+assign_spymaster_base_attributes_effect = {
   change_intrigue = 12
   change_diplomacy = 4
   change_learning = 4
@@ -87,11 +87,11 @@ assign_spymaster_base_attributes = {
 }
 
 # Assign the spymaster traits to the base character (orchestrator)
-assign_spymaster_traits = {
-  remove_spymaster_negative_traits = yes
-  set_elite_spymaster_education = yes
-  assign_spymaster_flavor = yes
-  assign_religion_traits = yes
+assign_spymaster_traits_effect = {
+  remove_spymaster_negative_traits_effect = yes
+  set_elite_spymaster_education_effect = yes
+  assign_spymaster_flavor_effect = yes
+  assign_religion_traits_effect = yes
 
   set_character_flag = elite_recruit_spymaster
   save_event_target_as = invited_character
@@ -100,7 +100,7 @@ assign_spymaster_traits = {
 # Remove incompetence, frailty, and conspicuous traits unbecoming of an elite spymaster.
 # A spy must blend in, so a memorable face, gait, or speech is a liability. paranoid is
 # deliberately kept -- it is +2 intrigue, an asset for a spymaster.
-remove_spymaster_negative_traits = {
+remove_spymaster_negative_traits_effect = {
   # Incompetence / frailty
   remove_trait = imbecile
   remove_trait = dull
@@ -128,13 +128,13 @@ remove_spymaster_negative_traits = {
 }
 
 # Guaranteed top intrigue education
-set_elite_spymaster_education = {
+set_elite_spymaster_education_effect = {
   clear_education_trait = yes
   add_trait = elusive_shadow
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_spymaster_flavor = {
+assign_spymaster_flavor_effect = {
   random_list = {
     20 = {
       change_intrigue = 2
@@ -146,13 +146,13 @@ assign_spymaster_flavor = {
       change_intrigue = 4
     }
     10 = {
-      assign_elite_schemer_trait = yes
+      assign_elite_schemer_trait_effect = yes
     }
     10 = {
       add_trait = cynical
     }
     10 = {
-      assign_elite_beauty_trait = yes
+      assign_elite_beauty_trait_effect = yes
     }
     5 = {
       add_trait = cruel
@@ -171,7 +171,7 @@ assign_spymaster_flavor = {
       add_trait = impaler
     }
     5 = {
-      assign_elite_seducer_trait = yes
+      assign_elite_seducer_trait_effect = yes
     }
   }
 }

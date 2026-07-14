@@ -8,7 +8,7 @@
 ############################################################
 
 # Create male chaplain in your culture and religion with dynasty lottery
-create_male_chaplain_dynasty_lottery = {
+create_male_chaplain_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_priest = {
@@ -43,7 +43,7 @@ create_male_chaplain_dynasty_lottery = {
 }
 
 # Create female chaplain in your culture and religion with dynasty lottery
-create_female_chaplain_dynasty_lottery = {
+create_female_chaplain_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_priest = {
@@ -78,7 +78,7 @@ create_female_chaplain_dynasty_lottery = {
 }
 
 # Assign the base chaplain attributes to the base character
-assign_chaplain_base_attributes = {
+assign_chaplain_base_attributes_effect = {
   change_learning = 12
   change_diplomacy = 4
   change_stewardship = 4
@@ -87,13 +87,13 @@ assign_chaplain_base_attributes = {
 }
 
 # Assign the chaplain traits to the base character (orchestrator)
-assign_chaplain_traits = {
-  set_character_flag = elite_recruit_chaplain   # set first so the shared assign_religion_traits grants the brahmin (priest) caste; also the chaplain's recruit marker
-  remove_chaplain_negative_traits = yes
-  set_elite_chaplain_education = yes
-  assign_chaplain_flavor = yes
-  assign_chaplain_wonder_bonus = yes
-  assign_religion_traits = yes
+assign_chaplain_traits_effect = {
+  set_character_flag = elite_recruit_chaplain   # set first so the shared assign_religion_traits_effect grants the brahmin (priest) caste; also the chaplain's recruit marker
+  remove_chaplain_negative_traits_effect = yes
+  set_elite_chaplain_education_effect = yes
+  assign_chaplain_flavor_effect = yes
+  assign_chaplain_wonder_bonus_effect = yes
+  assign_religion_traits_effect = yes
 
   save_event_target_as = invited_character
 }
@@ -101,7 +101,7 @@ assign_chaplain_traits = {
 # Remove drawbacks unbecoming of an elite court chaplain. A holy man should be able-bodied,
 # well-spoken (he preaches), and devout; gluttonous/greedy are intentionally kept, as a
 # well-fed friar or a worldly, coffer-filling prelate are apt, characterful clergy.
-remove_chaplain_negative_traits = {
+remove_chaplain_negative_traits_effect = {
   # Incompetence / frailty
   remove_trait = weak
   remove_trait = slow
@@ -133,13 +133,13 @@ remove_chaplain_negative_traits = {
 }
 
 # Guaranteed top learning education
-set_elite_chaplain_education = {
+set_elite_chaplain_education_effect = {
   clear_education_trait = yes
   add_trait = mastermind_theologian
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_chaplain_flavor = {
+assign_chaplain_flavor_effect = {
   random_list = {
     15 = {
       change_learning = 2
@@ -200,7 +200,7 @@ assign_chaplain_flavor = {
 # marshal's inspire-commanders bloodline bonus. The top education (mastermind_theologian)
 # is already guaranteed, so this grants the other learning boons vanilla's employ_priest
 # rolls there.
-assign_chaplain_wonder_bonus = {
+assign_chaplain_wonder_bonus_effect = {
   if = {
     limit = { ROOT = { realm_wonder_or_upgrade_has_flag_inspires_learning_trigger = yes } }
     # Skip a boon the recruit already has so the bonus always lands something fresh;

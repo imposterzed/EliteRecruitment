@@ -9,6 +9,11 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-07-14
+
+### Changed
+- Add `_effect` suffix to all 68 scripted_effect definitions and their call sites.
+
 ## [1.0.7] - 2026-07-14
 
 ### Changed

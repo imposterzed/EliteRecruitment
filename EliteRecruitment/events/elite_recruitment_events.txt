@@ -456,17 +456,17 @@ character_event = {
       elite_recruitment_chancellor_can_afford_trigger = yes
     }
 
-    pay_elite_chancellor_cost = yes
+    pay_elite_chancellor_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chancellor_TT
 
-      create_male_chancellor_dynasty_lottery = yes
+      create_male_chancellor_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chancellor_base_attributes = yes
-        assign_chancellor_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chancellor_base_attributes_effect = yes
+        assign_chancellor_traits_effect = yes
       }
     }
 
@@ -484,17 +484,17 @@ character_event = {
       elite_recruitment_marshal_can_afford_trigger = yes
     }
 
-    pay_elite_marshal_cost = yes
+    pay_elite_marshal_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_marshal_TT
 
-      create_male_marshal_dynasty_lottery = yes
+      create_male_marshal_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_marshal_base_attributes = yes
-        assign_marshal_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_marshal_base_attributes_effect = yes
+        assign_marshal_traits_effect = yes
       }
     }
 
@@ -512,17 +512,17 @@ character_event = {
       elite_recruitment_steward_can_afford_trigger = yes
     }
 
-    pay_elite_steward_cost = yes
+    pay_elite_steward_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_steward_TT
 
-      create_male_steward_dynasty_lottery = yes
+      create_male_steward_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_steward_base_attributes = yes
-        assign_steward_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_steward_base_attributes_effect = yes
+        assign_steward_traits_effect = yes
       }
     }
 
@@ -541,17 +541,17 @@ character_event = {
       NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
     }
 
-    pay_elite_spymaster_cost = yes
+    pay_elite_spymaster_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_spymaster_TT
 
-      create_male_spymaster_dynasty_lottery = yes
+      create_male_spymaster_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_spymaster_base_attributes = yes
-        assign_spymaster_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_spymaster_base_attributes_effect = yes
+        assign_spymaster_traits_effect = yes
       }
     }
 
@@ -571,17 +571,17 @@ character_event = {
       NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
     }
 
-    pay_elite_chaplain_cost = yes
+    pay_elite_chaplain_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chaplain_TT
 
-      create_male_chaplain_dynasty_lottery = yes
+      create_male_chaplain_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chaplain_base_attributes = yes
-        assign_chaplain_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chaplain_base_attributes_effect = yes
+        assign_chaplain_traits_effect = yes
       }
     }
 
@@ -624,17 +624,17 @@ character_event = {
       elite_recruitment_chancellor_can_afford_trigger = yes
     }
 
-    pay_elite_chancellor_cost = yes
+    pay_elite_chancellor_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chancellor_TT
 
-      create_female_chancellor_dynasty_lottery = yes
+      create_female_chancellor_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chancellor_base_attributes = yes
-        assign_chancellor_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chancellor_base_attributes_effect = yes
+        assign_chancellor_traits_effect = yes
       }
     }
 
@@ -652,17 +652,17 @@ character_event = {
       elite_recruitment_marshal_can_afford_trigger = yes
     }
 
-    pay_elite_marshal_cost = yes
+    pay_elite_marshal_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_marshal_TT
 
-      create_female_marshal_dynasty_lottery = yes
+      create_female_marshal_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_marshal_base_attributes = yes
-        assign_marshal_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_marshal_base_attributes_effect = yes
+        assign_marshal_traits_effect = yes
       }
     }
 
@@ -680,17 +680,17 @@ character_event = {
       elite_recruitment_steward_can_afford_trigger = yes
     }
 
-    pay_elite_steward_cost = yes
+    pay_elite_steward_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_steward_TT
 
-      create_female_steward_dynasty_lottery = yes
+      create_female_steward_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_steward_base_attributes = yes
-        assign_steward_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_steward_base_attributes_effect = yes
+        assign_steward_traits_effect = yes
       }
     }
 
@@ -710,17 +710,17 @@ character_event = {
       NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
     }
 
-    pay_elite_spymaster_cost = yes
+    pay_elite_spymaster_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_spymaster_TT
 
-      create_female_spymaster_dynasty_lottery = yes
+      create_female_spymaster_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_spymaster_base_attributes = yes
-        assign_spymaster_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_spymaster_base_attributes_effect = yes
+        assign_spymaster_traits_effect = yes
       }
     }
 
@@ -740,17 +740,17 @@ character_event = {
       NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
     }
 
-    pay_elite_chaplain_cost = yes
+    pay_elite_chaplain_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chaplain_TT
 
-      create_female_chaplain_dynasty_lottery = yes
+      create_female_chaplain_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chaplain_base_attributes = yes
-        assign_chaplain_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chaplain_base_attributes_effect = yes
+        assign_chaplain_traits_effect = yes
       }
     }
 
@@ -790,17 +790,17 @@ character_event = {
       elite_recruitment_spymaster_can_afford_trigger = yes
     }
 
-    pay_elite_spymaster_cost = yes
+    pay_elite_spymaster_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_spymaster_TT
 
-      create_male_spymaster_dynasty_lottery = yes
+      create_male_spymaster_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_spymaster_base_attributes = yes
-        assign_spymaster_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_spymaster_base_attributes_effect = yes
+        assign_spymaster_traits_effect = yes
       }
     }
 
@@ -818,17 +818,17 @@ character_event = {
       elite_recruitment_chaplain_can_afford_trigger = yes
     }
 
-    pay_elite_chaplain_cost = yes
+    pay_elite_chaplain_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chaplain_TT
 
-      create_male_chaplain_dynasty_lottery = yes
+      create_male_chaplain_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chaplain_base_attributes = yes
-        assign_chaplain_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chaplain_base_attributes_effect = yes
+        assign_chaplain_traits_effect = yes
       }
     }
 
@@ -862,17 +862,17 @@ character_event = {
       elite_recruitment_spymaster_can_afford_trigger = yes
     }
 
-    pay_elite_spymaster_cost = yes
+    pay_elite_spymaster_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_spymaster_TT
 
-      create_female_spymaster_dynasty_lottery = yes
+      create_female_spymaster_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_spymaster_base_attributes = yes
-        assign_spymaster_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_spymaster_base_attributes_effect = yes
+        assign_spymaster_traits_effect = yes
       }
     }
 
@@ -890,17 +890,17 @@ character_event = {
       elite_recruitment_chaplain_can_afford_trigger = yes
     }
 
-    pay_elite_chaplain_cost = yes
+    pay_elite_chaplain_cost_effect = yes
 
     custom_tooltip = {
       text = recruit_chaplain_TT
 
-      create_female_chaplain_dynasty_lottery = yes
+      create_female_chaplain_dynasty_lottery_effect = yes
 
       new_character = {
-        assign_random_adult_age = yes
-        assign_chaplain_base_attributes = yes
-        assign_chaplain_traits = yes
+        assign_random_adult_age_effect = yes
+        assign_chaplain_base_attributes_effect = yes
+        assign_chaplain_traits_effect = yes
       }
     }
 

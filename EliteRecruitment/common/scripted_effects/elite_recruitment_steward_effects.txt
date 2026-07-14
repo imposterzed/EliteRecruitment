@@ -8,7 +8,7 @@
 ############################################################
 
 # Create male steward in your culture and religion with dynasty lottery
-create_male_steward_dynasty_lottery = {
+create_male_steward_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_steward = {
@@ -43,7 +43,7 @@ create_male_steward_dynasty_lottery = {
 }
 
 # Create female steward in your culture and religion with dynasty lottery
-create_female_steward_dynasty_lottery = {
+create_female_steward_dynasty_lottery_effect = {
   random_list = {
     # New random house
     33 = { create_random_steward = {
@@ -78,7 +78,7 @@ create_female_steward_dynasty_lottery = {
 }
 
 # Assign the base steward attributes to the base character
-assign_steward_base_attributes = {
+assign_steward_base_attributes_effect = {
   change_stewardship = 12
   change_diplomacy = 4
   change_intrigue = 4
@@ -87,11 +87,11 @@ assign_steward_base_attributes = {
 }
 
 # Assign the steward traits to the base character (orchestrator)
-assign_steward_traits = {
-  remove_steward_negative_traits = yes
-  set_elite_steward_education = yes
-  assign_steward_flavor = yes
-  assign_religion_traits = yes
+assign_steward_traits_effect = {
+  remove_steward_negative_traits_effect = yes
+  set_elite_steward_education_effect = yes
+  assign_steward_flavor_effect = yes
+  assign_religion_traits_effect = yes
 
   set_character_flag = elite_recruit_steward
   save_event_target_as = invited_character
@@ -100,7 +100,7 @@ assign_steward_traits = {
 # Remove drawbacks unbecoming of an elite steward. A treasurer must be sharp and diligent,
 # so dullness and sloth are stripped; gluttonous (wasteful) and arbitrary (corrupt) ill
 # befit a steady hand on the realm's coffers.
-remove_steward_negative_traits = {
+remove_steward_negative_traits_effect = {
   # Incompetence / sloth
   remove_trait = slow
   remove_trait = imbecile
@@ -116,13 +116,13 @@ remove_steward_negative_traits = {
 }
 
 # Guaranteed top stewardship education
-set_elite_steward_education = {
+set_elite_steward_education_effect = {
   clear_education_trait = yes
   add_trait = midas_touched
 }
 
 # Weighted "flavor" roll: usually a small, fitting bonus, rarely something bigger
-assign_steward_flavor = {
+assign_steward_flavor_effect = {
   random_list = {
     15 = {
       change_stewardship = 2

@@ -12,7 +12,7 @@
 
 # Physique flavor trait:
 # Robust (vanilla) / Brawny (CleanSlate)
-assign_elite_physique_trait = {
+assign_elite_physique_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = brawny
@@ -24,7 +24,7 @@ assign_elite_physique_trait = {
 
 # Beauty flavor trait:
 # Fair (vanilla) / Attractive (CleanSlate)
-assign_elite_beauty_trait = {
+assign_elite_beauty_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = attractive
@@ -36,7 +36,7 @@ assign_elite_beauty_trait = {
 
 # Battlefield Terrain Master leadership trait:
 # narrow_flank_leader (vanilla) / battlefield_terrain_master (CleanSlate)
-assign_elite_battlefield_terrain_master_trait = {
+assign_elite_battlefield_terrain_master_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = battlefield_terrain_master
@@ -48,7 +48,7 @@ assign_elite_battlefield_terrain_master_trait = {
 
 # Direct Leader leadership trait:
 # experimenter (vanilla) / direct_leader (CleanSlate)
-assign_elite_direct_leader_trait = {
+assign_elite_direct_leader_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = direct_leader
@@ -60,7 +60,7 @@ assign_elite_direct_leader_trait = {
 
 # Terrain-expertise leadership traits:
 # vanilla *_terrain_leader / CleanSlate *_expert
-assign_elite_desert_terrain_trait = {
+assign_elite_desert_terrain_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = desert_expert
@@ -70,7 +70,7 @@ assign_elite_desert_terrain_trait = {
   }
 }
 
-assign_elite_flat_terrain_trait = {
+assign_elite_flat_terrain_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = flat_terrain_expert
@@ -80,7 +80,7 @@ assign_elite_flat_terrain_trait = {
   }
 }
 
-assign_elite_jungle_terrain_trait = {
+assign_elite_jungle_terrain_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = jungle_expert
@@ -90,7 +90,7 @@ assign_elite_jungle_terrain_trait = {
   }
 }
 
-assign_elite_mountain_terrain_trait = {
+assign_elite_mountain_terrain_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = mountain_expert
@@ -100,7 +100,7 @@ assign_elite_mountain_terrain_trait = {
   }
 }
 
-assign_elite_rough_terrain_trait = {
+assign_elite_rough_terrain_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = rough_terrain_expert
@@ -111,7 +111,7 @@ assign_elite_rough_terrain_trait = {
 }
 
 # Remove the build's renamed leadership traits (Battlefield Terrain Master, Direct Leader, terrain)
-remove_elite_compat_leadership_traits = {
+remove_elite_compat_leadership_traits_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     # CleanSlate IDs
@@ -137,7 +137,7 @@ remove_elite_compat_leadership_traits = {
 
 # Intrigue lifestyle trait:
 # Schemer (vanilla) / Master Schemer (CleanSlate)
-assign_elite_schemer_trait = {
+assign_elite_schemer_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = master_schemer
@@ -149,7 +149,7 @@ assign_elite_schemer_trait = {
 
 # Seduction lifestyle trait (sex-specific):
 # Seducer/Seductress (vanilla) / Master Seducer/Master Seductress (CleanSlate)
-assign_elite_seducer_trait = {
+assign_elite_seducer_trait_effect = {
   if = {
     limit = { is_female = yes }
     if = {
@@ -171,12 +171,12 @@ assign_elite_seducer_trait = {
   }
 }
 
-# Holy-war veteran traits (called from assign_marshal_crusade_trait). Five of
+# Holy-war veteran traits (called from assign_marshal_crusade_trait_effect). Five of
 # the fourteen religion->trait mappings have CleanSlate-renamed trait IDs and
 # need a compat switch; the other nine share IDs and are added inline.
 
 # Tengri: tengri_warrior (vanilla) / skylord (CleanSlate)
-assign_elite_tengri_crusade_trait = {
+assign_elite_tengri_crusade_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = skylord
@@ -187,7 +187,7 @@ assign_elite_tengri_crusade_trait = {
 }
 
 # Finnish: ukkos_shield (vanilla) / ukkos_hammer (CleanSlate)
-assign_elite_finnish_crusade_trait = {
+assign_elite_finnish_crusade_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = ukkos_hammer
@@ -198,7 +198,7 @@ assign_elite_finnish_crusade_trait = {
 }
 
 # Baltic: romuvas_own (vanilla) / hound_of_dievas (CleanSlate)
-assign_elite_baltic_crusade_trait = {
+assign_elite_baltic_crusade_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = hound_of_dievas
@@ -209,7 +209,7 @@ assign_elite_baltic_crusade_trait = {
 }
 
 # Aztec: eagle_warrior (vanilla) / eagle_knight (CleanSlate)
-assign_elite_aztec_crusade_trait = {
+assign_elite_aztec_crusade_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = eagle_knight
@@ -220,7 +220,7 @@ assign_elite_aztec_crusade_trait = {
 }
 
 # Jewish: shaddai (vanilla) / kanai (CleanSlate)
-assign_elite_jewish_crusade_trait = {
+assign_elite_jewish_crusade_trait_effect = {
   if = {
     limit = { has_global_flag = cleanslate_active }
     add_trait = kanai
