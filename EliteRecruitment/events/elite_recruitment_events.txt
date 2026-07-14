@@ -86,7 +86,10 @@ character_event = {
 		trigger = {
 			event_target:invited_character = {
 				has_character_flag = elite_recruit_marshal
-				can_be_marshal_trigger = yes
+				OR = {
+					elite_recruitment_gender_gating_bypassed_trigger = yes
+					can_be_marshal_trigger = yes
+				}
 			}
 		}
 		# If the seat is filled, dismiss the holder first; this block's portrait and
@@ -137,7 +140,10 @@ character_event = {
 		trigger = {
 			event_target:invited_character = {
 				has_character_flag = elite_recruit_chancellor
-				can_be_chancellor_trigger = yes
+				OR = {
+					elite_recruitment_gender_gating_bypassed_trigger = yes
+					can_be_chancellor_trigger = yes
+				}
 			}
 		}
 		# If the seat is filled, dismiss the holder first; this block's portrait and
@@ -188,7 +194,10 @@ character_event = {
 		trigger = {
 			event_target:invited_character = {
 				has_character_flag = elite_recruit_steward
-				can_be_treasurer_trigger = yes
+				OR = {
+					elite_recruitment_gender_gating_bypassed_trigger = yes
+					can_be_treasurer_trigger = yes
+				}
 			}
 		}
 		# If the seat is filled, dismiss the holder first; this block's portrait and
@@ -239,7 +248,10 @@ character_event = {
 		trigger = {
 			event_target:invited_character = {
 				has_character_flag = elite_recruit_spymaster
-				can_be_spymaster_trigger = yes
+				OR = {
+					elite_recruitment_gender_gating_bypassed_trigger = yes
+					can_be_spymaster_trigger = yes
+				}
 			}
 		}
 		# If the seat is filled, dismiss the holder first; this block's portrait and
@@ -290,7 +302,10 @@ character_event = {
 		trigger = {
 			event_target:invited_character = {
 				has_character_flag = elite_recruit_chaplain
-				can_be_spiritual_trigger = yes
+				OR = {
+					elite_recruitment_gender_gating_bypassed_trigger = yes
+					can_be_spiritual_trigger = yes
+				}
 			}
 		}
 		# If the seat is filled, dismiss the holder first; this block's portrait and
@@ -430,7 +445,10 @@ character_event = {
 	option = {
 		name = ER_11_chancellor
 		trigger = {
-			NOT = { has_religion_feature = religion_matriarchal }
+			OR = {
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_male_gate_trigger = yes
+			}
 			elite_recruitment_chancellor_can_afford_trigger = yes
 		}
 
@@ -455,7 +473,10 @@ character_event = {
 	option = {
 		name = ER_11_marshal
 		trigger = {
-			NOT = { has_religion_feature = religion_matriarchal }
+			OR = {
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_male_gate_trigger = yes
+			}
 			elite_recruitment_marshal_can_afford_trigger = yes
 		}
 
@@ -480,7 +501,10 @@ character_event = {
 	option = {
 		name = ER_11_steward
 		trigger = {
-			NOT = { has_religion_feature = religion_matriarchal }
+			OR = {
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_male_gate_trigger = yes
+			}
 			elite_recruitment_steward_can_afford_trigger = yes
 		}
 
@@ -505,7 +529,10 @@ character_event = {
 	option = {
 		name = ER_11_spymaster
 		trigger = {
-			NOT = { has_religion_feature = religion_matriarchal }
+			OR = {
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_male_gate_trigger = yes
+			}
 			elite_recruitment_spymaster_can_afford_trigger = yes
 			NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
 		}
@@ -533,8 +560,8 @@ character_event = {
 		name = ER_11_chaplain
 		trigger = {
 			OR = {
-				religion_allows_male_temple_holders = yes
-				has_religion_feature = religion_patriarchal
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_chaplain_male_gate_trigger = yes
 			}
 			elite_recruitment_chaplain_can_afford_trigger = yes
 			NOT = { elite_recruitment_all_5_male_visible_trigger = yes }
@@ -586,8 +613,8 @@ character_event = {
 		name = ER_12_chancellor
 		trigger = {
 			OR = {
-				realm_allows_female_courtiers_trigger = yes
-				has_law = status_of_women_4
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_female_gate_trigger = yes
 			}
 			elite_recruitment_chancellor_can_afford_trigger = yes
 		}
@@ -614,8 +641,8 @@ character_event = {
 		name = ER_12_marshal
 		trigger = {
 			OR = {
-				realm_allows_female_courtiers_trigger = yes
-				has_law = status_of_women_4
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_female_gate_trigger = yes
 			}
 			elite_recruitment_marshal_can_afford_trigger = yes
 		}
@@ -642,8 +669,8 @@ character_event = {
 		name = ER_12_steward
 		trigger = {
 			OR = {
-				realm_allows_female_courtiers_trigger = yes
-				has_law = status_of_women_4
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_female_gate_trigger = yes
 			}
 			elite_recruitment_steward_can_afford_trigger = yes
 		}
@@ -671,14 +698,8 @@ character_event = {
 		name = ER_12_spymaster
 		trigger = {
 			OR = {
-				realm_allows_female_courtiers_trigger = yes
-				has_law = status_of_women_4
-				AND = {
-					religion_group = pagan_group
-					NOT = { has_religion_feature = religion_patriarchal }
-				}
-				religion = cathar
-				religion = messalian
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_spymaster_female_gate_trigger = yes
 			}
 			elite_recruitment_spymaster_can_afford_trigger = yes
 			NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
@@ -707,8 +728,8 @@ character_event = {
 		name = ER_12_chaplain
 		trigger = {
 			OR = {
-				religion_allows_female_temple_holders = yes
-				has_religion_feature = religion_matriarchal
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_chaplain_female_gate_trigger = yes
 			}
 			elite_recruitment_chaplain_can_afford_trigger = yes
 			NOT = { elite_recruitment_all_5_female_visible_trigger = yes }
@@ -756,7 +777,10 @@ character_event = {
 	option = {
 		name = ER_13_spymaster
 		trigger = {
-			NOT = { has_religion_feature = religion_matriarchal }
+			OR = {
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_generic_male_gate_trigger = yes
+			}
 			elite_recruitment_spymaster_can_afford_trigger = yes
 		}
 
@@ -782,8 +806,8 @@ character_event = {
 		name = ER_13_chaplain
 		trigger = {
 			OR = {
-				religion_allows_male_temple_holders = yes
-				has_religion_feature = religion_patriarchal
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_chaplain_male_gate_trigger = yes
 			}
 			elite_recruitment_chaplain_can_afford_trigger = yes
 		}
@@ -825,14 +849,8 @@ character_event = {
 		name = ER_14_spymaster
 		trigger = {
 			OR = {
-				realm_allows_female_courtiers_trigger = yes
-				has_law = status_of_women_4
-				AND = {
-					religion_group = pagan_group
-					NOT = { has_religion_feature = religion_patriarchal }
-				}
-				religion = cathar
-				religion = messalian
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_spymaster_female_gate_trigger = yes
 			}
 			elite_recruitment_spymaster_can_afford_trigger = yes
 		}
@@ -859,8 +877,8 @@ character_event = {
 		name = ER_14_chaplain
 		trigger = {
 			OR = {
-				religion_allows_female_temple_holders = yes
-				has_religion_feature = religion_matriarchal
+				elite_recruitment_gender_gating_bypassed_trigger = yes
+				elite_recruitment_chaplain_female_gate_trigger = yes
 			}
 			elite_recruitment_chaplain_can_afford_trigger = yes
 		}

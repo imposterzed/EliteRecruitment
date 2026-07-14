@@ -93,10 +93,9 @@ seasoning, never the main course.
 
 ## Game rules
 
-Elite Recruitment adds a single **game rule**, so you can tailor it to your campaign. Set it on
-the **Game Rules** screen when you start a new game (it lives under the "Various" group).
+Elite Recruitment adds two **game rules** under the "Various" filter, so you can tailor the mod to your campaign.
 
-**Elite Recruitment** — one sliding-scale cost tier:
+**Elite Recruitment: Cost** — sliding scale:
 
 > Pittance · Trifle · **Modicum** (default) · Bounty · Fortune · Disabled
 
@@ -135,6 +134,14 @@ and mid realms, the floor is what you actually pay.
 | Marshal | Prestige | 25 | 50 | 100 | 200 | 400 |
 | Chancellor | Prestige | 35 | 75 | 150 | 300 | 600 |
 | Court Chaplain | Piety | 35 | 75 | 150 | 300 | 600 |
+
+**Elite Recruitment: Gender Gating** — whether council roles are gated
+by realm council law and faith ordination:
+
+> **Adhere** (default) · Bypass
+
+- **Adhere** keeps the existing eligibility gates.
+- **Bypass** opens every role to both genders regardless.
 
 ## Requirements
 

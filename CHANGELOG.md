@@ -9,6 +9,18 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-07-14
+
+### Added
+- **Gender Gating game rule.** Adhere (default) keeps existing
+  eligibility gates. Bypass opens every role to both genders
+  regardless of council law or faith ordination.
+
+### Changed
+- Cost rule name now opens with a dark green "Elite Recruitment:"
+  prefix.
+- Cost rule descriptions cleaned up.
+
 ## [1.0.3] - 2026-07-13
 
 ### Added
