@@ -9,6 +9,13 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.11] - 2026-07-15
+
+### Changed
+- Standardize field order across all `.mod` descriptors.
+- Update contributor docs to align with current conventions.
+- Correct outdated legendary-commander bloodline naming in the console commands table.
+
 ## [1.0.10] - 2026-07-14
 
 ### Changed

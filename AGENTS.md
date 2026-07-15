@@ -95,6 +95,11 @@ You **cannot** verify in-game behavior. After making changes, surface
 them to the maintainer for in-game testing, and capture any uncertain
 edge cases as explicit questions in your handoff.
 
+For hard-to-reach scenarios (legendary-commander bloodline grants), the
+Debug sub-mod ships `event ERD.<N>` events reachable from the console
+when both mods are loaded. Enable `Elite Recruitment - Debug` alongside
+the base mod in the launcher to make these events available.
+
 ## Adding graphics
 
 Graphics ship in two places, matching the dual-mod pattern:
@@ -129,19 +134,27 @@ body.
 
 ## Conventions
 
-- **Commit messages:** imperative subject (~70 chars, no period),
-  optional bullet body explaining the "why," closing bullet referencing
-  the `CHANGELOG x.y.z.` entry.
+- **Commit messages:** subject `vX.Y.Z - <topic>` (~70 chars, no
+  trailing period), topic is a noun phrase. Optional short body
+  explaining the "why" — present tense, no forward-looking phrases.
 - **Versioning:** semver in the `0.x` range until first Steam Workshop
   release, then `1.x`+. Every commit tagged with `vX.Y.Z` (lightweight
   tag).
 - **CHANGELOG:** [Keep a Changelog](https://keepachangelog.com/) format.
   Add entries under `[X.Y.Z] - YYYY-MM-DD` with sub-sections **Added**,
-  **Changed**, **Fixed**, **Removed**, **Deprecated**, **Security**.
+  **Changed**, **Deprecated**, **Removed**, **Fixed**, **Security** in
+  that order (omit empty ones). The CHANGELOG entry ships in the SAME
+  commit as the change it describes.
 - **Comments in script files:** preserve the maintainer's existing
   comment voice; don't reformat or inject new commentary. Don't narrate
   removals in comments — rationale goes in the commit message and
   CHANGELOG.
+- **Script style:** 2-space indent, CRLF endings, one space around `=`,
+  one blank line between blocks (never two or more; no blank line
+  right after `{` or right before `}`). Use `NOR` for multi-child
+  negation — CK2's `NOT = { A B }` means "all false" (NOR), not NAND.
+  Use `real_tier` / `higher_real_tier_than` (never plain `tier` — it
+  lies under nomad/tribal mechanics).
 
 ## Things to avoid
 
@@ -163,6 +176,10 @@ body.
 - **Traits reference:** https://ck2.paradoxwikis.com/Traits — every
   trait ID with its modifiers and `leader = yes` flag. Critical for any
   flavor-roll or strip work.
+- **CleanSlate:** https://github.com/ck2plus/CleanSlate — primary
+  reference for CleanSlate-specific trait IDs and `replace_path` folder
+  targets. See `common/scripted_effects/elite_recruitment_trait_compat.txt`
+  for the vanilla↔CleanSlate rename map ER uses.
 - **Vanilla CK2 game files** — if you have access to a CK2 installation,
   the vanilla script is an invaluable reference (same syntax as the mod).
   Common locations:

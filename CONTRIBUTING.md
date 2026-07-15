@@ -83,12 +83,14 @@ Open the console with `~`.
 | Add a law | `add_law <law>` (e.g. `add_law status_of_women_4`; [law IDs](https://ck2.paradoxwikis.com/Laws)) |
 | Add a trait | `add_trait <trait> <charID>` ([trait IDs](https://ck2.paradoxwikis.com/Traits)) |
 | Join a society | `join_society <society_key>` (e.g. `join_society warrior_lodge_norse`) |
-| Grant a bloodline | `event <event_id>` — fire one of the [HF bloodline events](https://ck2.paradoxwikis.com/HF_bloodline_events). For Elite Recruitment's legendary marshal path, you need a `legendary_commander_male`/`female` bloodline. |
+| Grant a bloodline | `event <event_id>` — fire one of the [HF bloodline events](https://ck2.paradoxwikis.com/HF_bloodline_events). |
 
-For a UI alternative to typing trait / currency / society-rank
-commands, install **SketchyCheatMenu** — a Workshop mod that adds an
-in-game cheat panel. *Note: it doesn't grant bloodlines or join
-societies — those still need the console commands above.*
+### Debug event sub-mod
+
+The sibling `EliteRecruitmentDebug` sub-mod (opt-in via the launcher)
+exposes the `ERD.*` event family for hard-to-reach test setups —
+currently `ERD.1` for legendary-commander bloodline grants. Load it
+when your test needs it.
 
 ### Pull request workflow
 
@@ -96,7 +98,8 @@ societies — those still need the console commands above.*
 2. Create a branch from `main` for your change.
 3. Make and test your changes (see Testing above).
 4. Commit with the [convention from AGENTS.md](AGENTS.md#conventions)
-   (imperative subject, optional bullet body, CHANGELOG entry).
+   (release-prefixed subject `vX.Y.Z - <topic>`, optional bullet body,
+   CHANGELOG entry in the same commit).
 5. Open a PR against `main` with a brief description of what changed
    and why.
 
