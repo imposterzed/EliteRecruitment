@@ -9,6 +9,11 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.10] - 2026-07-14
+
+### Changed
+- Refactor five trigger sites to use `trigger_if`. Four aggregate helpers pull the Bypass check out as a fast-path. The commander-cap trigger becomes a chain keyed by real-tier.
+
 ## [1.0.9] - 2026-07-14
 
 ### Changed

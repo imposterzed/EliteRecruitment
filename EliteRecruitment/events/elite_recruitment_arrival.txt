@@ -338,14 +338,31 @@ character_event = {
     name = ER_1_command
     trigger = {
       event_target:invited_character = { has_character_flag = elite_recruit_marshal }
-      OR = {
-        AND = { real_tier = COUNT    NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { real_tier = DUKE     NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { real_tier = KING     is_nomadic = no  NOT = { any_realm_character = { count = 6 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { real_tier = EMPEROR  is_nomadic = no  NOT = { any_realm_character = { count = 8 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { real_tier = KING     is_nomadic = yes NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } } }
-        AND = { real_tier = EMPEROR  is_nomadic = yes NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } } }
+      trigger_if = {
+        limit = { real_tier = COUNT }
+        NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } }
       }
+      trigger_else_if = {
+        limit = { real_tier = DUKE }
+        NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } }
+      }
+      trigger_else_if = {
+        limit = { real_tier = KING  is_nomadic = no }
+        NOT = { any_realm_character = { count = 6 liege = { character = ROOT } has_minor_title = title_commander } }
+      }
+      trigger_else_if = {
+        limit = { real_tier = EMPEROR  is_nomadic = no }
+        NOT = { any_realm_character = { count = 8 liege = { character = ROOT } has_minor_title = title_commander } }
+      }
+      trigger_else_if = {
+        limit = { real_tier = KING  is_nomadic = yes }
+        NOT = { any_realm_character = { count = 2 liege = { character = ROOT } has_minor_title = title_commander } }
+      }
+      trigger_else_if = {
+        limit = { real_tier = EMPEROR  is_nomadic = yes }
+        NOT = { any_realm_character = { count = 4 liege = { character = ROOT } has_minor_title = title_commander } }
+      }
+      trigger_else = { always = no }
     }
     event_target:invited_character = {
       show_scope_change = no

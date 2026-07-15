@@ -142,29 +142,31 @@ elite_recruitment_any_female_role_eligible_trigger = {
 # gates. Prevents routing the player into a role picker where every option
 # is priced out.
 elite_recruitment_any_male_role_eligible_and_affordable_trigger = {
-  OR = {
-    AND = {
-      elite_recruitment_gender_gating_bypassed_trigger = yes
-      OR = {
-        elite_recruitment_marshal_can_afford_trigger = yes
-        elite_recruitment_steward_can_afford_trigger = yes
-        elite_recruitment_chancellor_can_afford_trigger = yes
-        elite_recruitment_spymaster_can_afford_trigger = yes
+  trigger_if = {
+    limit = { elite_recruitment_gender_gating_bypassed_trigger = yes }
+    OR = {
+      elite_recruitment_marshal_can_afford_trigger = yes
+      elite_recruitment_steward_can_afford_trigger = yes
+      elite_recruitment_chancellor_can_afford_trigger = yes
+      elite_recruitment_spymaster_can_afford_trigger = yes
+      elite_recruitment_chaplain_can_afford_trigger = yes
+    }
+  }
+  trigger_else = {
+    OR = {
+      AND = {
+        elite_recruitment_generic_male_gate_trigger = yes
+        OR = {
+          elite_recruitment_marshal_can_afford_trigger = yes
+          elite_recruitment_steward_can_afford_trigger = yes
+          elite_recruitment_chancellor_can_afford_trigger = yes
+          elite_recruitment_spymaster_can_afford_trigger = yes
+        }
+      }
+      AND = {
+        elite_recruitment_chaplain_male_gate_trigger = yes
         elite_recruitment_chaplain_can_afford_trigger = yes
       }
-    }
-    AND = {
-      elite_recruitment_generic_male_gate_trigger = yes
-      OR = {
-        elite_recruitment_marshal_can_afford_trigger = yes
-        elite_recruitment_steward_can_afford_trigger = yes
-        elite_recruitment_chancellor_can_afford_trigger = yes
-        elite_recruitment_spymaster_can_afford_trigger = yes
-      }
-    }
-    AND = {
-      elite_recruitment_chaplain_male_gate_trigger = yes
-      elite_recruitment_chaplain_can_afford_trigger = yes
     }
   }
 }
@@ -174,32 +176,34 @@ elite_recruitment_any_male_role_eligible_and_affordable_trigger = {
 # gates. Prevents routing the player into a role picker where every option
 # is priced out.
 elite_recruitment_any_female_role_eligible_and_affordable_trigger = {
-  OR = {
-    AND = {
-      elite_recruitment_gender_gating_bypassed_trigger = yes
-      OR = {
-        elite_recruitment_marshal_can_afford_trigger = yes
-        elite_recruitment_steward_can_afford_trigger = yes
-        elite_recruitment_chancellor_can_afford_trigger = yes
+  trigger_if = {
+    limit = { elite_recruitment_gender_gating_bypassed_trigger = yes }
+    OR = {
+      elite_recruitment_marshal_can_afford_trigger = yes
+      elite_recruitment_steward_can_afford_trigger = yes
+      elite_recruitment_chancellor_can_afford_trigger = yes
+      elite_recruitment_spymaster_can_afford_trigger = yes
+      elite_recruitment_chaplain_can_afford_trigger = yes
+    }
+  }
+  trigger_else = {
+    OR = {
+      AND = {
+        elite_recruitment_generic_female_gate_trigger = yes
+        OR = {
+          elite_recruitment_marshal_can_afford_trigger = yes
+          elite_recruitment_steward_can_afford_trigger = yes
+          elite_recruitment_chancellor_can_afford_trigger = yes
+        }
+      }
+      AND = {
+        elite_recruitment_spymaster_female_gate_trigger = yes
         elite_recruitment_spymaster_can_afford_trigger = yes
+      }
+      AND = {
+        elite_recruitment_chaplain_female_gate_trigger = yes
         elite_recruitment_chaplain_can_afford_trigger = yes
       }
-    }
-    AND = {
-      elite_recruitment_generic_female_gate_trigger = yes
-      OR = {
-        elite_recruitment_marshal_can_afford_trigger = yes
-        elite_recruitment_steward_can_afford_trigger = yes
-        elite_recruitment_chancellor_can_afford_trigger = yes
-      }
-    }
-    AND = {
-      elite_recruitment_spymaster_female_gate_trigger = yes
-      elite_recruitment_spymaster_can_afford_trigger = yes
-    }
-    AND = {
-      elite_recruitment_chaplain_female_gate_trigger = yes
-      elite_recruitment_chaplain_can_afford_trigger = yes
     }
   }
 }
@@ -385,12 +389,13 @@ elite_recruitment_chaplain_can_afford_trigger = {
 # from page 1 and the "Or perhaps another..." button shows. When false,
 # page 1 shows whichever roles are visible directly with no nav button.
 elite_recruitment_all_5_male_visible_trigger = {
-  OR = {
-    elite_recruitment_gender_gating_bypassed_trigger = yes
-    AND = {
-      elite_recruitment_generic_male_gate_trigger = yes
-      elite_recruitment_chaplain_male_gate_trigger = yes
-    }
+  trigger_if = {
+    limit = { elite_recruitment_gender_gating_bypassed_trigger = yes }
+    always = yes
+  }
+  trigger_else = {
+    elite_recruitment_generic_male_gate_trigger = yes
+    elite_recruitment_chaplain_male_gate_trigger = yes
   }
   elite_recruitment_marshal_can_afford_trigger = yes
   elite_recruitment_steward_can_afford_trigger = yes
@@ -401,12 +406,13 @@ elite_recruitment_all_5_male_visible_trigger = {
 
 # Female mirror.
 elite_recruitment_all_5_female_visible_trigger = {
-  OR = {
-    elite_recruitment_gender_gating_bypassed_trigger = yes
-    AND = {
-      elite_recruitment_generic_female_gate_trigger = yes
-      elite_recruitment_chaplain_female_gate_trigger = yes
-    }
+  trigger_if = {
+    limit = { elite_recruitment_gender_gating_bypassed_trigger = yes }
+    always = yes
+  }
+  trigger_else = {
+    elite_recruitment_generic_female_gate_trigger = yes
+    elite_recruitment_chaplain_female_gate_trigger = yes
   }
   elite_recruitment_marshal_can_afford_trigger = yes
   elite_recruitment_steward_can_afford_trigger = yes
