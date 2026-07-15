@@ -9,6 +9,11 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.12] - 2026-07-15
+
+### Changed
+- Restructure README sections and rewrite Optional DLC bullets.
+
 ## [1.0.11] - 2026-07-15
 
 ### Changed
