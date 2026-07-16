@@ -9,6 +9,11 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.15] - 2026-07-16
+
+### Fixed
+- Marshal commander and Chaplain court physician bonus options now respect vanilla's minor-title eligibility gates. Bypass game rule ignores this.
+
 ## [1.0.14] - 2026-07-16
 
 ### Changed

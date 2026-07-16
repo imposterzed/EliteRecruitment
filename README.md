@@ -158,7 +158,7 @@ by realm council law and faith ordination:
 > **Adhere** (default) · Bypass
 
 - **Adhere** keeps the existing eligibility gates.
-- **Bypass** opens every role to both genders regardless.
+- **Bypass** lets you recruit either gender for any role, regardless of gender restrictions from council law or faith.
 
 ## Requirements
 
