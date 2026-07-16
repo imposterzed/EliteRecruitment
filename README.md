@@ -11,10 +11,24 @@ council titles, so a Tibetan-Buddhist ruler picks from **Chief Minister**, **Tre
 **Chief Diviner** rather than the generic English names.
 
 <p align="center">
-  <img src="docs/decisions.jpg" alt="Recruit an Elite Specialist in the decisions panel" height="200" />
-  <img src="docs/gender-picker.jpg" alt="Gender picker — choose the recruit's sex" height="200" />
-  <img src="docs/role-picker.jpg" alt="Role picker — choose the council role" height="200" />
-  <img src="docs/arrival.jpg" alt="Recruit arrival — appoint or replace" height="200" />
+  <a href="docs/decisions.jpg"><img src="docs/thumbs/decisions.jpg" alt="Recruit an Elite Specialist in the decisions panel" height="200" /></a>
+  <a href="docs/gender-picker.jpg"><img src="docs/thumbs/gender-picker.jpg" alt="Gender picker — choose the recruit's sex" height="200" /></a>
+  <a href="docs/role-picker.jpg"><img src="docs/thumbs/role-picker.jpg" alt="Role picker — choose the council role" height="200" /></a>
+</p>
+
+<p align="center"><sub><em>Recruit arrivals — court order (Chancellor · Marshal · Steward · Spymaster · Chaplain), male then female:</em></sub></p>
+
+<p align="center">
+  <a href="docs/chancellor-male.jpg"><img src="docs/thumbs/chancellor-male.jpg" alt="Chancellor (male) arrival" height="130" /></a>
+  <a href="docs/chancellor-female.jpg"><img src="docs/thumbs/chancellor-female.jpg" alt="Chancellor (female) arrival" height="130" /></a>
+  <a href="docs/marshal-male.jpg"><img src="docs/thumbs/marshal-male.jpg" alt="Marshal (male) arrival" height="130" /></a>
+  <a href="docs/marshal-female.jpg"><img src="docs/thumbs/marshal-female.jpg" alt="Marshal (female) arrival" height="130" /></a>
+  <a href="docs/steward-male.jpg"><img src="docs/thumbs/steward-male.jpg" alt="Steward (male) arrival" height="130" /></a>
+  <a href="docs/steward-female.jpg"><img src="docs/thumbs/steward-female.jpg" alt="Steward (female) arrival" height="130" /></a>
+  <a href="docs/spymaster-male.jpg"><img src="docs/thumbs/spymaster-male.jpg" alt="Spymaster (male) arrival" height="130" /></a>
+  <a href="docs/spymaster-female.jpg"><img src="docs/thumbs/spymaster-female.jpg" alt="Spymaster (female) arrival" height="130" /></a>
+  <a href="docs/chaplain-male.jpg"><img src="docs/thumbs/chaplain-male.jpg" alt="Chaplain (male) arrival" height="130" /></a>
+  <a href="docs/chaplain-female.jpg"><img src="docs/thumbs/chaplain-female.jpg" alt="Chaplain (female) arrival" height="130" /></a>
 </p>
 
 <p align="center"><sub><em>Screenshots taken with the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3054987840">Proper 4K UI Project</a> mod enabled.</em></sub></p>
@@ -74,25 +88,29 @@ personality — tuned so it *adds* character without changing what they fundamen
   skill, or a relevant trait (Duelist, Hunter, or Strong for marshals; Administrator,
   Architect, Gardener, or Temperate for stewards; Gregarious, Kind, or Honest for chancellors;
   Deceitful, Schemer, or Cynical for spymasters; Theologian, Mystic, Erudite, or Scholar for chaplains).
-- **Occasionally** something bigger or quirkier appears. These are intentionally rare, so
-  your recruit almost always reads as "an excellent specialist," not a lottery prize.
+- **Occasionally** something bigger or quirkier appears. These surprises are intentionally rare.
 - **Rarely**, if you carry a bloodline that *inspires commanders*, a marshal recruit can
   be a **legendary, named hero** — a unique nickname and a stronger set of traits. Likewise,
   if your realm has a **wonder that inspires learning** (a great library, House of Wisdom),
   a chaplain recruit picks up extra scholarly traits.
 - A **marshal** may also carry the **marks of old battles** — a hardened scar, or (with The
   Reaper's Due) a lost eye or a disfiguring wound — always paired with a fitting trait, such
-  as hard-won patience or a battle-born temper, so a scar is never just a penalty.
+  as hard-won patience or a battle-born temper.
 - Recruits also pick up **faith-appropriate touches** where they fit (a caste trait for
   Indian religions, a zodiac sign for astrological faiths, and so on), and a marshal may
   turn up a **holy-war veteran** trait matching their faith (Crusader, Mujahid, and the like).
 
-The baseline is always "a reliably excellent specialist"; the random flavor is the
-seasoning, never the main course.
-
 ## Game rules
 
 Elite Recruitment adds two **game rules** under the "Various" filter, so you can tailor the mod to your campaign.
+
+<p align="center">
+  <img src="docs/game-rules-default.jpg" alt="Elite Recruitment game rules — defaults" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/game-rules-adjusted.jpg" alt="Elite Recruitment game rules — adjusted" width="100%" />
+</p>
 
 **Elite Recruitment: Cost** — sliding scale:
 
@@ -250,12 +268,12 @@ Arrival banner art is in the public domain. Sources:
 
 | Banner | Work | Artist | Year | Source |
 |---|---|---|---|---|
+| Chancellor (male) | *Arrival of the English Ambassadors* (St Ursula cycle) | Vittore Carpaccio | 1495 | Gallerie dell'Accademia, Venice — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Accademia_-_Arrivo_degli_ambasciatori_inglesi_presso_il_re_di_Bretagna_di_Vittore_Carpaccio.jpg&oldid=1004866913) |
+| Chancellor (female) | Illumination from *Book of the Queen* — Christine de Pizan presenting to Queen Isabeau of Bavaria | Master of the Cité des Dames workshop (BL Harley 4431, fol. 3r) | c. 1410–14 | British Library — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Christine_de_Pisan_and_Queen_Isabeau_(2).jpg&oldid=1124296593) |
 | Marshal (male) | *Niccolò Mauruzi da Tolentino at the Battle of San Romano* | Paolo Uccello | c. 1438–1440 | National Gallery, London — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:San_Romano_Battle_%28Paolo_Uccello%2C_London%29_01.jpg&oldid=1041440407) |
 | Marshal (female) | *Jeanne d'Arc à la porte Saint-Honoré lors du siège de Paris de 1429* | Anonymous (from Martial d'Auvergne, *Vigiles du roi Charles VII*) | c. 1484 | BnF ms. Français 5054, fol. 66v — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Le_si%C3%A8ge_de_Paris_en_1429_par_Jeanne_d%27Arc_-_Martial.jpg&oldid=1102676135) |
 | Steward (male) | *The Village Lawyer* (also *The Payment of the Tithes*) | Pieter Brueghel the Younger | 1621 | Museum of Fine Arts Ghent (MSK) — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Pieter_Brueghel_the_Younger_-_Village_Lawyer_-_WGA3633.jpg&oldid=1075665833) |
 | Steward (female) | Illumination from *La Cité des Dames* | Master of the Cité des Dames (BnF ms. Français 607, fol. 2) | c. 1450 | Bibliothèque nationale de France — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Meister_der_%27Cit%C3%A9_des_Dames%27_002.jpg&oldid=605848094) |
-| Chancellor (male) | *Arrival of the English Ambassadors* (St Ursula cycle) | Vittore Carpaccio | 1495 | Gallerie dell'Accademia, Venice — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Accademia_-_Arrivo_degli_ambasciatori_inglesi_presso_il_re_di_Bretagna_di_Vittore_Carpaccio.jpg&oldid=1004866913) |
-| Chancellor (female) | Illumination from *Book of the Queen* — Christine de Pizan presenting to Queen Isabeau of Bavaria | Master of the Cité des Dames workshop (BL Harley 4431, fol. 3r) | c. 1410–14 | British Library — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Christine_de_Pisan_and_Queen_Isabeau_(2).jpg&oldid=1124296593) |
 | Spymaster (male) | *Assassinat de Sigebert Ier* (Grandes Chroniques de France, BnF Fr. 6465, fol. 25) | Jean Fouquet | c. 1455–60 | Bibliothèque nationale de France — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Assassinat_de_Sigebert_Ier.jpg&oldid=1067059001) |
 | Spymaster (female) | *Herod's Banquet* (Salome's Dance) | Fra Filippo Lippi | 1452–65 | Prato Cathedral fresco — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Fra_Filippo_Lippi_-_Herod%27s_Banquet_-_WGA13286.jpg&oldid=1033447971) |
 | Chaplain (male) | *St Peter Preaching in the Presence of St Mark* (Linaioli Tabernacle predella) | Fra Angelico | c. 1433 | Museo di San Marco, Florence — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Fra_Angelico_-_St_Peter_Preaching_in_the_Presence_of_St_Mark_-_WGA00464.jpg&oldid=1170300133) |

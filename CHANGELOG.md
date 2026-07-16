@@ -9,6 +9,14 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.14] - 2026-07-16
+
+### Changed
+- Replace the single arrival screenshot with 10 role/gender variants. Add 2 Game rules screenshots.
+
+### Removed
+- Untrack `descriptor.mod` across the three ER mod folders.
+
 ## [1.0.13] - 2026-07-16
 
 ### Changed
