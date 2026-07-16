@@ -9,6 +9,12 @@ release, which will be tagged `1.0.0`.
 
 ## [Unreleased]
 
+## [1.0.13] - 2026-07-16
+
+### Changed
+- Replace all 10 arrival banners with new public-domain artwork from Wikimedia Commons. Both base (450×150) and Proper4KUI Patch (810×270) variants updated.
+- Added attributions in README's `Credit & License` section.
+
 ## [1.0.12] - 2026-07-15
 
 ### Changed

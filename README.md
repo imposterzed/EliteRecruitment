@@ -242,6 +242,21 @@ for contributors:
 
 Markdown (this README, the changelog) is plain UTF-8 and needs none of this.
 
-## License
+## Credit & License
 
 Elite Recruitment © 2026 imposterzed. MIT, see [LICENSE](LICENSE).
+
+Arrival banner art is in the public domain. Sources:
+
+| Banner | Work | Artist | Year | Source |
+|---|---|---|---|---|
+| Marshal (male) | *Niccolò Mauruzi da Tolentino at the Battle of San Romano* | Paolo Uccello | c. 1438–1440 | National Gallery, London — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:San_Romano_Battle_%28Paolo_Uccello%2C_London%29_01.jpg&oldid=1041440407) |
+| Marshal (female) | *Jeanne d'Arc à la porte Saint-Honoré lors du siège de Paris de 1429* | Anonymous (from Martial d'Auvergne, *Vigiles du roi Charles VII*) | c. 1484 | BnF ms. Français 5054, fol. 66v — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Le_si%C3%A8ge_de_Paris_en_1429_par_Jeanne_d%27Arc_-_Martial.jpg&oldid=1102676135) |
+| Steward (male) | *The Village Lawyer* (also *The Payment of the Tithes*) | Pieter Brueghel the Younger | 1621 | Museum of Fine Arts Ghent (MSK) — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Pieter_Brueghel_the_Younger_-_Village_Lawyer_-_WGA3633.jpg&oldid=1075665833) |
+| Steward (female) | Illumination from *La Cité des Dames* | Master of the Cité des Dames (BnF ms. Français 607, fol. 2) | c. 1450 | Bibliothèque nationale de France — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Meister_der_%27Cit%C3%A9_des_Dames%27_002.jpg&oldid=605848094) |
+| Chancellor (male) | *Arrival of the English Ambassadors* (St Ursula cycle) | Vittore Carpaccio | 1495 | Gallerie dell'Accademia, Venice — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Accademia_-_Arrivo_degli_ambasciatori_inglesi_presso_il_re_di_Bretagna_di_Vittore_Carpaccio.jpg&oldid=1004866913) |
+| Chancellor (female) | Illumination from *Book of the Queen* — Christine de Pizan presenting to Queen Isabeau of Bavaria | Master of the Cité des Dames workshop (BL Harley 4431, fol. 3r) | c. 1410–14 | British Library — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Christine_de_Pisan_and_Queen_Isabeau_(2).jpg&oldid=1124296593) |
+| Spymaster (male) | *Assassinat de Sigebert Ier* (Grandes Chroniques de France, BnF Fr. 6465, fol. 25) | Jean Fouquet | c. 1455–60 | Bibliothèque nationale de France — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Assassinat_de_Sigebert_Ier.jpg&oldid=1067059001) |
+| Spymaster (female) | *Herod's Banquet* (Salome's Dance) | Fra Filippo Lippi | 1452–65 | Prato Cathedral fresco — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Fra_Filippo_Lippi_-_Herod%27s_Banquet_-_WGA13286.jpg&oldid=1033447971) |
+| Chaplain (male) | *St Peter Preaching in the Presence of St Mark* (Linaioli Tabernacle predella) | Fra Angelico | c. 1433 | Museo di San Marco, Florence — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Fra_Angelico_-_St_Peter_Preaching_in_the_Presence_of_St_Mark_-_WGA00464.jpg&oldid=1170300133) |
+| Chaplain (female) | *Saint Catherine of Alexandria and the Philosophers* | Masolino da Panicale | 1428–30 | Basilica di San Clemente, Rome — [Wikimedia](https://commons.wikimedia.org/w/index.php?title=File:Masolino,_santa_caterina_e_i_filosofi_di_alessandria,_san_clemente_roma.jpg&oldid=1038755711) |
