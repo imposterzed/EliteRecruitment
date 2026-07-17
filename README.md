@@ -33,6 +33,13 @@ council titles, so a Tibetan-Buddhist ruler picks from **Chief Minister**, **Tre
 
 <p align="center"><sub><em>Screenshots taken with the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3054987840">Proper 4K UI Project</a> mod enabled.</em></sub></p>
 
+## What is new
+
+Latest release: **v1.1.0**.
+
+- **Gender Gating game rule.** Adhere (default) keeps existing eligibility gates. Bypass lets you recruit either gender for any role, regardless of gender restrictions from council law or faith.
+- **Refreshed arrival banners.** All 10 role/gender banners now use public-domain artwork spanning the 15th to early 17th centuries. Includes Proper4KUI Patch support.
+
 ## What it does
 
 Crusader Kings II's vanilla **Promote Commander** decision can already turn up a strong —
