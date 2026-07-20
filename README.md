@@ -35,8 +35,9 @@ council titles, so a Tibetan-Buddhist ruler picks from **Chief Minister**, **Tre
 
 ## What is new
 
-Latest release: **v1.1.0**.
+Latest release: **v1.2.0**.
 
+- **Fixed broken .mod file** — should fix the mod not showing up in the launcher after subscribing.
 - **Gender Gating game rule.** Adhere (default) keeps existing eligibility gates. Bypass lets you recruit either gender for any role, regardless of gender restrictions from council law or faith.
 - **Refreshed arrival banners.** All 10 role/gender banners now use public-domain artwork spanning the 15th to early 17th centuries. Includes Proper4KUI Patch support.
 

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-07-20
+
+Public release. Base mod and Proper4KUI Patch.
+
+### Fixed
+- Subscribing on Steam Workshop now shows the mod in the launcher.
+
 ## [1.1.0] - 2026-07-17
 
 Public release. Base mod and Proper4KUI Patch.
